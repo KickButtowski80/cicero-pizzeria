@@ -1,3 +1,10 @@
+
+.wrapper {
+    display: grid;
+    place-items: center; 
+    min-height: 100vh;
+}
+
 h1 {
     color: red;
     border: 1px solid blue;
