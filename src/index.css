@@ -19,11 +19,3 @@ p  {
     }
 }
 
-section {
-    @apply border-b border-b-red-400
-     px-1 pb-5 pt-2;
-    .section-header {
-      @apply text-center block text-2xl
-       font-bold text-red-500 dark:text-red-50
-    }
-  }
