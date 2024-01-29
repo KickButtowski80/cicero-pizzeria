@@ -1,13 +1,43 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>My First Parcel App</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
   </head>
+
   <body>
-    <div class="wrapper">
-      <h1>Hello, Work is hello</h2>
+    <div class="wrapper text-3xl font-bold underline md:text-blue-900">
+      <h1 class="p-9">Hello, Work is hello
+
+        <button
+          class="bg-sky-700 px-4 py-2 text-white
+           hover:bg-sky-800 sm:px-8 sm:py-3 border-2
+           border-solid "
+        >
+          Click
+        </button>
+        <button type="button" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
+
+      </h1>
+
+      <div class="scale-125 opacity-50 hover:scale-150 hover:opacity-75"></div>
+      <div class="p-4 pt-2"></div>
+      
+          <p>
+            <h2>hello</h2>
+          </p>
+
+          <section>
+            <div class="section-header">I am a header</div>
+          </section>
+
+          <include src="./src/components/card.html">
+            {
+              "title": "it is a title", 
+              "description": "I am a lengthy description"
+            }
+          </include>
     </div>
   </body>
 </html>
