@@ -4,23 +4,20 @@
 .menu-bg {
   width: 0px;
   height: 0px;
+  margin: 30px 0 20px 20px;
   position: absolute;
   right: 0;
   top: 0;
   z-index: -1;
-  transition: width 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
-  &.in-view {
-    /* width: 520px;
-    height: 460px;*/
+  &.in-view { 
+    z-index: -1;
+    width: 520px;
+    height: 460px;
     transform: translate(60%, -30%);
     background: radial-gradient(circle, #dc052d, #dc052d);
-    /* border-radius: 50%; */
-    width: 200px;
-  height: 200px;
-
-  /* background: radial-gradient(circle at 100% 50%, transparent 50%, #dc052d 50%); */
-  border-radius: 50% 0 0 50%;
+    border-radius: 50%;
   }
 }
 
