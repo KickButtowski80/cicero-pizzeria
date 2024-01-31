@@ -5,16 +5,16 @@
   width: 0px;
   height: 0px;
   margin: 30px 0 20px 20px;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   z-index: -1;
   transition: all 0.5s ease-in-out;
 
-  &.in-view { 
+  &.in-view {
     z-index: -1;
     width: 520px;
-    height: 460px;
+    min-height: 460px;
     transform: translate(60%, -30%);
     background: radial-gradient(circle, #dc052d, #dc052d);
     border-radius: 50%;
@@ -38,16 +38,15 @@ hr {
 }
 
 #menu-items {
-    & > li {
-      /* transform: translateY(-205px); */
-      font-size: 20px;
-      transition: all 0.5s;
+  & > li {
+    font-size: 20px;
+    transition: all 0.5s;
   }
-  &:nth-child(1) {
+  /* &:nth-child(1) {
     transform: translate(-127px, 10px);
   }
 
-  &:nth-child(2) {
+  &:nth-child(2) a {
     transform: translate(-129px, 25px);
   }
 
@@ -56,5 +55,5 @@ hr {
   }
   &:nth-child(4) {
     transform: translate(-105px, 50px);
-  }
+  } */
 }
