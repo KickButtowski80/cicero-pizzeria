@@ -34,8 +34,10 @@
 
 .change {
   #br1 {
-    color:white;
     transform: translateY(11px) rotateZ(-45deg);
+    & img.knife {
+      filter: invert(100%);
+    }
   }
   #br2 {
     opacity: 0;
