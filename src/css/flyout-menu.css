@@ -56,14 +56,14 @@
   }
   &.in-view-menuItems {
     li:nth-child(1) {
-      transform: translate(-127px, 10px);
+      transform: translate(-137px, 10px);
     }
     li:nth-child(2) {
       transform: translate(-124px, 25px);
     }
 
     li:nth-child(3) {
-      transform: translate(-105px, 40px);
+      transform: translate(-95px, 40px);
     }
     li:nth-child(4) {
       transform: translate(-70px, 50px);
