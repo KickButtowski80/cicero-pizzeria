@@ -46,7 +46,27 @@
     transform: translateY(-82px) rotateZ(45deg);
   }
 }
+#logo {
+  width: 3rem;
+  width: 0px;
+  height: 0px;
+  transform: translate(0%, 0%);
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  z-index: -1;
+  transition: all 2.5s ease;
+  &.in-view-logo {
+    width: 3rem;
+    transform: translate(-150px, -71px);
 
+  }
+  &.out-view-logo {
+  
+    transform: translate(10%, 0%);
+  
+  }
+}
 #menu-items {
   li {
     font-size: 20px;
@@ -56,17 +76,17 @@
   }
   &.in-view-menuItems {
     li:nth-child(1) {
-      transform: translate(-137px, 10px);
+      transform: translate(-90px, 10px);
     }
     li:nth-child(2) {
-      transform: translate(-124px, 25px);
+      transform: translate(-77px, 25px);
     }
 
     li:nth-child(3) {
-      transform: translate(-95px, 40px);
+      transform: translate(-48px, 40px);
     }
     li:nth-child(4) {
-      transform: translate(-70px, 50px);
+      transform: translate(-23px, 50px);
     }
   }
   &.out-view-menuItems {
