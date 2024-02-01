@@ -8,8 +8,8 @@
   background: radial-gradient(circle, #dc052d, #dc052d);
   border-radius: 50%;
   position: fixed;
-  top: -0px;
-  right: 0;
+  top: 15px;
+  right: 10px;
   transform: translate(0%, 0%);
   transition: all 1.5s ease;
 
@@ -32,26 +32,24 @@
   transition: all 1s;
 }
 
-
-
 .change {
   #br1 {
+    color:white;
     transform: translateY(11px) rotateZ(-45deg);
   }
   #br2 {
     opacity: 0;
   }
   #br3 {
-    transform: translateY(-12px) rotateZ(45deg);
+    transform: translateY(-60px) rotateZ(45deg);
   }
 }
 
- 
 #menu-items {
   li {
     font-size: 20px;
     color: white;
-    transform: translate(0%,0%);
+    transform: translate(0%, 0%);
     transition: all 2.5s ease;
   }
   &.in-view-menuItems {
@@ -71,7 +69,7 @@
   }
   &.out-view-menuItems {
     li {
-      transform: translate(0%,0%);
+      transform: translate(0%, 0%);
     }
   }
 }
