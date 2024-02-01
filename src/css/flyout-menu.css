@@ -41,7 +41,7 @@
     opacity: 0;
   }
   #br3 {
-    transform: translateY(-60px) rotateZ(45deg);
+    transform: translateY(-82px) rotateZ(45deg);
   }
 }
 
@@ -64,7 +64,7 @@
       transform: translate(-105px, 40px);
     }
     li:nth-child(4) {
-      transform: translate(-80px, 50px);
+      transform: translate(-70px, 50px);
     }
   }
   &.out-view-menuItems {
