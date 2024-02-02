@@ -5,12 +5,12 @@
   width: 0px;
   height: 0px;
   margin: 30px 0 20px 20px;
-  background: radial-gradient(circle, #dc052d, #dc052d);
+  background: radial-gradient(circle, #dc8d05, #9b3649);
   border-radius: 50%;
   position: fixed;
   top: 15px;
   right: 10px;
-  transform: translate(0%, 0%);
+ 
   transition: all 1.5s ease;
 
   &.in-view {
@@ -23,13 +23,12 @@
   &.out-view {
     z-index: -1;
     width: 0px;
-    min-height: 0px;
-    transform: translate(0%, 0%);
+    min-height: 0px; 
   }
 }
 
 #hamburgerIcon div {
-  transition: all 1s;
+   transition: all 0.75s;
 }
 
 .change {
@@ -47,34 +46,34 @@
   }
 }
 #logo {
-  width: 3rem;
-  width: 0px;
-  height: 0px;
+  width: 0px; 
   transform: translate(0%, 0%);
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  z-index: -1;
-  transition: all 2.5s ease;
+ 
+ 
+  transition: all 1s ease;
   &.in-view-logo {
     width: 3rem;
     transform: translate(-150px, -71px);
 
   }
-  &.out-view-logo {
-  
-    transform: translate(10%, 0%);
+  &.out-view-logo {    
+    transform: translate(10%, -10%);
   
   }
 }
 #menu-items {
   li {
+    opacity: 0;
     font-size: 20px;
     color: white;
     transform: translate(0%, 0%);
-    transition: all 2.5s ease;
+    transition: all 0.75s ease;
   }
   &.in-view-menuItems {
+    li{
+
+      opacity: 1;
+    }
     li:nth-child(1) {
       transform: translate(-90px, 10px);
     }
