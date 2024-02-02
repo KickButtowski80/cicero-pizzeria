@@ -45,7 +45,7 @@
     opacity: 0;
   }
   #br3 {
-    transform: translateY(-40px) rotateZ(45deg);
+    transform: translateY(-15px) rotateZ(45deg);
   }
 }
 #logo {

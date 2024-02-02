@@ -8,7 +8,6 @@
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-margin, 40px);
     font-family: "Raleway", sans-serif;
-    /* overflow: hidden; */
   }
 
   * {
