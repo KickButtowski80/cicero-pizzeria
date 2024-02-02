@@ -54,7 +54,7 @@
   transition: all 1s ease;
   &.in-view-logo {
     width: 3rem;
-    transform: translate(-150px, -71px);
+    transform: translate(-150px, 10px);
   }
   &.out-view-logo {
     transform: translate(10%, -10%);
@@ -73,17 +73,17 @@
       opacity: 1;
     }
     li:nth-child(1) {
-      transform: translate(-90px, 10px);
+      transform: translate(-90px, 70px);
     }
     li:nth-child(2) {
-      transform: translate(-77px, 25px);
+      transform: translate(-77px, 80px);
     }
 
     li:nth-child(3) {
-      transform: translate(-48px, 40px);
+      transform: translate(-48px, 90px);
     }
     li:nth-child(4) {
-      transform: translate(-23px, 50px);
+      transform: translate(-23px, 100px);
     }
   }
   &.out-view-menuItems {
