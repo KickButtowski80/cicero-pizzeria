@@ -10,7 +10,7 @@
   position: fixed;
   top: 15px;
   right: 10px;
- 
+
   transition: all 1.5s ease;
 
   &.in-view {
@@ -23,17 +23,20 @@
   &.out-view {
     z-index: -1;
     width: 0px;
-    min-height: 0px; 
+    min-height: 0px;
   }
 }
 
-#hamburgerIcon div {
-   transition: all 0.75s;
+#hamburgerIcon {
+  div {
+    transition: all 0.75s;
+  }
 }
 
 .change {
   #br1 {
     transform: translateY(11px) rotateZ(-45deg);
+
     & img.knife {
       filter: invert(100%);
     }
@@ -42,23 +45,19 @@
     opacity: 0;
   }
   #br3 {
-    transform: translateY(-82px) rotateZ(45deg);
+    transform: translateY(-40px) rotateZ(45deg);
   }
 }
 #logo {
-  width: 0px; 
+  width: 0px;
   transform: translate(0%, 0%);
- 
- 
   transition: all 1s ease;
   &.in-view-logo {
     width: 3rem;
     transform: translate(-150px, -71px);
-
   }
-  &.out-view-logo {    
+  &.out-view-logo {
     transform: translate(10%, -10%);
-  
   }
 }
 #menu-items {
@@ -70,8 +69,7 @@
     transition: all 0.75s ease;
   }
   &.in-view-menuItems {
-    li{
-
+    li {
       opacity: 1;
     }
     li:nth-child(1) {
