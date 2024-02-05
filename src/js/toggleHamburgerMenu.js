@@ -1,7 +1,7 @@
 const hamburgerIcon = document.querySelector('#hamburgerIcon')
 const menuBg = document.querySelector('.menu-bg')
-const menuItems = document.querySelectorAll('#menu-items')
-const navBarLogo = document.querySelector('#logo');
+const menuItems = document.querySelectorAll('#flyout-menu-items')
+const navBarLogo = document.querySelector('#flyout-menu-logo');
 hamburgerIcon.addEventListener('click', () => {
     hamburgerIcon.classList.toggle('change');
     toggleClasses(menuBg, 'in-view', 'out-view');

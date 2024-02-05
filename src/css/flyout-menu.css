@@ -48,7 +48,7 @@
     transform: translateY(-15px) rotateZ(45deg);
   }
 }
-#logo {
+#flyout-menu-logo {
   width: 0px;
   transform: translate(0%, 0%);
   transition: all 1s ease;
@@ -60,7 +60,7 @@
     transform: translate(10%, -10%);
   }
 }
-#menu-items {
+#flyout-menu-items{
   li {
     opacity: 0;
     font-size: 20px;
