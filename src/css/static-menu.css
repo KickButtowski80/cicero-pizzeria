@@ -16,9 +16,18 @@
   li {
     opacity: 0;
     transform: translate(200px, 0%);
-
-    color: black;
+    position: relative;
+    display: inline-block;
     animation: slideIn 1.5s ease forwards;
+    :hover::before{ 
+      content: url('/src/assets/svg/serving-hand.svg');
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 50%;
+      height: 2px; 
+      transition: all 1s ease-in-out;
+    }
   }
 
   li:nth-child(1) {
