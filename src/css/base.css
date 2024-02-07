@@ -31,7 +31,7 @@
     min-h-screen   
     bg-slate-500 max-w-[1140px] ;
  
-    width: calc(100% - 2rem);
+    width: calc(100% - 0rem);
     margin-inline: auto;
  
   }
