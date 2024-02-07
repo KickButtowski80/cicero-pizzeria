@@ -1,4 +1,4 @@
-let allMenuItems = document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a');
+var allMenuItems = document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a');
 
 const options = {
     threshold: 0.3
