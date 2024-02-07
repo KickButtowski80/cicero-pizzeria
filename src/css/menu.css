@@ -1,0 +1,8 @@
+@import "./flyout-menu.css";
+@import "./static-menu.css";
+
+#navbar {
+  & > div {
+    background: radial-gradient(at right bottom, #dc8d05, #9b3649);
+  }
+}

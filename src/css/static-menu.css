@@ -16,9 +16,15 @@
   li {
     opacity: 0;
     transform: translate(200px, 0%);
-
-    color: black;
     animation: slideIn 1.5s ease forwards;
+    :hover::after {
+      content: url("/src/assets/svg/serving-hand.svg");
+      position: absolute;
+      left: 0;
+      width: 55px;
+      padding-top: 5.5px;
+      transition: all 1s ease-in-out;
+    }
   }
 
   li:nth-child(1) {
@@ -39,15 +45,14 @@
 }
 
 @keyframes slideDown {
-    100% {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
-  
-#static-menu-logo{
-    opacity: 0;
-    transform: translateY(-65px);
-    animation: slideDown .4s forwards;  
+}
 
+#static-menu-logo {
+  opacity: 0;
+  transform: translateY(-65px);
+  animation: slideDown 0.4s forwards;
 }
