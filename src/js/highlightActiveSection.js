@@ -1,9 +1,9 @@
-var allMenuItems = document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a');
+//  allMenuItems = document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a');
 
 const options = {
     threshold: 0.3
 }
-allMenuItems.forEach(menuItem => {
+document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a').forEach(menuItem => {
     const hashId = menuItem.hash;
     const observedElement = document.querySelector(hashId);
     let observer = new IntersectionObserver((entries) => {
