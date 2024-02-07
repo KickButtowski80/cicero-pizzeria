@@ -17,16 +17,19 @@
     opacity: 0;
     transform: translate(200px, 0%);
     animation: slideIn 1.5s ease forwards;
-    :hover::after {
+    ::after {
       content: url("/src/assets/svg/serving-hand.svg");
       position: absolute;
       left: 0;
       width: 55px;
       padding-top: 5.5px;
-      transition: all 1s ease-in-out;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    :hover::after {
+      opacity: 1;
     }
   }
-
   li:nth-child(1) {
     animation-name: slideIn;
   }
