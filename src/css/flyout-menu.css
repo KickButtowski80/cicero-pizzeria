@@ -54,10 +54,10 @@
   transition: all 1s ease;
   &.in-view-logo {
     width: 3rem;
-    transform: translate(-150px, 10px);
+    transform: translate(-150px, -30px);
   }
   &.out-view-logo {
-    transform: translate(10%, -10%);
+    transform: translate(10%, 10%);
   }
 }
 #flyout-menu-items{
