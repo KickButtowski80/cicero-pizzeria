@@ -21,8 +21,7 @@
       content: url("/src/assets/svg/serving-hand.svg");
       position: absolute;
       left: 0;
-      width: 55px;
-      padding-top: 5.5px;
+      padding-top: 12.5px;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
