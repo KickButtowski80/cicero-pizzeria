@@ -20,24 +20,19 @@
     vertical-align: baseline;
     box-sizing: border-box;
   }
-
 }
 
-
 @layer components {
-  
   .wrapper {
-    @apply 
-    min-h-screen   
-    bg-slate-500 max-w-[1140px] ;
- 
+    @apply min-h-screen   
+    max-w-[1140px] bg-slate-500;
+    
     width: calc(100% - 0rem);
     margin-inline: auto;
- 
   }
 
   h1 {
     font-weight: 900;
-    font-size: 2rem; 
+    font-size: 2rem;
   }
 }
