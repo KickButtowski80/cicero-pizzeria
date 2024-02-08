@@ -21,19 +21,22 @@
     
   }
   li::after {
-    content: url("/src/assets/svg/serving-hand.svg");
+    content: url("/src/assets/svg/slicePizza.svg");
     position: absolute;
     left: 0;
-    top: 1lh;
+    top: 0.8lh;
+   width:0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: all 1s ease-in-out;
   }
 
   li:hover::after,
   li:focus::after {
+    width: 2rem;
     opacity: 1;
   }
   li.active::after {
+    width: 2rem;
     opacity: 1;
   }
   li:nth-child(1) {
