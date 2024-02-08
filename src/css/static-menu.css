@@ -17,16 +17,28 @@
     opacity: 0;
     transform: translate(200px, 0%);
     animation: slideIn 1.5s ease forwards;
-    :hover::after {
-      content: url("/src/assets/svg/serving-hand.svg");
-      position: absolute;
-      left: 0;
-      width: 55px;
-      padding-top: 5.5px;
-      transition: all 1s ease-in-out;
-    }
+  
+    
+  }
+  li::after {
+    content: url("/src/assets/svg/slicePizza.svg");
+    position: absolute;
+    left: 0;
+    top: 0.8lh;
+   width:0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
   }
 
+  li:hover::after,
+  li:focus::after {
+    width: 2rem;
+    opacity: 1;
+  }
+  li.active::after {
+    width: 2rem;
+    opacity: 1;
+  }
   li:nth-child(1) {
     animation-name: slideIn;
   }

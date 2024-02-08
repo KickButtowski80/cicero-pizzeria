@@ -1,6 +1,6 @@
 const hamburgerIcon = document.querySelector('#hamburgerIcon')
 const menuBg = document.querySelector('.menu-bg')
-const flyoutMenuId = document.querySelectorAll('#flyout-menu-items')
+const flyoutMenuId = document.querySelectorAll('#flyout-menu-items');
 const flyoutMenuItems = document.querySelectorAll('#flyout-menu-items li');
 const navBarLogo = document.querySelector('#flyout-menu-logo');
 hamburgerIcon.addEventListener('click', () => {
