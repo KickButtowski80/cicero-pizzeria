@@ -11,11 +11,11 @@ hamburgerIcon.addEventListener('click', () => {
 
 });
 
-// flyoutMenuItems.forEach(fmi => fmi.addEventListener('click', () => {
-//     flyoutMenuId[0].classList.remove('in-view-menuItems');
-//     menuBg.classList.remove('in-view');
-//     navBarLogo.classList.remove('in-view-logo');
-// }))
+flyoutMenuItems.forEach(fmi => fmi.addEventListener('click', () => {
+    flyoutMenuId[0].classList.remove('in-view-menuItems');
+    menuBg.classList.remove('in-view');
+    navBarLogo.classList.remove('in-view-logo');
+}))
 
 
 function toggleClasses(element, class1, class2) {
