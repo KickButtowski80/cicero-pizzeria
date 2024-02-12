@@ -52,9 +52,11 @@ input[type="checkbox"].checkbox-round {
   position: absolute;
   left: -5px;
   top: -5px;
+  /* width: 92%; */
   width: 100%;
   height: 100%;
-  background: linear-gradient(
+  background-image: url("/src/assets/svg/slicePizza.svg");
+  /* background: linear-gradient(
       45deg,
       transparent,
       transparent 49%,
@@ -87,22 +89,26 @@ input[type="checkbox"].checkbox-round {
       transparent 51%
     ),
     #ffd72c;
-  box-shadow: inset 0 0 0 10px #ffb10b;
+  box-shadow: inset 0 0 0 10px #ffb10b; */
   border-radius: 100%;
 }
 
-.checkbox-round:checked {
-  transition: all 2s ease-in-out;
-  animation: pizzaflip 0.75s ease-in-out forwards;
-}
 
-.checkbox-round:checked ~ .pizza {
+.checkbox-round:checked ~ .pizza > *{
+
   transition: all 2s ease-in-out;
   animation: pizzaflip 0.5s ease-in-out forwards;
 }
 
 @keyframes pizzaflip {
+  
+  
   100% {
+    /* background: none;
+    box-shadow:none; */
     transform: translateX(50px);
+    background-image: url("/src/assets/svg/plate.svg");
   }
 }
+
+ 
