@@ -93,16 +93,11 @@ input[type="checkbox"].checkbox-round {
   border-radius: 100%;
 }
 
-
-.checkbox-round:checked ~ .pizza > *{
-
-  transition: all 2s ease-in-out;
-  animation: pizzaflip 0.5s ease-in-out forwards;
+.checkbox-round:checked ~ .pizza > * {
+  animation: darkModeOn 0.5s ease-in-out forwards;
 }
 
-@keyframes pizzaflip {
-  
-  
+@keyframes darkModeOn {
   100% {
     /* background: none;
     box-shadow:none; */
@@ -111,4 +106,3 @@ input[type="checkbox"].checkbox-round {
   }
 }
 
- 
