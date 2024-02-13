@@ -86,6 +86,10 @@
   li:nth-child(4)::after {
     left: 75px; 
   }
+  
+  li:nth-child(5)::after {
+    content:none;
+   }
 
 
   :hover::after,
