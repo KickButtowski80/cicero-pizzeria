@@ -1,22 +1,25 @@
 <div id="navbar" class="fixed left-0 top-0 z-50 w-full">
-  <div class="flex justify-between py-2" >
+  <div class="flex justify-between py-2">
     <h1 class="mr-2 flex items-center text-4xl font-semibold">Cicero Pizza</h1>
     <include src="src/components/static-menu.html"></include>
     <include src="src/components/flyout-menu.html"></include>
   </div>
   <nav id="flyout-navbar" class="flex flex-row-reverse">
-     <img 
+    <img
       id="flyout-menu-logo"
-      src="assets/svg/slicePizza.svg" 
-      alt="a slice pizza" />
+      src="assets/svg/slicePizza.svg"
+      alt="a slice pizza"
+    />
+
     <ul id="flyout-menu-items">
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+        <include src="src/components/dark-mode.html"></include>
+      </li>
     </ul>
   </nav>
   <div class="menu-bg"></div>
 </div>
-
- 
