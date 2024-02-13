@@ -28,7 +28,6 @@
   .wrapper {
     @apply min-h-screen   
     max-w-[1140px];
-
     width: calc(100% - 0rem);
     margin-inline: auto;
   }
