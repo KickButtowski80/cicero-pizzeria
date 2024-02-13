@@ -1,22 +1,31 @@
 <section
-  class="wrapper flex justify-center items-center"
+  class="wrapper flex items-center justify-center"
   id="about"
-  style="background-image: url(&quot;assets/svg/slicePizza.svg&quot;) ;
-  background-color: #243047;"
+  style="
+    background-image: url(&quot;assets/svg/slicePizza.svg&quot;);
+    background-color: #243047;
+  "
 >
   <section
-    class=" md:container md:mx-auto rounded-lg 
-    border border-gray-400 border-opacity-25
-     bg-gray-400 bg-opacity-25 p-8
-      shadow-lg backdrop-blur-md"
+    class="rounded-lg border border-gray-400 border-opacity-25 bg-gray-400 bg-opacity-25 p-8 shadow-lg backdrop-blur-md md:container md:mx-auto"
   >
     <section class="bg-cover bg-no-repeat">
-      <div class="container mx-auto px-2 py-8 md:px-4 md:py-16 text-center text-slate-900">
+      <div
+        class="container mx-auto px-2 py-8 text-center text-slate-900 md:px-4 md:py-16"
+      >
         <h1 class="mb-4 text-4xl font-bold">Welcome to Cicero!</h1>
-        <p class="text-xl leading-relaxed">
+        <p class="text-xl leading-relaxed mb-8">
           Crafting delicious pizzas with fresh ingredients since 1980.
         </p>
-        <a href="/menu" class="btn btn-primary mt-4">Explore our Menu</a>
+        <a
+          href="#menu"
+          title="Click to visit and explore menu options for dinner and lunch"
+          class="rounded-lg bg-yellow-400 px-5 py-2.5
+           text-lg font-medium
+           text-black hover:bg-yellow-500 focus:outline-none 
+           focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900"
+          >Explore our Menu</a
+        >
       </div>
     </section>
     <h2 class="mb-4 text-2xl font-bold">Our Story</h2>
