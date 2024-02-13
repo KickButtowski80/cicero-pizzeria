@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@parcel/transformer-posthtml": "^2.11.0",
+    "htmlnano": "^2.1.0",
     "posthtml": "^0.16.6"
   }
 }
