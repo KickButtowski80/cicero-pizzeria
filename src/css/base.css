@@ -27,7 +27,8 @@
 @layer components {
   .flex-centered-wrapper {
     @apply min-h-screen   
-    max-w-[1140px] flex justify-center items-center;
+    /* max-w-[1140px]  */
+    flex justify-center items-center;
     width: calc(100% - 0rem);
     margin-inline: auto;
   }
