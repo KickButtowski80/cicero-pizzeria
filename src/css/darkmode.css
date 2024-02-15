@@ -13,9 +13,9 @@
 
 .slider {
   position: relative;
-  width: 100px;
+  width: 102px;
   height: 50px;
-  background-color: gray;
+  background-color: var(--pineapple);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;
@@ -29,7 +29,7 @@ input[type="checkbox"].checkbox-round {
   width: 100px;
   height: 100%;
   vertical-align: middle;
-  border: 1px solid #ddd;
+  border: 1px solid #dfd324;
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -40,56 +40,21 @@ input[type="checkbox"].checkbox-round {
 
 .pizza {
   position: absolute;
-  left: 5px;
-  top: 5px;
   width: 50%;
   height: 100%;
   border-radius: 100%;
+  background-color: var(--black);
   transition: 0.2s ease-in-out;
 }
 
 .pizza .inner {
   position: absolute;
-  left: -5px;
-  top: -5px;
-  /* width: 92%; */
   width: 100%;
   height: 100%;
   background-image: url("/src/assets/svg/slicePizza.svg");
-  /* background: linear-gradient(
-      45deg,
-      transparent,
-      transparent 49%,
-      #f8c900 49%,
-      #f8c900 51%,
-      transparent 51%
-    ),
-    linear-gradient(
-      -45deg,
-      transparent,
-      transparent 49%,
-      #f8c900 49%,
-      #f8c900 51%,
-      transparent 51%
-    ),
-    linear-gradient(
-      90deg,
-      transparent,
-      transparent 49%,
-      #f8c900 49%,
-      #f8c900 51%,
-      transparent 51%
-    ),
-    linear-gradient(
-      180deg,
-      transparent,
-      transparent 49%,
-      #f8c900 49%,
-      #f8c900 51%,
-      transparent 51%
-    ),
-    #ffd72c;
-  box-shadow: inset 0 0 0 10px #ffb10b; */
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: inset 0 0 0 1px #ffb10b;
   border-radius: 100%;
 }
 
@@ -99,10 +64,28 @@ input[type="checkbox"].checkbox-round {
 
 @keyframes darkModeOn {
   100% {
-    /* background: none;
-    box-shadow:none; */
     transform: translateX(50px);
-    background-image: url("/src/assets/svg/plate.svg");
+  }
+}
+.slider:has(input[type="checkbox"].checkbox-round:checked){
+  background-color: var(--black);
+}
+.slider:has(input[type="checkbox"].checkbox-round) {
+  #sun-logo {
+    display: block;
+  }
+
+  #moon-logo {
+    display: none;
   }
 }
 
+.slider:has(input[type="checkbox"].checkbox-round:checked) {
+  #sun-logo {
+    display: none;
+  }
+
+  #moon-logo {
+    display: block;
+  }
+}
