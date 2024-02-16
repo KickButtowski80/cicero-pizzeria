@@ -7,7 +7,7 @@
             type="rotate"
             from="0 50 50"
             to="360 50 50"
-            dur="5s"
+            dur="50s"
             repeatCount="indefinite" />
 
         <line x1="50" y1="20" x2="50" y2="10" stroke="#ff9005" stroke-width="4" />
