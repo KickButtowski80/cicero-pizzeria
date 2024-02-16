@@ -15,9 +15,7 @@ hamburgerIcon.addEventListener('click', () => {
 Array.from(flyoutMenuItems).slice(0,-1).forEach(fmi => fmi.addEventListener('click', () => {
     flyoutMenuId[0].classList.remove('in-view-menuItems');
     menuBg.classList.remove('in-view');
-    navBarLogo.classList.remove('in-view-logo');
-    console.log(process.env.PUBLIC_URL)
-   
+    navBarLogo.classList.remove('in-view-logo');   
 }))
 
 
