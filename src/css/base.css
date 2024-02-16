@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --slice-pizza: url("/src/assets/svg/slicePizza.svg")
+  }
+  
   html,
   body {
     scroll-behavior: smooth;
