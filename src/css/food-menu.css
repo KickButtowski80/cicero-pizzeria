@@ -1,0 +1,14 @@
+/* ul#dinner-samples{
+    position: relative;
+  
+   
+    &::after {
+      content: "";
+      background-image: url("../assets/png/dinner-logo.png");
+      display: block;
+      width: 100px; 
+      height: 100px; 
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+} */
