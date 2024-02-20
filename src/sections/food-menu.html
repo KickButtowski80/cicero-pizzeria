@@ -1,63 +1,55 @@
 <section
   style="
-    background-image: url(&quot;./assets/webp/pizza-bg.webp&quot;);
+    background-image: url(&quot;./assets/webp/pizza-bg_processed.webp&quot;);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
+    background-size: contain;
   "
-  class="flex-centered-wrapper bg-green-500"
+  class="flex-centered-wrapper bg-[#243047] "
   id="menu"
 >
-  <section>
-    <!-- <div class="container1 mx-auto px-4" -->
+  <div class="flex flex-col gap-y-11 md:flex-nowrap md:flex-row md:gap-x-5">
+    <div
+      class="border-opacity-2  
+       border-gray-900 bg-gray-900 bg-opacity-10
+        p-6 shadow-lg backdrop-blur-md 
+        flex flex-col justify-center items-center"
+    >
+      <h3 class="mb-4 text-2xl font-bold">Lunch Menu</h3>
+      <!-- <p class="mb-4 text-white text-xl">Explore our delicious lunch options:</p> -->
 
-    <!-- <h2 class="text-3xl font-bold mb-8 text-center">Our Menu</h2> -->
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-      <div
-        class="rounded-full border-gray-400 border-opacity-2
-         bg-gray-400 bg-opacity-10 p-6 shadow-lg backdrop-blur-md"
+      <img
+        src="./assets/png/lunch-logo.png"
+        alt="lunch logo"
+        class="bg-opacity-5  "
+      />
+      <a
+        href="./lunch.html"
+        class="mt-6 block text-center font-bold
+         text-blue-600 hover:underline"
+        >View Lunch Menu</a
       >
-        <h3 class="mb-4 text-xl font-bold">Lunch Menu</h3>
-        <p class="mb-4 text-gray-700">Explore our delicious lunch options:</p>
-
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <ul class="list-disc pl-6">
-            <li class="mb-2">Margherita Pizza</li>
-            <li class="mb-2">Pepperoni Pizza</li>
-            <li class="mb-2">Vegetarian Pizza</li>
-          </ul>
-          <img
-            src="./assets/png/dinner-logo.png"
-            alt="dinner logo"
-            class="bg-opacity-5"
-          />
-        </div>
-        <a
-          href="./lunch.html"
-          class="mt-6 block text-center font-bold text-blue-600 hover:underline"
-          >View Lunch Menu</a
-        >
-      </div>
-      <div
-        class="rounded-full
-         border border-gray-400 border-opacity-25
-         bg-gray-400 bg-opacity-10 p-12
-         shadow-lg backdrop-blur-xl"
-      >
-        <h3 class=" text-xl font-bold">Dinner Menu</h3>
-        <p class=" text-gray-100">Explore our delectable dinner options:</p>
-         <img
-          src="./assets/png/lunch-logo.png"
-          alt="lunch logo"
-          class="bg-opacity-5 hover:scale-150"
-        />
-        <a
-          href="./dinner.html"
-          class="block text-center font-bold
-           text-blue-600 hover:underline"
-          >View Dinner Menu</a
-        >
-      </div>
     </div>
-    <!-- </div> -->
-  </section>
+    <div
+    class="border-opacity-2  
+     border-gray-900 bg-gray-900 bg-opacity-10
+      p-6 shadow-lg backdrop-blur-md 
+      flex flex-col justify-center items-center"
+  >
+    <h3 class="mb-4 text-2xl font-bold">Dinner Menu</h3>
+    <!-- <p class="mb-4 text-white text-xl">Explore our delicious dinner options:</p> -->
+
+    <img
+      src="./assets/png/dinner-logo.png"
+      alt="dinner logo"
+      class="bg-opacity-5  "
+    />
+    <a
+      href="./lunch.html"
+      class="mt-6 block text-center font-bold
+       text-blue-600 hover:underline"
+      >View Dinner Menu</a
+    >
+  </div>
+  </div>
 </section>
