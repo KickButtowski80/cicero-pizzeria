@@ -1,19 +1,23 @@
 <section
   style="
     background-image: url(&quot;./assets/webp/pizza-bg_processed.webp&quot;);
-    "
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-size: contain;
+  "
   class="flex-centered-wrapper bg-[#243047] 
-  object-contain bg-center md:bg-no-repeat"
+  bg-cover bg-center md:bg-no-repeat "
   id="menu"
 >
   <div
     class="[&>*]:border-opacity-2 flex flex-col gap-y-11 shadow-lg 
     md:flex-row md:flex-nowrap md:gap-x-5 [&>*]:flex [&>*]:flex-col
     [&>*]:items-center [&>*]:border-gray-900 [&>*]:bg-gray-900
-    [&>*]:bg-opacity-10 [&>*]:p-1 [&>*]:my-3 [&>*]:rounded-3xl [&>*]:backdrop-blur-lg"
+    [&>*]:bg-opacity-10 [&>*]:p-1 [&>*]:my-3 [&>*]:rounded-3xl
+     [&>*]:backdrop-blur-lg [&>*]:mx-9"
   >
     <div >
-      <h3 class="mb-4 text-2xl font-bold">Lunch Menu</h3>
+      <h3 class="my-2 text-2xl font-bold">Lunch Menu</h3>
       <!-- <p class="mb-4 text-white text-xl">Explore our delicious lunch options:</p> -->
 
       <img
@@ -24,11 +28,11 @@
       <a
         href="./lunch.html"
         class="mt-6 block text-center font-bold text-blue-600 hover:underline"
-        >View Lunch Menu</a
+        >View Menu</a
       >
     </div>
     <div >
-      <h3 class="mb-4 text-2xl font-bold">Dinner Menu</h3>
+      <h3 class="my-2 text-2xl font-bold">Dinner Menu</h3>
       <!-- <p class="mb-4 text-white text-xl">Explore our delicious dinner options:</p> -->
 
       <img
@@ -37,9 +41,9 @@
         class="bg-opacity-5"
       />
       <a
-        href="./lunch.html"
+        href="./dinner.html"
         class="mt-6 block text-center font-bold text-blue-600 hover:underline"
-        >View Dinner Menu</a
+        >View  Menu</a
       >
     </div>
   </div>
