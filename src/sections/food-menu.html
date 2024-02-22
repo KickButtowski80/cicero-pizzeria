@@ -2,38 +2,54 @@
   style="
     background-image: url(&quot;./assets/webp/pizza-bg_processed.webp&quot;);
   "
-  class="flex-centered-wrapper bg-[#243047] bg-cover bg-center md:bg-no-repeat"
+  class="[&>*]:border-opacity-2 grid min-h-screen grid-cols-1 md:grid-cols-2
+   place-items-center justify-items-center bg-[#243047]
+    bg-cover bg-center md:gap-x-0
+    md:bg-no-repeat [&>*]:mx-9 [&>*]:my-5 [&>*]:grid
+    [&>*]:max-h-min [&>*]:items-center [&>*]:rounded-3xl [&>*]:border-gray-900 [&>*]:bg-gray-900 [&>*]:bg-opacity-10 [&>*]:p-1 [&>*]:backdrop-blur-lg"
   id="menu"
 >
-  <div
-    class="[&>*]:border-opacity-2 flex flex-col gap-y-11 shadow-lg md:flex-row md:flex-nowrap md:gap-x-5 [&>*]:mx-9 [&>*]:my-3 [&>*]:flex [&>*]:flex-col [&>*]:items-center [&>*]:rounded-3xl [&>*]:border-gray-900 [&>*]:bg-gray-900 [&>*]:bg-opacity-10 [&>*]:p-1 [&>*]:backdrop-blur-lg"
-  >
-    <div>
-      <h3 class="my-2 text-2xl font-bold">Lunch Menu</h3>
+  <div >
+    <h3 class="my-2 text-2xl font-bold">Lunch Menu</h3>
+    <img
+      src="./assets/png/lunch-logo.png"
+      alt="lunch logo"
+      class="bg-opacity-5"
+    />
+    <a
+      href="./lunch.html"
+      class="my-3 block text-center font-bold text-blue-600 hover:underline"
+      >View Menu</a
+    >
 
-      <img
-        src="./assets/png/lunch-logo.png"
-        alt="lunch logo"
-        class="bg-opacity-5"
-      />
-      <a
-        href="./lunch.html"
-        class="my-3 block text-center font-bold text-blue-600 hover:underline"
-        >View Menu</a
-      >
-    </div>
-    <div>
-      <h3 class="my-2 text-2xl font-bold">Dinner Menu</h3>
-      <img
-        src="./assets/png/dinner-logo.png"
-        alt="dinner logo"
-        class="bg-opacity-5"
-      />
-      <a
-        href="./dinner.html"
-        class="my-3 block text-center font-bold text-blue-600 hover:underline"
-        >View Menu</a
-      >
-    </div>
   </div>
+
+  <div>
+    <img
+    src="https://images.pexels.com/photos/2323183/pexels-photo-2323183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    alt=""
+  />
+  </div>
+  <div>
+    <img
+      src="https://images.pexels.com/photos/845808/pexels-photo-845808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt=""
+    />
+  
+  </div>
+  <div>
+    <h3 class="my-2 text-2xl font-bold">Dinner Menu</h3>
+    <img
+      src="./assets/png/dinner-logo.png"
+      alt="dinner logo"
+      class="bg-opacity-5"
+    />
+    <a
+      href="./dinner.html"
+      class="my-3 block text-center font-bold text-blue-600 hover:underline"
+      >View Menu</a
+    >
+  </div>
+ 
+
 </section>
