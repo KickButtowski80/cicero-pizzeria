@@ -1,14 +1,11 @@
-/* ul#dinner-samples{
-    position: relative;
-  
-   
-    &::after {
-      content: "";
-      background-image: url("../assets/png/dinner-logo.png");
-      display: block;
-      width: 100px; 
-      height: 100px; 
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-} */
+#food-menu {
+  img {
+    max-height: 50vh;
+    /* max-width: 200px; */
+    /* height: 25vh; */
+    /* width: 25vw; */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4%;
+  }
+}
