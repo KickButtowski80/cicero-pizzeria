@@ -1,9 +1,6 @@
 #food-menu {
   img {
-    max-height: 50vh;
-    /* max-width: 200px; */
-    /* height: 25vh; */
-    /* width: 25vw; */
+    max-height: 50vh; 
     object-fit: cover;
     object-position: center;
     border-radius: 4%;
