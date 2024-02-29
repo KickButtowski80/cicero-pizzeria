@@ -1,20 +1,27 @@
 (() => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const intersecting = entry.isIntersecting;
+    const images = document.querySelectorAll('.image')
+    const dinnerLogo = document.querySelector('.dinner-logo')
+    images.forEach(image => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const intersecting = entry.isIntersecting;
 
-            if (intersecting) {
-                entry.target.style.backgroundColor = "blue";
-            }
-            else {
-                entry.target.style.backgroundColor = "green"
-            }
-        })
-    }
-        , { threshold: [0.4, 0.5] })
+                if (intersecting) {
+                    image.classList.add('show-image');
+                    dinnerLogo.classList.add('show-dinner-logo')
+                }
+                else {
+                    image.classList.remove('show-image')
+                    dinnerLogo.classList.remove('show-dinner-logo')
+                }
+            })
+        }
+            , { threshold: 0.5 })
+        observer.observe(image);
 
-    const foodMenu = document.getElementById('food-menu');
-    if (foodMenu) {
-        observer.observe(foodMenu);
-    }
+    })
 })();
+
+
+ 
+  
