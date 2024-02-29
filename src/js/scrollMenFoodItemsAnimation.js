@@ -8,11 +8,11 @@
 
                 if (intersecting) {
                     image.classList.add('show-image');
-                    dinnerLogo.classList.add('dinner-logo')
+                    dinnerLogo.classList.add('dinner-logo-animation')
                 }
                 else {
                     image.classList.remove('show-image')
-                    dinnerLogo.classList.remove('dinner-logo')
+                    dinnerLogo.classList.remove('dinner-logo-animation')
                 }
             })
         }

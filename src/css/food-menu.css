@@ -1,8 +1,49 @@
-#food-menu {
-  img {
-    max-height: 50vh; 
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4%;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #food-menu {
+    .image {
+      max-height: 50vh;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4%;
+      opacity: 0;
+      transition: opacity 2.3s ease-in;
+    }
+
+    .show-image {
+      opacity: 1;
+    }
+
+      .dinner-logo-animation {
+        animation: bounce 5s forwards;
+      }
+ 
+  }
+}
+
+@layer utilities {
+  @keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(-10px, 0, 0);
+    }
+    40%,
+    43% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(-10px, -300px, 0);
+    }
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(-10px, -150px, 0);
+    }
+    90% {
+      transform: translate3d(-10px, -40px, 0);
+    }
   }
 }
