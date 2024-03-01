@@ -9,7 +9,7 @@
     scroll-padding-top: var(--scroll-margin, 80px);
     font-family: "Raleway", sans-serif;
     max-width: 100vw;
-    transition: all 2s;
+    transition: background-color 2s;
   }
 
   * {
@@ -27,8 +27,7 @@
 
 @layer components {
   .wrapper {
-    @apply min-h-screen   
-    max-w-[1140px];
+    @apply min-h-screen;
     width: calc(100% - 0rem);
     margin-inline: auto;
   }
