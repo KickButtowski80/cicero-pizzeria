@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+ #hero {
+    background-image: url('../assets/images/hero/stone-oven-smaller.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+}
