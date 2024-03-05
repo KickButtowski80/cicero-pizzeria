@@ -5,7 +5,8 @@
   #food-menu {
     background:url('../assets/svg/svg-bg.svg');
     .image {
-      max-height: 50vh;
+      /* max-height: 80vh; */
+      height: 50vh;
       object-fit: cover;
       object-position: center;
       border-radius: 4%;
