@@ -44,10 +44,10 @@
     }
     70% {
       animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-      transform: translate3d(0px, -15px, 0);
+      transform: translate3d(0px, -20px, 0);
     }
     90% {
-      transform: translate3d(0px, -40px, 0);
+      transform: translate3d(0px, -10px, 0);
     }
   }
 }
