@@ -7,6 +7,88 @@
     background-image: url('../assets/images/hero/stone-oven-smaller.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    .pizza-container {
+      display: flex;
+      justify-content: center;
+      /*   margin-top: 70px; */
+      perspective: 10000px;
+    }
+    .pizza {
+      position: relative;
+      width: min(60vh, 60vw);
+      height: min(60vh, 60vw);
+      background-color: #ffeb3b;
+      border-radius: 50%;
+      border: 10px solid #ffa500;
+      box-shadow: 0 0 0px 10px #dd8126;
+      transition: all 3s ease;
+    
+      transform: rotate3d(0, 1, 0.5, 140deg);
+      box-shadow: -150px 210px 5px 10px rgba(0, 0, 0, 0.75);
+    }
+    
+    /* .pizza:before1 {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background-color: #d1c4e9;
+      transform: rotate(45deg);
+      left: 70%;
+      z-index: 20;
+    } */
+    .melting-cheese {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 110px;
+      background-color: #ffeb3b;
+      border-radius: 0 0 10px 100px;
+      top: 100%;
+      left: 35%;
+      transform: rotate(25deg);
+      box-shadow: -10px 234px 5px 10px rgba(0, 0, 0, 0.75);
+      animation: chorreo 4s ease-out infinite;
+      transition: height 2s ease;
+    }
+    
+    .melting-cheese:hover {
+      height: 100px;
+    }
+    .melting-cheese:nth-child(1) {
+      left: 35.5%;
+      height: 55px;
+    }
+    
+    .melting-cheese:nth-child(2) {
+      left: 35%;
+      height: 155px;
+    }
+    .melting-cheese:nth-child(3) {
+      left: 39.5%;
+      height: 55px;
+    }
+    
+    .pizza .slice {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-color: gray;
+    }
+    .pizza .slice-1 {
+      transform: rotate(45deg);
+    }
+    .pizza .slice-2 {
+      transform: rotate(90deg);
+    }
+    .pizza .slice-3 {
+      transform: rotate(135deg);
+    }
+    .pizza .slice-4 {
+      transform: rotate(180deg);
+    }
  }
 
 }
