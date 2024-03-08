@@ -47,7 +47,7 @@
     content: " ";
     width: 100%;
     height: 10%;
-    background:#0e2a47;
+    background:url("../assets/svg/svg-bg.svg");
     position: absolute;
     z-index: -1;
     bottom: 3px;
