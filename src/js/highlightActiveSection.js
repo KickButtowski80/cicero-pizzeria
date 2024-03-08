@@ -4,8 +4,10 @@
         threshold: 0.3
     }
     allMenuItems.forEach(menuItem => {
+        
         const hashId = menuItem.hash;
         const observedElement = document.querySelector(hashId);
+        if (observedElement === null) return;
         let observer = new IntersectionObserver((entries) => {
             const [entry] = entries;
             if (entry.isIntersecting) {

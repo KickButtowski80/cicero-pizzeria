@@ -21,7 +21,7 @@
     
   }
   li::after {
-    content: url("/src/assets/svg/slicePizza.svg");
+    content: var(--slice-pizza);
     position: absolute;
     left: 0;
     top: 0.8lh;
