@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --slice-pizza: url("/src/assets/svg/slicePizza.svg")
+  }
+  
   html,
   body {
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-margin, 80px);
     font-family: "Raleway", sans-serif;
     max-width: 100vw;
-    transition: all 2s;
+    transition: background-color 2s ease-in;
   }
 
   * {
@@ -26,16 +30,28 @@
 }
 
 @layer components {
-  .wrapper {
+  .flex-centered-wrapper {
     @apply min-h-screen   
-    max-w-[1140px];
+    /* max-w-[1140px]  */
+    flex justify-center items-center;
     width: calc(100% - 0rem);
+    min-height: 100vh;
     margin-inline: auto;
   }
 
   h1 {
     font-weight: 900;
     font-size: 2rem;
+  }
+}
+
+@layer utilities {
+  .text-stroke-3 {
+    text-shadow:
+      1px 1px 0 rgb(111, 108, 108),
+      1px 1px 0 black,
+      1px 1px 0 black,
+      1px 1px 0 black;
   }
 }
 
