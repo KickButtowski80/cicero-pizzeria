@@ -12,13 +12,13 @@
       Us
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2">
-      <address class="inline-block">
+      <address>
         <div class="flex">
           <img
-            src="./assets/svg/calling-phone.svg"
+            src="./assets/svg/phone.svg"
             alt="calling phone receiver icon"
           />
-          <a class="flex items-center" href="tel:3106596171">(310) 659-6171</a>
+          <a class="flex items-center p-3" href="tel:3106596171">(310) 659-6171</a>
         </div>
         <div class="flex">
           <img src="./assets/svg/location.svg" alt="address icon" />
@@ -40,42 +40,51 @@
     </div>
   </div>
   <div class="columns">
-    <form
-      class="grid gap-y-2 rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2"
-    >
+ 
+    <form class="grid gap-y-2 rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2">
+      <label for="name" class="sr-only">Name</label>
       <input
+        id="name"
         name="name"
         type="text"
         class="short"
         placeholder="Name"
-        onfocus="this.placeholder=''"
-        onblur="this.placeholder='Name'"
+        aria-label="Name"
       />
+      <label for="email" class="sr-only">Email</label>
       <input
+        id="email"
         name="email"
         type="text"
         class="short"
         placeholder="Email"
-        onfocus="this.placeholder=''"
-        onblur="this.placeholder='Email'"
+        aria-label="Email"
       />
+      <label for="subject" class="sr-only">Subject</label>
       <input
+        id="subject"
         name="subject"
         type="text"
         class="feedback-input"
         placeholder="Subject"
-        onfocus="this.placeholder=''"
-        onblur="this.placeholder='Subject'"
+        aria-label="Subject"
       />
+      <label for="message" class="sr-only">Message</label>
       <textarea
-        name="text"
+        id="message"
+        name="message"
         class="feedback-input"
         placeholder="Message"
-        onfocus="this.placeholder=''"
-        onblur="this.placeholder='Message'"
+        aria-label="Message"
       ></textarea>
-      <input type="submit" class="bg-red-800 text-lg text-white font-bold" value="SEND" />
+      <input
+        type="submit"
+        class="bg-red-800 text-lg text-white font-bold"
+        value="SEND"
+        aria-label="Send"
+      />
     </form>
+    
     <div id="map-and-info">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13223.12069462494!2d-118.3757565!3d34.0495096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b9d487b5f797%3A0xbee3d3ca3f19460c!2sCiccero%20Pizzeria!5e0!3m2!1sen!2sus!4v1709866813594!5m2!1sen!2sus"
