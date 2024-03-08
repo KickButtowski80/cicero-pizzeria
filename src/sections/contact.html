@@ -1,3 +1,84 @@
-<section class="flex-centered-wrapper " id="contact">
-  
+<section class="flex-centered-wrapper flex-col" id="contact">
+  <div
+    class="rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter [&>*]:text-white"
+  >
+    <h1 class="mx-1 mt-2 text-center">Let's get in touch</h1>
+    <p class="p-2">
+      Have a question or craving our delicious pizza? Don't hesitate to reach
+      out to us! Whether you're looking to place an order for pickup or
+      delivery, inquire about our menu offerings, or provide feedback on your
+      dining experience, our team at Cicero Pizza is here to assist you. Visit
+      us at our convenient location [Address], give us a call at [Phone Number],
+      or send us a message using the contact form below.
+    </p>
+
+    <h2 class="m-2 text-2xl">
+      We can't wait to hear from you and serve up piping hot slices of our
+      mouthwatering pizza creations
+    </h2>
+  </div>
+  <div class="columns">
+    <form
+      class="grid gap-y-2 rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2"
+    >
+      <input
+        name="name"
+        type="text"
+        class="short"
+        placeholder="Name"
+        onfocus="this.placeholder=''"
+        onblur="this.placeholder='Name'"
+      />
+      <input
+        name="email"
+        type="text"
+        class="short"
+        placeholder="Email"
+        onfocus="this.placeholder=''"
+        onblur="this.placeholder='Email'"
+      />
+      <input
+        name="subject"
+        type="text"
+        class="feedback-input"
+        placeholder="Subject"
+        onfocus="this.placeholder=''"
+        onblur="this.placeholder='Subject'"
+      />
+      <textarea
+        name="text"
+        class="feedback-input"
+        placeholder="Message"
+        onfocus="this.placeholder=''"
+        onblur="this.placeholder='Message'"
+      ></textarea>
+      <input type="submit" class="bg-red-800" value="SEND" />
+    </form>
+    <div id="map-and-info">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13223.12069462494!2d-118.3757565!3d34.0495096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b9d487b5f797%3A0xbee3d3ca3f19460c!2sCiccero%20Pizzeria!5e0!3m2!1sen!2sus!4v1709866813594!5m2!1sen!2sus"
+        class="w-full h-full"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <!-- <div class="[&>*]:text-white">
+        <div class="information">
+          <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
+
+          <p>1536 S La Cienega Blvd, Los Angeles, CA 90035</p>
+        </div>
+        <div class="information">
+          <i class="fas fa-envelope"></i> &nbsp &nbsp
+          <p>lorem@ipsum.com</p>
+        </div>
+        <div class="information">
+          <i class="fas fa-phone"></i>&nbsp&nbsp
+          <p>123-456-789</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
 </section>
