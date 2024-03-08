@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
- #hero {
-    background-image: url('../assets/images/hero/stone-oven-smaller.webp');
+@layer base {
+  #hero {
+    background-image: url("../assets/images/hero/stone-oven-smaller.webp");
     background-repeat: no-repeat;
     background-size: cover;
     .pizza-container {
       display: flex;
       justify-content: center;
-      /*   margin-top: 70px; */
+
       perspective: 10000px;
     }
     .pizza {
@@ -22,11 +22,11 @@
       border: 10px solid #ffa500;
       box-shadow: 0 0 0px 10px #dd8126;
       transition: all 3s ease;
-    
+
       transform: rotate3d(0, 1, 0.5, 140deg);
       box-shadow: -150px 210px 5px 10px rgba(0, 0, 0, 0.75);
     }
-    
+
     /* .pizza:before1 {
       content: "";
       position: absolute;
@@ -46,12 +46,12 @@
       border-radius: 0 0 10px 100px;
       top: 100%;
       left: 35%;
-      transform: rotate(25deg);
+      rotate: 25deg;
       box-shadow: -10px 234px 5px 10px rgba(0, 0, 0, 0.75);
       animation: chorreo 4s ease-out infinite;
       transition: height 2s ease;
     }
-    
+
     .melting-cheese:hover {
       height: 100px;
     }
@@ -59,7 +59,7 @@
       left: 35.5%;
       height: 55px;
     }
-    
+
     .melting-cheese:nth-child(2) {
       left: 35%;
       height: 155px;
@@ -68,7 +68,7 @@
       left: 39.5%;
       height: 55px;
     }
-    
+
     .pizza .slice {
       position: absolute;
       left: 50%;
@@ -89,6 +89,13 @@
     .pizza .slice-4 {
       transform: rotate(180deg);
     }
- }
+  }
+}
 
+@layer utilities {
+  @keyframes chorreo {
+    50% {
+      scale: 1 2;
+    }
+  }
 }
