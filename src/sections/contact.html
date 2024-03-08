@@ -1,9 +1,7 @@
 <section class="flex-centered-wrapper flex-col" id="contact">
   <div
-    class="w-min-[90%] grid-cols-auto mx-3 mt-20 
-     grid max-w-[75rem] gap-y-8 rounded-lg border
-      border-white border-opacity-30 bg-white
-       bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter [&>*]:text-white"
+    class="backdrop-blur-5xl mx-1 mt-20 grid grid-flow-row gap-y-8 rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-filter md:mx-3 [&>*]:text-white"
+    style="width: min(90%, 75rem)"
   >
     <h1 class="mx-1 mt-2 text-center">Let's get in touch</h1>
     <p class="p-2">
@@ -11,14 +9,35 @@
       out to us! Whether you're looking to place an order for pickup or
       delivery, inquire about our menu offerings, or provide feedback on your
       dining experience, our team at Cicero Pizza is here to assist you. Visit
-      us at our convenient location [Address], give us a call at [Phone Number],
-      or send us a message using the contact form below.
+      Us
     </p>
-
-    <h2 class="m-2 text-2xl">
-      We can't wait to hear from you and serve up piping hot slices of our
-      mouthwatering pizza creations
-    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <address class="inline-block">
+        <div class="flex">
+          <img
+            src="./assets/svg/calling-phone.svg"
+            alt="calling phone receiver icon"
+          />
+          <a class="flex items-center" href="tel:3106596171">(310) 659-6171</a>
+        </div>
+        <div class="flex">
+          <img src="./assets/svg/location.svg" alt="address icon" />
+          <p class="flex items-center">
+            1536 S La Cienega Blvd, Los Angeles, CA 90035
+          </p>
+        </div>
+        <div class="flex">
+          <img src="./assets/svg/email.svg" alt="email icon" />
+          <a class="flex items-center p-5" href="mailto:beintouch@hello.com"
+            >beintouch@hello.com</a
+          >
+        </div>
+      </address>
+      <h2 class="m-2 text-center text-2xl">
+        We can't wait to hear from you and serve up piping hot slices of our
+        mouthwatering pizza creations
+      </h2>
+    </div>
   </div>
   <div class="columns">
     <form
@@ -55,7 +74,7 @@
         onfocus="this.placeholder=''"
         onblur="this.placeholder='Message'"
       ></textarea>
-      <input type="submit" class="bg-red-800" value="SEND" />
+      <input type="submit" class="bg-red-800 text-lg text-white font-bold" value="SEND" />
     </form>
     <div id="map-and-info">
       <iframe
@@ -66,22 +85,6 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-
-      <!-- <div class="[&>*]:text-white">
-        <div class="information">
-          <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
-
-          <p>1536 S La Cienega Blvd, Los Angeles, CA 90035</p>
-        </div>
-        <div class="information">
-          <i class="fas fa-envelope"></i> &nbsp &nbsp
-          <p>lorem@ipsum.com</p>
-        </div>
-        <div class="information">
-          <i class="fas fa-phone"></i>&nbsp&nbsp
-          <p>123-456-789</p>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
