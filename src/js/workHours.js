@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     selectList.id = "mySelect";
     selectList.name = "mySelect";
     selectList.className = 'text-black'
+    // selectList.style.width = "100%"
     workHours.appendChild(selectList);
     
  
