@@ -15,12 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
     
  
-    let selectList = document.createElement("select");
-    selectList.id = "mySelect";
-    selectList.name = "mySelect";
-    selectList.className = 'text-black'
+    // let selectList = document.createElement("select");
+    // selectList.id = "mySelect";
+    // selectList.name = "mySelect";
+    // selectList.className = 'text-black';
+    let selectList = document.getElementById('hours-dropdown')
     // selectList.style.width = "100%"
-    workHours.appendChild(selectList);
+    // workHours.appendChild(selectList);
     
  
     for (var i = dayInNumber; i < workSchedule.length; i++) {
