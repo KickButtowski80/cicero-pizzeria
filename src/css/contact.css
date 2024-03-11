@@ -6,6 +6,7 @@
     background-image: url("https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_1280.jpg");
     background-size: cover;
     background-position: calc(30% + 10px);
+    position: relative;
     .columns {
       margin: 5rem auto;
       width: min(90%, 75rem);
