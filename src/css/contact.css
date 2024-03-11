@@ -2,8 +2,8 @@
 @tailwind utilities;
 
 @layer components {
-   #contact{
-    background-image: url('https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_1280.jpg');
+  #contact {
+    background-image: url("https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_1280.jpg");
     background-size: cover;
     background-position: calc(30% + 10px);
     .columns {
@@ -12,21 +12,18 @@
       display: grid;
       grid-auto-flow: row;
       gap: 2em;
-      
     }
-    
+
     @media (min-width: 55em) {
       .columns {
-        grid-auto-flow: column;        
+        grid-auto-flow: column;
         /* didn't mention this during the video
            but it ensures equal columns  */
         /*     grid-auto-columns: 1fr; */
-       }
+      }
     }
-    
-   }
+  }
 }
 
 @layer utilities {
-  
-  }
+}
