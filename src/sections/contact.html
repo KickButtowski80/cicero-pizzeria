@@ -101,14 +101,14 @@
       </div>
     </div>
   </div>
-  <div class="columns">
-  
+  <div class="columns">  
     <form class="grid gap-y-2 rounded-lg
      border border-white border-opacity-30
       bg-white bg-opacity-20 p-3 
       shadow-lg backdrop-blur-xl 
       backdrop-filter
-       [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2">
+       [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2"
+       action="/api/hello.js" method="POST" >
        <h2 class="text-2xl text-white ">Send Message: </h2>
       <label for="name" class="sr-only">Name</label>
       <input
@@ -150,6 +150,7 @@
         class="bg-red-800 text-lg text-white font-bold"
         value="SEND"
         aria-label="Send"
+        
       />
     </form>
     
