@@ -16,7 +16,7 @@ console.log(name,email, subject, message)
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: false, // Use `true` for port 465, `false` for all other ports
+  secure: false,
   auth: {
     user: "pazpaz25@gmail.com",
     pass: process.env.GOOGLE_PASSWORD,
