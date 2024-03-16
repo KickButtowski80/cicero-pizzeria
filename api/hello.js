@@ -4,7 +4,7 @@
 //   }
 
 const nodemailer = require("nodemailer");
-
+require('dotenv').config()
 export default (request, response) => {
   // if (request.method !== 'POST') {
   //   return response.status(Status.BAD_REQUEST).send('');
@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
   secure: false, // Use `true` for port 465, `false` for all other ports
   auth: {
     user: "pazpaz25@gmail.com",
-    pass: "uzsz ibdn uwdm fokm",
+    pass: process.env.GOOGLE_PASSWORD,
   },
 });
 
