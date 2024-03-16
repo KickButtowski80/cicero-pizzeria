@@ -1,7 +1,8 @@
 {
   "name": "cicero-pizzeria",
-  "source": "./src/index.html",
+  "source": "src.index.html",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "scripts": {
     "dev": "rm -rf .parcel-cache && DEBUG=parcel:* pnpm parcel src/index.html --no-cache",
