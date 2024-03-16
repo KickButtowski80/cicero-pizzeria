@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "pazpaz25@gmail.com",
-    pass: ""
+    pass: process.env.GOOGLE_PASSWORD,
   },
 });
 
