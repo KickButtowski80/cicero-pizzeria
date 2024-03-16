@@ -1,20 +1,16 @@
-// export function GET(request) {
-//     console.log(request)
-//     return new Response(`Hello from I am really ${process.env.VERCEL_REGION}`);
-//   }
 
 const nodemailer = require("nodemailer");
+ 
 require('dotenv').config()
 export default (request, response) => {
-  // if (request.method !== 'POST') {
-  //   return response.status(Status.BAD_REQUEST).send('');
-  // }
+  if (request.method !== 'POST') {
+    return response.status(Status.BAD_REQUEST).send('');
+  }
   // const name = request?.body?.name ?? 'world';
   // return response.json({
   //   data: `hello ${name}`,
   // });
 
-console.log('the request body', request.body)
 const {name, email, subject, message} =  request.body;
 console.log(name,email, subject, message)
 const transporter = nodemailer.createTransport({
@@ -31,7 +27,7 @@ const transporter = nodemailer.createTransport({
 async function main() {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: '"Maddison Foo Koch `${name}`👻" <`${email}>', // sender address
+    from:  ` Maddison Foo Koch ${name}👻 <${email}>`, // sender address
     to: "pazpaz25@gmail.com", // list of receivers
     subject: `${subject} 😄`, // Subject line
     text: `${message}`, // plain text body
@@ -39,7 +35,11 @@ async function main() {
   });
 
   console.log("Message sent: %s", info.messageId);
+  response.status(200).send('<h1>Go back</h1> <a href="../src/sections/contact.html">go back</a>')
+ 
   // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+
+ 
 }
  
 main().catch(console.error);
