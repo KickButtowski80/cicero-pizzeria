@@ -1,7 +1,6 @@
 
 const nodemailer = require("nodemailer"); 
 require('dotenv').config()
-
 export default (request, response) => {
   if (request.method !== 'POST') {
     return response.status(Status.BAD_REQUEST).send('');
