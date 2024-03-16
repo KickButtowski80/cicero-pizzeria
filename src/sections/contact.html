@@ -1,16 +1,13 @@
-<section class="flex-centered-wrapper  flex-col" id="contact">
+<section class="flex-centered-wrapper flex-col" id="contact">
   <div
-  class="backdrop-blur-5xl mx-1 mt-20  relative
-  grid grid-flow-row gap-y-8 
-  rounded-lg border border-white 
-  border-opacity-30 bg-white 
-  bg-opacity-20 p-3 shadow-lg backdrop-filter 
-  md:mx-3 [&>*]:text-white"
-  style="width: min(90%, 75rem)"
+    class="backdrop-blur-5xl relative mx-1 mt-20 grid grid-flow-row gap-y-8 rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-filter md:mx-3 [&>*]:text-white"
+    style="width: min(90%, 75rem)"
   >
-  <img src="./assets/svg/slicePizza.svg" 
-  class="w-24 h-w-24 absolute -right-9 -top-7"
-  alt="slice of pizza ">
+    <img
+      src="./assets/svg/slicePizza.svg"
+      class="h-w-24 absolute -right-9 -top-7 w-24"
+      alt="slice of pizza "
+    />
     <h1 class="mx-1 mt-2 text-center">Let's get in touch</h1>
     <p class="p-2">
       Have a question or craving our delicious pizza? Don't hesitate to reach
@@ -19,15 +16,14 @@
       dining experience, our team at Cicero Pizza is here to assist you. Visit
       Us
     </p>
-    <div class="grid grid-cols-1 ml-2 md:grid-cols-2">
+    <div class="ml-2 grid grid-cols-1 md:grid-cols-2">
       <address>
         <h2>Contact Info:</h2>
         <div class="flex">
-          <img
-            src="./assets/svg/phone.svg"
-            alt="calling phone receiver icon"
-          />
-          <a class="flex items-center p-5" href="tel:3106596171">(310) 659-6171</a>
+          <img src="./assets/svg/phone.svg" alt="calling phone receiver icon" />
+          <a class="flex items-center p-5" href="tel:3106596171"
+            >(310) 659-6171</a
+          >
         </div>
         <div class="flex">
           <img src="./assets/svg/location.svg" alt="address icon" />
@@ -42,58 +38,22 @@
           >
         </div>
       </address>
-    
-      <div >
-        <h2 class="m-2 text-center text-2xl ">
+
+      <div>
+        <h2 class="m-2 text-center text-2xl">
           We can't wait to hear from you and serve up piping hot slices of our
           mouthwatering pizza creations
         </h2>
-        <div class="mt-16 text-lg m-5 ">
-            <div  id="work-hours" class="relative h-16 w-full min-w-[200px]">
-            <select id="hours-dropdown"
-              class="peer h-full w-full rounded-[7px] focus:text-black
-               border border-blue-gray-200 border-t-transparent
-                bg-transparent px-3 py-2.5 font-sans
-                text-lg font-normal text-blue-gray-700
-                outline outline-0 transition-all
-                placeholder-shown:border
-                placeholder-shown:border-gray-200
-                placeholder-shown:border-t-gray-200
-                empty:!bg-gray-900 focus:border-2
-               focus:border-gray-900 focus:border-t-transparent 
-                focus:outline-0 disabled:border-0
-                disabled:bg-gray-50">
-            </select>
-            <label for="hours-dropdown"
-              class="before:content[' ']
-               after:content[' '] pointer-events-none
-                absolute left-0 -top-1.5 
-                flex h-full w-full select-none text-lg
-                 font-normal leading-tight 
-                  transition-all before:pointer-events-none 
-                  before:mt-[11.5px] before:mr-0 before:box-border
-                  before:block before:h-2.5 before:w-3.5
-                  before:rounded-tl-md before:border-t
-                  before:border-l before:border-gray-200
-                  before:transition-all after:pointer-events-none
-                  after:mt-[11.5px] after:ml-1 after:box-border
-                  after:block after:h-2.5 after:w-3.5
-                  after:flex-grow after:rounded-tr-md
-                  after:border-t after:border-r
-                  after:border-gray-200
-                  after:transition-all peer-placeholder-shown:text-sm
-                  peer-placeholder-shown:leading-[3.75]
-                  peer-placeholder-shown:text-gray-500
-                  peer-placeholder-shown:before:border-transparent
-                  peer-placeholder-shown:after:border-transparent
-                  peer-focus:text-[11px] peer-focus:leading-tight
-                peer-focus:text-gray-900
-                  peer-focus:before:border-t-2 
-                  peer-focus:before:border-l-2
-                peer-focus:before:border-gray-900 
-                  peer-focus:after:border-t-2 peer-focus:after:border-r-2
-                peer-focus:after:border-gray-900 peer-disabled:text-transparent
-                  peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+        <div class="m-5 mt-16 text-lg">
+          <div id="work-hours" class="relative h-16 w-full min-w-[200px]">
+            <select
+              id="hours-dropdown"
+              class="border-blue-gray-200 text-blue-gray-700 peer h-full w-full rounded-[7px] border border-t-transparent bg-transparent px-3 py-2.5 font-sans text-lg font-normal outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-gray-200 placeholder-shown:border-t-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:text-black focus:outline-0 disabled:border-0 disabled:bg-gray-50"
+            ></select>
+            <label
+              for="hours-dropdown"
+              class="before:content[' '] after:content[' '] peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-lg font-normal leading-tight transition-all before:pointer-events-none before:mr-0 before:mt-[11.5px] before:box-border before:block before:h-2.5 before:w-3.5 before:rounded-tl-md before:border-l before:border-t before:border-gray-200 before:transition-all after:pointer-events-none after:ml-1 after:mt-[11.5px] after:box-border after:block after:h-2.5 after:w-3.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:border-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:border-gray-900 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
+            >
               Today's Hours
             </label>
           </div>
@@ -101,16 +61,14 @@
       </div>
     </div>
   </div>
-  <div class="columns">  
-    <form 
-    id="contact-form"
-    class="grid gap-y-2 rounded-lg
-     border border-white border-opacity-30
-      bg-white bg-opacity-20 p-3 
-      shadow-lg backdrop-blur-xl 
-      backdrop-filter
-       [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2">
-       <h2 class="text-2xl text-white ">Send Message: </h2>
+  <div class="columns">
+    <form
+      id="contact-form"
+      action="/api/hello.js"
+      method="POST"
+      class="grid gap-y-2 rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter [&>*]:my-2 [&>*]:rounded-xl [&>*]:p-2"
+    >
+      <h2 class="text-2xl text-white">Send Message:</h2>
       <label for="name" class="sr-only">Name</label>
       <input
         id="name"
@@ -148,19 +106,16 @@
       ></textarea>
       <input
         type="submit"
-        class="bg-red-800 text-lg text-white font-bold"
+        class="bg-red-800 text-lg font-bold text-white"
         value="Submit"
         aria-label="Send"
       />
     </form>
-    
-    <div id="map-and-info " class="
-    h-[17rem] md:h-full
-    rounded-lg
-    border border-white border-opacity-30
-     bg-white bg-opacity-20 p-3 
-     shadow-lg backdrop-blur-xl 
-     backdrop-filter">
+
+    <div
+      id="map-and-info "
+      class="h-[17rem] rounded-lg border border-white border-opacity-30 bg-white bg-opacity-20 p-3 shadow-lg backdrop-blur-xl backdrop-filter md:h-full"
+    >
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13223.12069462494!2d-118.3757565!3d34.0495096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b9d487b5f797%3A0xbee3d3ca3f19460c!2sCiccero%20Pizzeria!5e0!3m2!1sen!2sus!4v1709866813594!5m2!1sen!2sus"
         class="h-full w-full"

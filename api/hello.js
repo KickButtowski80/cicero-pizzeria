@@ -1,7 +1,7 @@
 
-const nodemailer = require("nodemailer");
- 
+const nodemailer = require("nodemailer"); 
 require('dotenv').config()
+
 export default (request, response) => {
   if (request.method !== 'POST') {
     return response.status(Status.BAD_REQUEST).send('');
@@ -25,6 +25,7 @@ const transporter = nodemailer.createTransport({
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
+  
   // send mail with defined transport object
   const info = await transporter.sendMail({
     from:  ` Maddison Foo Koch ${name}👻 <${email}>`, // sender address
@@ -33,7 +34,7 @@ async function main() {
     text: `${message}`, // plain text body
     html: `<b>${message}?</b>`, // html body
   });
-
+ 
   console.log("Message sent: %s", info.messageId);
   response.status(200).send('<h1>Go back</h1> <a href="../src/sections/contact.html">go back</a>')
  
