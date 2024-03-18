@@ -23,15 +23,13 @@ const transporter = nodemailer.createTransport({
 });
 
  
-async function main() {
-  
-  // send mail with defined transport object
+async function main() { 
   const info = await transporter.sendMail({
-    from:  ` Maddison Foo Koch ${name}👻 <${email}>`, // sender address
-    to: "pazpaz25@gmail.com", // list of receivers
-    subject: `${subject} 😄`, // Subject line
-    text: `${message}`, // plain text body
-    html: `<b>${message}?</b>`, // html body
+    from:  ` Maddison Foo Koch ${name}👻 <${email}>`, 
+    to: "pazpaz25@gmail.com", 
+    subject: `${subject} 😄`, 
+    text: `${message}`, 
+    html: `<b>${message}?</b>`, 
   });
  
   console.log("Message sent: %s", info.messageId);
@@ -41,7 +39,7 @@ async function main() {
 </head>
   <h1>Go back</h1> <a href="#contact">go back</a>`)
  
-  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+  
 
  
 }
