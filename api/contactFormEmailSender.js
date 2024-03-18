@@ -12,32 +12,32 @@ export default (request, response) => {
     return response.status(400).send(`
     <head>
     <base href="../index.html">
-  </head>
+    </head>
     <h1>Error</h1> <p>all the fields are required</p><a href="#contact">go back</a>`);
   }
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: "pazpaz25@gmail.com",
-        pass: process.env.GMAIL_PASS,
-      },
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "pazpaz25@gmail.com",
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+
+
+  async function main() {
+    const info = await transporter.sendMail({
+      from: `${name} 🍕 <${email}>`,
+      to: "pazpaz25@gmail.com",
+      subject: `${subject} 😄`,
+      text: `${message}`,
+      html: `<b>${message}?</b>`,
     });
 
-
-    async function main() {
-      const info = await transporter.sendMail({
-        from: `${name} 🍕 <${email}>`,
-        to: "pazpaz25@gmail.com",
-        subject: `${subject} 😄`,
-        text: `${message}`,
-        html: `<b>${message}?</b>`,
-      });
-
-      console.log("Message sent: %s", info.messageId);
-      response.status(200).send(`
+    console.log("Message sent: %s", info.messageId);
+    response.status(200).send(`
   <head>
   <base href="../index.html">
 </head>
@@ -46,11 +46,11 @@ export default (request, response) => {
 
 
 
-    }
+  }
 
-    main().catch(console.error);
+  main().catch(console.error);
 
-  };
+};
 
 
 
