@@ -39,7 +39,7 @@ async function main() {
   <head>
   <base href="../index.html">
 </head>
-  <h1>Go back</h1> <a href="src/sections/contact.html">go back</a>`)
+  <h1>Go back</h1> <a href="#contact">go back</a>`)
  
   // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 
