@@ -37,11 +37,11 @@ export default (request, response) => {
     });
 
     console.log("Message sent: %s", info.messageId);
-    response.status(200).send(`
-  <head>
-  <base href="../index.html">
-  </head>
-  <h1>Go back</h1> <a href="#contact">go back</a>`)
+    response.status(200).send(`<script>
+      alert('Go back');
+      window.location.href = '../index.html#contact';
+    </script>
+    `)
   }
 
   main().catch(console.error);
