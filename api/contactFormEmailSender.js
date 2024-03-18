@@ -40,12 +40,8 @@ export default (request, response) => {
     response.status(200).send(`
   <head>
   <base href="../index.html">
-</head>
+  </head>
   <h1>Go back</h1> <a href="#contact">go back</a>`)
-
-
-
-
   }
 
   main().catch(console.error);
