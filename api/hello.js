@@ -37,7 +37,7 @@ async function main() {
   console.log("Message sent: %s", info.messageId);
   response.status(200).send(`
   <head>
-  <base href="./index.html">
+  <base href="../src/index.html">
 </head>
   <h1>Go back</h1> <a href="src/sections/contact.html">go back</a>`)
  
