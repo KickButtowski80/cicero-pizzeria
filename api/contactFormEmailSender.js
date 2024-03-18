@@ -9,7 +9,11 @@ export default (request, response) => {
   const { name, email, subject, message } = request.body;
   if (!name || !email || !subject || !message) {
 
-    return response.status(400).send('<h1>Error</h1> <p>all the fields are required</p><a href="#contact">go back</a>');
+    return response.status(400).send(`
+    <head>
+    <base href="../index.html">
+  </head>
+    <h1>Error</h1> <p>all the fields are required</p><a href="#contact">go back</a>`);
   }
 
     const transporter = nodemailer.createTransport({
