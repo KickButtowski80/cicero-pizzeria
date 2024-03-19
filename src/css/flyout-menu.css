@@ -19,6 +19,7 @@
       width: 520px;
       min-height: 550px;
       transform: translate(60%, -30%);
+      transition: all 0.5s ease;
     }
 
     &.out-view {
@@ -51,14 +52,14 @@
     }
   }
 
-  #flyout-navbar {
+  nav {
     display: none;
-    .show-flyout-navbar {
-      display: flex;
-      flex-direction: row-reverse;
-    }
   }
-
+  
+  .show-flyout-navbar {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 
   #flyout-menu-logo {
     opacity: 0;
@@ -111,9 +112,8 @@
     }
 
     &.in-view-menuItems {
-      li {
+         li {
         opacity: 1;
-        display: block;
       }
       li:nth-child(1) {
         transform: translate(-65px, 70px);
@@ -134,7 +134,8 @@
     }
     &.out-view-menuItems {
       li {
-        display: none;
+        
+        transform: translate(0%, 0%);
       }
     }
   }
