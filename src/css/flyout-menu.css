@@ -1,7 +1,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#navbar {
+/* #navbar { */
   .menu-bg {
     width: 0px;
     height: 0px;
@@ -52,14 +52,14 @@
     }
   }
 
-  nav {
+  /* nav {
     display: none;
   }
   
   .show-flyout-navbar {
     display: flex;
     flex-direction: row-reverse;
-  }
+  } */
 
   #flyout-menu-logo {
     opacity: 0;
@@ -134,9 +134,9 @@
     }
     &.out-view-menuItems {
       li {
-        
-        transform: translate(0%, 0%);
+        display: none;
+        /* transform: translate(0%, 0%); */
       }
     }
   }
-}
+/* } */
