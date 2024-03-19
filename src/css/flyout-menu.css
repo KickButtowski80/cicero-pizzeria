@@ -1,6 +1,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+#navbar{}
 .menu-bg {
   width: 0px;
   height: 0px;
@@ -48,6 +50,16 @@
     transform: translateY(-15px) rotateZ(45deg);
   }
 }
+
+nav {
+  display: none;
+}
+
+.show-flyout-navbar {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 #flyout-menu-logo {
   opacity: 0;
   width: 0px;
@@ -55,7 +67,7 @@
   transform: translate(0%, 0%);
   transition: all 1s ease;
   &.in-view-logo {
-    opacity:1;
+    opacity: 1;
     width: 3rem;
     transform: translate(-150px, -30px);
   }
@@ -74,9 +86,9 @@
 
   li::after {
     content: var(--slice-pizza);
-    position: absolute;  
+    position: absolute;
     top: 0;
-    left:55px;
+    left: 55px;
     margin-bottom: 20px;
     width: 0;
     opacity: 0;
@@ -84,13 +96,12 @@
   }
 
   li:nth-child(4)::after {
-    left: 75px; 
+    left: 75px;
   }
-  
-  li:nth-child(5)::after {
-    content:none;
-   }
 
+  li:nth-child(5)::after {
+    content: none;
+  }
 
   :hover::after,
   :focus::after,
