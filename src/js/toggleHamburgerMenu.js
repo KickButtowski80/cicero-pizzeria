@@ -6,19 +6,16 @@ const navBarLogo = document.querySelector('#flyout-menu-logo');
 const flyoutNavBar = document.getElementById("flyout-navbar")
 hamburgerIcon.addEventListener('click', () => {
     hamburgerIcon.classList.toggle('change');
-    // flyoutNavBar.classList.toggle('show-flyout-navbar');
     toggleClasses(menuBg, 'in-view', 'out-view');
     toggleClasses(flyoutMenuId[0], 'in-view-menuItems', 'out-view-menuItems');
     toggleClasses(navBarLogo, 'in-view-logo', 'out-view-logo');
-
 });
- 
- 
-Array.from(flyoutMenuItems).slice(0,-1).forEach(fmi => fmi.addEventListener('click', () => {
-    // flyoutMenuId[0].classList.remove('in-view-menuItems');
+
+
+Array.from(flyoutMenuItems).slice(0, -1).forEach(fmi => fmi.addEventListener('click', () => {
     toggleClasses(flyoutMenuId[0], 'in-view-menuItems', 'out-view-menuItems');
     menuBg.classList.remove('in-view');
-    navBarLogo.classList.remove('in-view-logo');   
+    navBarLogo.classList.remove('in-view-logo');
     hamburgerIcon.classList.remove('change')
 }))
 
