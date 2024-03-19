@@ -113,6 +113,7 @@
     &.in-view-menuItems {
       li {
         opacity: 1;
+        display: block;
       }
       li:nth-child(1) {
         transform: translate(-65px, 70px);
