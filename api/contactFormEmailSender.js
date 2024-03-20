@@ -3,17 +3,17 @@ const nodemailer = require("nodemailer");
 require('dotenv').config()
 export default (request, response) => {
   if (request.method !== 'POST') {
-    return response.status(400).send('<h1>Bad Request </h1>');
+    return response.status(400).json({
+      message: 'bad request',
+      success: false,
+    });
   }
 
   const { name, email, subject, message } = request.body;
   if (!name || !email || !subject || !message) {
-
-
     return  response.status(400).json( {data:request.body, 
       message: 'all the fields are required',
       success: false} )
-
   }
 
   const transporter = nodemailer.createTransport({
