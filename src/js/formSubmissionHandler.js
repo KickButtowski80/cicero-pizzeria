@@ -12,7 +12,7 @@ form.addEventListener('submit', async function (e) {
     }
     // const formData = new FormData(dataForm);
 
-
+    try {
     const response = await fetch('/api/contactFormEmailSender.js', {
         method: 'POST',
         headers: {
@@ -29,8 +29,11 @@ form.addEventListener('submit', async function (e) {
     } else {
         alert('There was an error adding the fields.', data.message);
     }
-
+} catch (error) {
+    console.error('Error:', error);
+  }
 
 
 })
+
 
