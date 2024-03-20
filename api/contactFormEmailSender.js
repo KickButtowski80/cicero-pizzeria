@@ -2,12 +2,12 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config()
 export default (request, response) => {
-  if (request.method !== 'POST') {
-    return response.status(400).json({
-      message: 'bad request',
-      success: false,
-    });
-  }
+  // if (request.method !== 'POST') {
+  //   return response.status(400).json({
+  //     message: 'bad request',
+  //     success: false,
+  //   });
+  // }
 
   const { name, email, subject, message } = request.body;
   if (!name || !email || !subject || !message) {
