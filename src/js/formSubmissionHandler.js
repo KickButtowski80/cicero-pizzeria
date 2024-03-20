@@ -17,8 +17,8 @@ form.addEventListener('submit', async function (e) {
         method: 'POST',
         body: JSON.stringify(formData)
     })
-    const data = response.json()
-debugger;
+    const data = await response.json()
+
 
     if (data.success) {
         alert('Fields were successfully added!');
