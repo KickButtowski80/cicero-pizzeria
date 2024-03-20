@@ -37,11 +37,12 @@ export default (request, response) => {
     });
 
     console.log("Message sent: %s", info.messageId);
-    response.status(200).send(`<script>
-      alert('Go back');
-      window.location.href = '../index.html#contact';
-    </script>
-    `)
+    // response.status(200).send(`<script>
+    //   alert('Go back');
+    //   window.location.href = '../index.html#contact';
+    // </script>
+    // `)
+    response.status(200).json( {data:request.body, message: 'Fields were successfully added!' } )
   }
 
   main().catch(console.error);
