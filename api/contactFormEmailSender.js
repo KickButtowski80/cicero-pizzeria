@@ -9,11 +9,11 @@ export default (request, response) => {
   const { name, email, subject, message } = request.body;
   if (!name || !email || !subject || !message) {
 
-    return response.status(400).send(`
-    <head>
-    <base href="../index.html">
-    </head>
-    <h1>Error</h1> <p>all the fields are required</p><a href="#contact">go back</a>`);
+
+    return  response.status(400).json( {data:request.body, 
+      message: 'all the fields are required',
+      success: false} )
+
   }
 
   const transporter = nodemailer.createTransport({
@@ -37,11 +37,6 @@ export default (request, response) => {
     });
 
     console.log("Message sent: %s", info.messageId);
-    // response.status(200).send(`<script>
-    //   alert('Go back');
-    //   window.location.href = '../index.html#contact';
-    // </script>
-    // `)
     response.status(200).json( {data:request.body, 
       message: 'Fields were successfully added!',
       success: true} )
