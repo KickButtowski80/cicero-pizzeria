@@ -15,7 +15,11 @@ form.addEventListener('submit', async function (e) {
 
     const response = await fetch('/api/contactFormEmailSender.js', {
         method: 'POST',
-        body: JSON.stringify(formData)
+        // body: JSON.stringify(formData)
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        }
     })
     const data = await response.json()
 
