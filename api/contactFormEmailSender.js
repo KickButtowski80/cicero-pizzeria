@@ -71,7 +71,7 @@ export default (request, response) => {
   main().catch(console.error);
 };
 
-};
+// };
 
 
 
