@@ -42,7 +42,9 @@ export default (request, response) => {
     //   window.location.href = '../index.html#contact';
     // </script>
     // `)
-    response.status(200).json( {data:request.body, message: 'Fields were successfully added!' } )
+    response.status(200).json( {data:request.body, 
+      message: 'Fields were successfully added!',
+      success: true} )
   }
 
   main().catch(console.error);
