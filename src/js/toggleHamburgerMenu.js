@@ -1,9 +1,9 @@
-const hamburgerIcon = document.querySelector('#hamburgerIcon')
-const menuBg = document.querySelector('.menu-bg')
+const hamburgerIcon = document.querySelector('#hamburgerIcon');
+const menuBg = document.querySelector('.menu-bg');
 const flyoutMenuId = document.querySelectorAll('#flyout-menu-items');
 const flyoutMenuItems = document.querySelectorAll('#flyout-menu-items li');
 const navBarLogo = document.querySelector('#flyout-menu-logo');
-const flyoutNavBar = document.getElementById("flyout-navbar")
+const flyoutNavBar = document.getElementById("flyout-navbar");
 hamburgerIcon.addEventListener('click', () => {
     hamburgerIcon.classList.toggle('change');
     toggleClasses(menuBg, 'in-view', 'out-view');
@@ -16,7 +16,7 @@ Array.from(flyoutMenuItems).slice(0, -1).forEach(fmi => fmi.addEventListener('cl
     toggleClasses(flyoutMenuId[0], 'in-view-menuItems', 'out-view-menuItems');
     menuBg.classList.remove('in-view');
     navBarLogo.classList.remove('in-view-logo');
-    hamburgerIcon.classList.remove('change')
+    hamburgerIcon.classList.remove('change');
 }))
 
 
