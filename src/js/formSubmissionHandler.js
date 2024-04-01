@@ -25,7 +25,12 @@ form.addEventListener('submit', async function (e) {
 
 
         if (data.success) {
-            alert(`${data.message}`);
+            // alert(`${data.message}`);
+            <include src='src/components/dialog.html' >
+                
+                 'message': "`${data.message}`"
+                
+            </include>
         } else {
             alert('There was an error adding the fields.', data.message);
         }
