@@ -25,7 +25,7 @@ form.addEventListener('submit', async function (e) {
 
 
     if (data.success) {
-        alert('Fields were successfully added!', data.message);
+        alert(`${data.message}`);
     } else {
         alert('There was an error adding the fields.', data.message);
     }
