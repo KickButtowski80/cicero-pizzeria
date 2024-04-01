@@ -28,7 +28,7 @@ form.addEventListener('submit', async function (e) {
             // alert(`${data.message}`);
             <include src='src/components/dialog.html' >
                 
-                 'message': "`${data.message}`"
+                
                 
             </include>
         } else {
