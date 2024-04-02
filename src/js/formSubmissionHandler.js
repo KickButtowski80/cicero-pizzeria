@@ -26,18 +26,21 @@ form.addEventListener('submit', async function (e) {
         const message = document.querySelector('#response-form-dialog #message');
         const svg = document.querySelector('#response-form-dialog svg');
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
+        const circleAround = document.querySelector('.rounded-full')
 
         if (data.success) {
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             svg.classList.add('text-green-600');
             contactFormDialogCloseBtn.classList.add('bg-green-600');
+            circleAround.classList.add('bg-green-100');
 
         } else {
             dialog.style.display = "block";
             message.innerHTML = 'please try again in 2 minutes ';
             svg.classList.add('text-red-600');
             contactFormDialogCloseBtn.classList.add('bg-red-600');
+            circleAround.classList.add('bg-red-100');
         }
     } catch (error) {
         console.error('Error:', error);
