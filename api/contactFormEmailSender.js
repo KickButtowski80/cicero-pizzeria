@@ -40,7 +40,7 @@ export default (request, response) => {
 
       console.log("Message sent: %s", info.messageId);
       response.status(200).json({
-        message: `info of ${name} were successfully added!`,
+        message: `info of ${name} were successfully sent!`,
         success: true
       });
     } catch (error) {
