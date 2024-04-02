@@ -28,7 +28,7 @@ form.addEventListener('submit', async function (e) {
             // alert(`${data.message}`);
           // Your other logic here...
          const dialog = document.getElementById('response-form-dialog');
-         dialog.style.display = "block";
+         dialog.style.display = "flex";
          const message = document.querySelector('#response-form-dialog #message')
          message.innerHTML = `${data.message}`
         
