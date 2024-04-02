@@ -32,26 +32,26 @@ form.addEventListener('submit', async function (e) {
 
         submitBtn.children[0].style.display = 'block'
         submitBtn.children[0].style.margin = "0 auto";
-        if (data.success) {
-            submitBtn.children[0].style.display = 'none';
-            submitBtn.children[1].innerHTML = 'sent';
-            dialog.style.display = "block";
-            message.innerHTML = `${data.message}`;
-            successSvg.style.display = 'block'
-            successSvg.classList.add('text-green-600');
-            contactFormDialogCloseBtn.classList.add('bg-green-600');
-            circleAround.classList.add('bg-green-100');
+        // if (data.success) {
+        //     submitBtn.children[0].style.display = 'none';
+        //     submitBtn.children[1].innerHTML = 'sent';
+        //     dialog.style.display = "block";
+        //     message.innerHTML = `${data.message}`;
+        //     successSvg.style.display = 'block'
+        //     successSvg.classList.add('text-green-600');
+        //     contactFormDialogCloseBtn.classList.add('bg-green-600');
+        //     circleAround.classList.add('bg-green-100');
 
-        } else {
-            submitBtn.children[0].style.display = 'none';
-            submitBtn.children[1].innerHTML = 'not sent';
-            dialog.style.display = "block";
-            message.innerHTML = `${data.message}`;
-            failSvg.style.display = 'block'
-            failSvg.classList.add('text-red-600');
-            contactFormDialogCloseBtn.classList.add('bg-red-600');
-            circleAround.classList.add('bg-red-100');
-        }
+        // } else {
+        //     submitBtn.children[0].style.display = 'none';
+        //     submitBtn.children[1].innerHTML = 'not sent';
+        //     dialog.style.display = "block";
+        //     message.innerHTML = `${data.message}`;
+        //     failSvg.style.display = 'block'
+        //     failSvg.classList.add('text-red-600');
+        //     contactFormDialogCloseBtn.classList.add('bg-red-600');
+        //     circleAround.classList.add('bg-red-100');
+        // }
     } catch (error) {
         console.error('Error:', error);
     }
