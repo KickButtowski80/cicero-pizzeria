@@ -22,16 +22,18 @@ form.addEventListener('submit', async function (e) {
             body: JSON.stringify(formData)
         })
         const data = await response.json()
-
+        const dialog = document.getElementById('response-form-dialog');
+        const message = document.querySelector('#response-form-dialog #message');
+        const svg = document.querySelector('#response-form-dialog svg');
 
         if (data.success) {
-         const dialog = document.getElementById('response-form-dialog');
          dialog.style.display = "block";
-         const message = document.querySelector('#response-form-dialog #message')
-         message.innerHTML = `${data.message}`
+         message.innerHTML = `${data.message}`;
+         svg.classList.add('text-green-600');
         
         } else {
-            alert('There was an error adding the fields.', data.message);
+            dialog.style.display = "block";
+         message.innerHTML = `${data.message}`
        
         }
     } catch (error) {
