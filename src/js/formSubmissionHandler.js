@@ -34,13 +34,12 @@ form.addEventListener('submit', async function (e) {
         submitBtn.children[0].style.margin = "0 auto";
         submitBtn.children[1].innerHTML = "";
         setTimeout(() => {
-
             if (data.success) {
                 submitBtn.children[0].style.display = 'none';
+                submitBtn.children[1].innerHTML = 'sent';
                 setTimeout(() => {
-                    submitBtn.children[1].innerHTML = 'sent';
+                    submitBtn.children[1].innerHTML = 'send';
                 }, 1000);
-                submitBtn.children[1].innerHTML = 'send';
                 dialog.style.display = "block";
                 message.innerHTML = `${data.message}`;
                 successSvg.style.display = 'block'
@@ -50,10 +49,10 @@ form.addEventListener('submit', async function (e) {
 
             } else {
                 submitBtn.children[0].style.display = 'none';
+                submitBtn.children[1].innerHTML = 'not sent';
                 setTimeout(() => {
-                    submitBtn.children[1].innerHTML = 'not sent';
+                    submitBtn.children[1].innerHTML = 'send';
                 }, 1000);
-                submitBtn.children[1].innerHTML = 'send';
                 dialog.style.display = "block";
                 message.innerHTML = `${data.message}`;
                 failSvg.style.display = 'block'
