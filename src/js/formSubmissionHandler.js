@@ -29,11 +29,11 @@ form.addEventListener('submit', async function (e) {
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
         const circleAround = document.querySelector('.rounded-full');
         const submitBtn = document.querySelector("#contact-form input[type='submit']")
-        submitBtn.addEventListener('click', () => {
+        // submitBtn.addEventListener('click', () => {
            submitBtn.style.backgroundColor = 'green';
            alert('i');
            console.log('last test for tonight')
-        })
+        // })
 
         if (data.success) {
             dialog.style.display = "block";
