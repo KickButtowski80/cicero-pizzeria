@@ -34,8 +34,7 @@ form.addEventListener('submit', async function (e) {
         
         } else {
             alert('There was an error adding the fields.', data.message);
-        //     const dialog = document.getElementById('response-form-dialog');
-        //     dialog.style.visibility = "visible";
+       
         }
     } catch (error) {
         console.error('Error:', error);
