@@ -75,7 +75,7 @@ form.addEventListener('submit', async function (e) {
 
     try {
         // Simulate a longer fetch request
-        setTimeout(async () => {
+   
             const response = await fetch('/api/contactFormEmailSender.js', {
                 method: 'POST',
                 headers: {
@@ -92,11 +92,11 @@ form.addEventListener('submit', async function (e) {
             const failSvg = document.querySelector('#response-form-dialog #fail');
             const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
             const circleAround = document.querySelector('.rounded-full');
-
+           
             // Reset button state
             submitBtn.children[0].style.display = 'none';
             submitBtn.children[1].innerHTML = '';
-
+            setTimeout( () => {
             // Update UI based on response
             if (data.success) {
                 submitBtn.children[1].innerHTML = 'sent';
