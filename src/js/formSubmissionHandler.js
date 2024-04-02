@@ -29,23 +29,22 @@ form.addEventListener('submit', async function (e) {
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
         const circleAround = document.querySelector('.rounded-full');
         const submitBtn = document.querySelector("#contact-form button[type='submit']")
-        
+
         submitBtn.children[0].style.display = 'block'
-        console.dir(submitBtn)
+        submitBtn.children[0].style.margin = "0 auto";
         if (data.success) {
-            submitBtn.children[0].style.display = 'none'
-              
-        submitBtn.children[1].innerHTML = 'sent'
+            submitBtn.children[0].style.display = 'none';
+            submitBtn.children[1].innerHTML = 'sent';
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
-            successSvg.style.display= 'block'
+            successSvg.style.display = 'block'
             successSvg.classList.add('text-green-600');
             contactFormDialogCloseBtn.classList.add('bg-green-600');
             circleAround.classList.add('bg-green-100');
 
         } else {
             submitBtn.children[0].style.display = 'none';
-            submitBtn.children[1].innerHTML = 'not sent'
+            submitBtn.children[1].innerHTML = 'not sent';
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             failSvg.style.display = 'block'
