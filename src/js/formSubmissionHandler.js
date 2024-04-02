@@ -34,6 +34,8 @@ form.addEventListener('submit', async function (e) {
         console.dir(submitBtn)
         if (data.success) {
             submitBtn.children[0].style.display = 'none'
+              
+        submitBtn.children[0].innerHTML = 'sent'
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             successSvg.style.display= 'block'
@@ -42,7 +44,8 @@ form.addEventListener('submit', async function (e) {
             circleAround.classList.add('bg-green-100');
 
         } else {
-            submitBtn.children[0].style.display = 'none'
+            submitBtn.children[0].style.display = 'none';
+            submitBtn.children[0].innerHTML = 'not sent'
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             failSvg.style.display = 'block'
