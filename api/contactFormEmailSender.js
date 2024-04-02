@@ -45,7 +45,7 @@ export default (request, response) => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      response.status(500).json({
+      response.status(504).json({
         message: 'An error occurred while sending the email',
         success: false
       });
