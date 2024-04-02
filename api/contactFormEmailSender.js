@@ -18,7 +18,7 @@ export default (request, response) => {
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
+    port: 586,
     secure: false,
     auth: {
       user: "pazpaz25@gmail.com",

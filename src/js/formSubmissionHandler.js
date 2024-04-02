@@ -24,21 +24,25 @@ form.addEventListener('submit', async function (e) {
         const data = await response.json()
         const dialog = document.getElementById('response-form-dialog');
         const message = document.querySelector('#response-form-dialog #message');
-        const svg = document.querySelector('#response-form-dialog svg');
+        const successSvg = document.querySelector('#response-form-dialog #success');
+        const failSvg = document.querySelector('#response-form-dialog #fail');
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
-        const circleAround = document.querySelector('.rounded-full')
+        const circleAround = document.querySelector('.rounded-full');
+    
 
         if (data.success) {
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
-            svg.classList.add('text-green-600');
+            successSvg.style.display= 'block'
+            successSvg.classList.add('text-green-600');
             contactFormDialogCloseBtn.classList.add('bg-green-600');
             circleAround.classList.add('bg-green-100');
 
         } else {
             dialog.style.display = "block";
             message.innerHTML = 'please try again in 2 minutes ';
-            svg.classList.add('text-red-600');
+            failSvg.style.display = 'block'
+            failSvg.classList.add('text-red-600');
             contactFormDialogCloseBtn.classList.add('bg-red-600');
             circleAround.classList.add('bg-red-100');
         }
