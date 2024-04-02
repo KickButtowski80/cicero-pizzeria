@@ -35,7 +35,7 @@ form.addEventListener('submit', async function (e) {
         if (data.success) {
             submitBtn.children[0].style.display = 'none'
               
-        submitBtn.children[0].innerHTML = 'sent'
+        submitBtn.children[1].innerHTML = 'sent'
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             successSvg.style.display= 'block'
@@ -45,7 +45,7 @@ form.addEventListener('submit', async function (e) {
 
         } else {
             submitBtn.children[0].style.display = 'none';
-            submitBtn.children[0].innerHTML = 'not sent'
+            submitBtn.children[1].innerHTML = 'not sent'
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             failSvg.style.display = 'block'
