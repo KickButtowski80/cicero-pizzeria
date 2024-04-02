@@ -28,14 +28,12 @@ form.addEventListener('submit', async function (e) {
         const failSvg = document.querySelector('#response-form-dialog #fail');
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
         const circleAround = document.querySelector('.rounded-full');
-        const submitBtn = document.querySelector("#contact-form input[type='submit']")
-        // submitBtn.addEventListener('click', () => {
-           submitBtn.style.backgroundColor = 'green';
-           alert('i');
-           console.log('last test for tonight')
-        // })
-
+        const submitBtn = document.querySelector("#contact-form button[type='submit']")
+        
+        submitBtn.children[0].style.display = 'block'
+    
         if (data.success) {
+            submitBtn.children[0].style.display = 'none'
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
             successSvg.style.display= 'block'
@@ -44,8 +42,9 @@ form.addEventListener('submit', async function (e) {
             circleAround.classList.add('bg-green-100');
 
         } else {
+            submitBtn.children[0].style.display = 'none'
             dialog.style.display = "block";
-            message.innerHTML = 'please try again in 2 minutes ';
+            message.innerHTML = `${data.message}`;
             failSvg.style.display = 'block'
             failSvg.classList.add('text-red-600');
             contactFormDialogCloseBtn.classList.add('bg-red-600');
