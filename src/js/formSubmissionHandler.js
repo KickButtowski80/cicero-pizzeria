@@ -27,17 +27,13 @@ form.addEventListener('submit', async function (e) {
         if (data.success) {
             // alert(`${data.message}`);
           // Your other logic here...
-    import('./components/dialog.html').then((module) => {
-        // The imported module contains the content of dialog.html
-        // You can use it as needed, e.g., append it to the DOM
-        const dialogContent = module.default; // Assuming dialog.html exports its content as default
-        const dialogContainer = document.getElementById('dialog-container'); // Replace with your actual container element
-
-        // Append the dialog content to your container
-        dialogContainer.innerHTML = dialogContent;
-    });
+         const dialog = document.getElementById('response-form-dialog');
+         dialog.style.visibility = "visible";
+        
         } else {
             alert('There was an error adding the fields.', data.message);
+        //     const dialog = document.getElementById('response-form-dialog');
+        //     dialog.style.visibility = "visible";
         }
     } catch (error) {
         console.error('Error:', error);

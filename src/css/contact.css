@@ -14,7 +14,9 @@
       grid-auto-flow: row;
       gap: 2em;
     }
-
+   #response-form-dialog {
+    display: none;
+   }
     @media (min-width: 55em) {
       .columns {
         grid-auto-flow: column;
