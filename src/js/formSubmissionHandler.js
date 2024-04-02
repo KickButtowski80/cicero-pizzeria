@@ -27,14 +27,14 @@ form.addEventListener('submit', async function (e) {
         const svg = document.querySelector('#response-form-dialog svg');
 
         if (data.success) {
-         dialog.style.display = "block";
-         message.innerHTML = `${data.message}`;
-         svg.classList.add('text-green-600');
-        
+            dialog.style.display = "block";
+            message.innerHTML = `${data.message}`;
+            svg.classList.add('text-green-600');
+
         } else {
             dialog.style.display = "block";
-         message.innerHTML = `${data.message}`
-       
+            message.innerHTML = `${data.message}`;
+            svg.classList.add('text-red-600');
         }
     } catch (error) {
         console.error('Error:', error);
