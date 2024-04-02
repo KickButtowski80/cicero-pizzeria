@@ -39,7 +39,7 @@ form.addEventListener('submit', async function (e) {
                 submitBtn.children[0].style.display = 'none';
                 setTimeout(() => {
                     submitBtn.children[1].innerHTML = 'sent';
-                }, 100);
+                }, 1000);
                 submitBtn.children[1].innerHTML = 'send';
                 dialog.style.display = "block";
                 message.innerHTML = `${data.message}`;
@@ -52,8 +52,7 @@ form.addEventListener('submit', async function (e) {
                 submitBtn.children[0].style.display = 'none';
                 setTimeout(() => {
                     submitBtn.children[1].innerHTML = 'not sent';
-
-                }, 100);
+                }, 1000);
                 submitBtn.children[1].innerHTML = 'send';
                 dialog.style.display = "block";
                 message.innerHTML = `${data.message}`;
