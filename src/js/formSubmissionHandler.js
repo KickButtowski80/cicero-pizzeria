@@ -32,6 +32,7 @@ form.addEventListener('submit', async function (e) {
 
         submitBtn.children[0].style.display = 'block'
         submitBtn.children[0].style.margin = "0 auto";
+        submitBtn.children[1].innerHTML = "";
         // if (data.success) {
         //     submitBtn.children[0].style.display = 'none';
         //     submitBtn.children[1].innerHTML = 'sent';
