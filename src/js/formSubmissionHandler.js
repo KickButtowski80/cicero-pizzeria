@@ -1,5 +1,6 @@
 
 const form = document.getElementById('contact-form');
+const submitBtn = document.querySelector("#contact-form input[type='submit'")
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -29,7 +30,7 @@ form.addEventListener('submit', async function (e) {
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
         const circleAround = document.querySelector('.rounded-full');
     
-
+        submitBtn.style.backgroundColor= 'green'
         if (data.success) {
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
@@ -37,6 +38,7 @@ form.addEventListener('submit', async function (e) {
             successSvg.classList.add('text-green-600');
             contactFormDialogCloseBtn.classList.add('bg-green-600');
             circleAround.classList.add('bg-green-100');
+            submitBtn.style.backgroundColor= 'blue'
 
         } else {
             dialog.style.display = "block";
@@ -45,6 +47,7 @@ form.addEventListener('submit', async function (e) {
             failSvg.classList.add('text-red-600');
             contactFormDialogCloseBtn.classList.add('bg-red-600');
             circleAround.classList.add('bg-red-100');
+            submitBtn.style.backgroundColor= 'red'
         }
     } catch (error) {
         console.error('Error:', error);
