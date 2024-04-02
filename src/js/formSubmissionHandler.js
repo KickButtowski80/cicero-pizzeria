@@ -33,6 +33,7 @@ form.addEventListener('submit', async function (e) {
         
     //     submitBtn.style.backgroundColor= 'blue'
     //    }, 1000)
+    debugger;
         if (data.success) {
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
