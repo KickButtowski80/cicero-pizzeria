@@ -29,6 +29,8 @@ form.addEventListener('submit', async function (e) {
           // Your other logic here...
          const dialog = document.getElementById('response-form-dialog');
          dialog.style.display = "block";
+         const message = document.querySelector('#response-form-dialog #message')
+         message.innerHTML = `${data.message}`
         
         } else {
             alert('There was an error adding the fields.', data.message);
