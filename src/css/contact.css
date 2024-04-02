@@ -17,9 +17,7 @@
     #response-form-dialog {
       display: none;
     }
-    #response-form-dialog:has(svg) + div {
-      background-color: red;
-    }
+
     @media (min-width: 55em) {
       .columns {
         grid-auto-flow: column;
