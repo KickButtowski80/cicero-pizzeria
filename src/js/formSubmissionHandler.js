@@ -28,10 +28,11 @@ form.addEventListener('submit', async function (e) {
         const failSvg = document.querySelector('#response-form-dialog #fail');
         const contactFormDialogCloseBtn = document.querySelector("#response-form-dialog  button");
         const circleAround = document.querySelector('.rounded-full');
-        const submitBtn = document.querySelector("input[type='submit']")
+        const submitBtn = document.querySelector("#contact-form input[type='submit']")
         submitBtn.addEventListener('click', () => {
            submitBtn.style.backgroundColor = 'green';
-           alert('i')
+           alert('i');
+           console.log('last test for tonight')
         })
 
         if (data.success) {
