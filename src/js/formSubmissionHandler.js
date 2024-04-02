@@ -31,7 +31,7 @@ form.addEventListener('submit', async function (e) {
         const submitBtn = document.querySelector("#contact-form button[type='submit']")
         
         submitBtn.children[0].style.display = 'block'
-    
+        console.dir(submitBtn)
         if (data.success) {
             submitBtn.children[0].style.display = 'none'
             dialog.style.display = "block";
