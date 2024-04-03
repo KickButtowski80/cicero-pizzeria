@@ -20,6 +20,7 @@ export default (request, response) => {
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
+    jsonTransport: true,
     auth: {
       user: "pazpaz25@gmail.com",
       pass: process.env.GMAIL_PASS,
