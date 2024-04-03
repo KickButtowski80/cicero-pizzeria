@@ -33,39 +33,69 @@ form.addEventListener('submit', async function (e) {
         submitBtn.children[0].style.display = 'block'
         submitBtn.children[0].style.margin = "0 auto";
         submitBtn.children[1].innerHTML = "";
-        setTimeout(() => {
-            if (data.success) {
-                submitBtn.children[0].style.display = 'none';
-                submitBtn.children[1].innerHTML = 'sent';
-                setTimeout(() => {
-                    submitBtn.children[1].innerHTML = 'send';
-                }, 1000);
-                dialog.style.display = "block";
-                message.innerHTML = `${data.message}`;
-                successSvg.style.display = 'block';
-                failSvg.style.display ='none'
-                successSvg.classList.add('text-green-600');
-                contactFormDialogCloseBtn.classList.add('bg-green-600');
-                circleAround.classList.add('bg-green-100');
+        // setTimeout(() => {
+        //     if (data.success) {
+        //         submitBtn.children[0].style.display = 'none';
+        //         submitBtn.children[1].innerHTML = 'sent';
+        //         setTimeout(() => {
+        //             submitBtn.children[1].innerHTML = 'send';
+        //         }, 1000);
+        //         dialog.style.display = "block";
+        //         message.innerHTML = `${data.message}`;
+        //         successSvg.style.display = 'block';
+        //         failSvg.style.display ='none'
+        //         successSvg.classList.add('text-green-600');
+        //         contactFormDialogCloseBtn.classList.add('bg-green-600');
+        //         circleAround.classList.add('bg-green-100');
       
+        //     } else {
+        //         submitBtn.children[0].style.display = 'none';
+        //         submitBtn.children[1].innerHTML = 'not sent';
+        //         setTimeout(() => {
+        //             submitBtn.children[1].innerHTML = 'send';
+        //         }, 1000);
+        //         dialog.style.display = "block";
+        //         message.innerHTML = `${data.message}`;
+        //         failSvg.style.display = 'block';
+        //         successSvg.style.display = 'none';
+        //         failSvg.classList.add('text-red-600');
+        //         contactFormDialogCloseBtn.classList.add('bg-red-600');
+        //         circleAround.classList.add('bg-red-100');
+                
+        //     }
+        // }, 2000)
+
+        setTimeout(() => {
+            submitBtn.children[0].style.display = 'none';
+            submitBtn.children[1].innerHTML = data.success ? 'sent' : 'not sent';
+            setTimeout(() => {
+                submitBtn.children[1].innerHTML = 'send';
+            }, 1000);
+            dialog.style.display = "block";
+            message.innerHTML = `${data.message}`;
+        
+            // Apply classes based on data.success
+            if (data.success) {
+                successSvg.style.display = 'block';
+                failSvg.style.display = 'none';
+                successSvg.classList.add('text-green-600');
+                failSvg.classList.remove('text-red-600'); // Remove the red color class
+                contactFormDialogCloseBtn.classList.add('bg-green-600');
+                contactFormDialogCloseBtn.classList.remove('bg-red-600'); // Remove the red color class
+                circleAround.classList.add('bg-green-100');
+                circleAround.classList.remove('bg-red-100'); // Remove the red color class
             } else {
-                submitBtn.children[0].style.display = 'none';
-                submitBtn.children[1].innerHTML = 'not sent';
-                setTimeout(() => {
-                    submitBtn.children[1].innerHTML = 'send';
-                }, 1000);
-                dialog.style.display = "block";
-                message.innerHTML = `${data.message}`;
-                failSvg.style.display = 'block';
                 successSvg.style.display = 'none';
+                failSvg.style.display = 'block';
                 failSvg.classList.add('text-red-600');
+                successSvg.classList.remove('text-green-600'); // Remove the green color class
                 contactFormDialogCloseBtn.classList.add('bg-red-600');
-                circleAround.classList.remove('bg-red-100');
-                successSvg.classList.remove('text-green-600');
-                contactFormDialogCloseBtn.classList.remove('bg-green-600');
-                circleAround.classList.remove('bg-green-100');
+                contactFormDialogCloseBtn.classList.remove('bg-green-600'); // Remove the green color class
+                circleAround.classList.add('bg-red-100');
+                circleAround.classList.remove('bg-green-100'); // Remove the green color class
             }
-        }, 2000)
+        }, 2000);
+        
     } catch (error) {
         console.error('Error:', error);
     }
