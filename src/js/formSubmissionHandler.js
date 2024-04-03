@@ -44,9 +44,9 @@ form.addEventListener('submit', async function (e) {
                 message.innerHTML = `${data.message}`;
                 successSvg.style.display = 'block';
                 failSvg.style.display ='none'
-                successSvg.classList.toggle('text-green-600');
-                contactFormDialogCloseBtn.classList.toggle('bg-green-600');
-                circleAround.classList.toggle('bg-green-100');
+                successSvg.classList.add('text-green-600');
+                contactFormDialogCloseBtn.classList.add('bg-green-600');
+                circleAround.classList.add('bg-green-100');
       
             } else {
                 submitBtn.children[0].style.display = 'none';
@@ -58,9 +58,12 @@ form.addEventListener('submit', async function (e) {
                 message.innerHTML = `${data.message}`;
                 failSvg.style.display = 'block';
                 successSvg.style.display = 'none';
-                failSvg.classList.toggle('text-red-600');
-                contactFormDialogCloseBtn.classList.toggle('bg-red-600');
-                circleAround.classList.toggle('bg-red-100');
+                failSvg.classList.add('text-red-600');
+                contactFormDialogCloseBtn.classList.add('bg-red-600');
+                circleAround.classList.remove('bg-red-100');
+                successSvg.classList.remove('text-green-600');
+                contactFormDialogCloseBtn.classList.remove('bg-green-600');
+                circleAround.classList.remove('bg-green-100');
             }
         }, 2000)
     } catch (error) {
