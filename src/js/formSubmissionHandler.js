@@ -42,11 +42,12 @@ form.addEventListener('submit', async function (e) {
                 }, 1000);
                 dialog.style.display = "block";
                 message.innerHTML = `${data.message}`;
-                successSvg.style.display = 'block'
+                successSvg.style.display = 'block';
+                failSvg.style.display ='none'
                 successSvg.classList.add('text-green-600');
                 contactFormDialogCloseBtn.classList.add('bg-green-600');
                 circleAround.classList.add('bg-green-100');
-                console.log('i am a success')
+      
             } else {
                 submitBtn.children[0].style.display = 'none';
                 submitBtn.children[1].innerHTML = 'not sent';
@@ -55,7 +56,8 @@ form.addEventListener('submit', async function (e) {
                 }, 1000);
                 dialog.style.display = "block";
                 message.innerHTML = `${data.message}`;
-                failSvg.style.display = 'block'
+                failSvg.style.display = 'block';
+                successSvg.style.display = 'none';
                 failSvg.classList.add('text-red-600');
                 contactFormDialogCloseBtn.classList.add('bg-red-600');
                 circleAround.classList.add('bg-red-100');
