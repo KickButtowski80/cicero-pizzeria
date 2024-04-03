@@ -1,0 +1,11 @@
+@import "./flyout-menu.css";
+@import "./static-menu.css";
+
+ #response-form-dialog {
+    #success{
+        display: none;
+    }
+    #fail{
+        display:  none;
+    }
+}
