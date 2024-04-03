@@ -1,33 +1,34 @@
-(() => {
+
 const nodemailer = require("nodemailer");
 require('dotenv').config()
 export default (request, response) => {
-  // if (request.method !== 'POST') {
-  //   return response.status(400).json({
-  //     message: 'bad request',
-  //     success: false,
-  //   });
-  // }
+  if (request.method !== 'POST') {
+    return response.status(400).json({
+      message: 'bad request',
+      success: false,
+    });
+  }
 
   const { name, email, subject, message } = request.body;
   if (!name || !email || !subject || !message) {
-    return  response.status(400).json( {data:request.body, 
+    return response.status(400).json({
+      data: request.body,
       message: 'all the fields are required',
-      success: false} )
+      success: false
+    })
   }
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
-    jsonTransport: true,
     auth: {
       user: "pazpaz25@gmail.com",
       pass: process.env.GMAIL_PASS,
     },
   });
 
- 
+
 
   async function main() {
     try {
@@ -46,8 +47,8 @@ export default (request, response) => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      response.status(504).json({
-        message: 'An error occurred while sending the email',
+      response.status('error').json({
+        message: 'An error occurred while sending the email' + error + message,
         success: false
       });
     }
@@ -56,7 +57,7 @@ export default (request, response) => {
   main().catch(console.error);
 };
 
-// };
 
-})();
+
+
 
