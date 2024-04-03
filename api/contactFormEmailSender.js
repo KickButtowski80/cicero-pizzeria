@@ -20,7 +20,7 @@ export default (request, response) => {
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 586,
+    port: 587,
     secure: false,
     auth: {
       user: "pazpaz25@gmail.com",
@@ -41,19 +41,27 @@ export default (request, response) => {
       });
 
       console.log("Message sent: %s", info.messageId);
+      if (shouldRejectEmail()) {
+        throw new Error("SMTP server rejected the email");
+    }
+
       response.status(200).json({
         message: `info of ${name} were successfully sent!`,
         success: true
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      response.status(500).json({
-        message: 'An error occurred while sending the email' + error.message,
+      response.status('error').json({
+        message: 'An error occurred while sending the email' + error + message,
         success: false
       });
     }
   }
-
+  function shouldRejectEmail() {
+    // Implement your rejection logic here
+    // For example, you could randomly reject emails based on certain criteria
+    return Math.random() < 0.5; // Reject 50% of emails
+}
   main().catch(console.error);
 };
 
