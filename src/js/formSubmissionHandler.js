@@ -46,7 +46,7 @@ form.addEventListener('submit', async function (e) {
                 successSvg.classList.add('text-green-600');
                 contactFormDialogCloseBtn.classList.add('bg-green-600');
                 circleAround.classList.add('bg-green-100');
-
+                console.log('i am a success')
             } else {
                 submitBtn.children[0].style.display = 'none';
                 submitBtn.children[1].innerHTML = 'not sent';
