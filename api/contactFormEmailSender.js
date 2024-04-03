@@ -41,9 +41,9 @@ export default (request, response) => {
       });
 
       console.log("Message sent: %s", info.messageId);
-      if (shouldRejectEmail()) {
-        throw new Error("SMTP server rejected the email");
-    }
+    //   if (shouldRejectEmail()) {
+    //     throw new Error("SMTP server rejected the email");
+    // }
 
       response.status(200).json({
         message: `info of ${name} were successfully sent!`,
