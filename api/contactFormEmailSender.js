@@ -1,4 +1,4 @@
-
+(() => {
 const nodemailer = require("nodemailer");
 require('dotenv').config()
 export default (request, response) => {
@@ -18,7 +18,7 @@ export default (request, response) => {
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 586,
+    port: 587,
     secure: false,
     auth: {
       user: "pazpaz25@gmail.com",
@@ -57,5 +57,5 @@ export default (request, response) => {
 
 // };
 
-
+})();
 
