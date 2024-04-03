@@ -51,10 +51,11 @@ export default (request, response) => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      response.status('error').json({
-        message: 'An error occurred while sending the email' + error + message,
+      response.status(500).json({
+        message: 'An error occurred while sending the email',
+        error: error.message,
         success: false
-      });
+    });
     }
   }
   function shouldRejectEmail() {
