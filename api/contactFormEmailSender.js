@@ -13,7 +13,7 @@ export default (request, response) => {
   if (!name || !email || !subject || !message) {
     return response.status(400).json({
       data: request.body,
-      message: 'all the fields are required',
+      message: 'all the fields are required, please try again',
       success: false
     })
   }
@@ -41,9 +41,10 @@ export default (request, response) => {
       });
 
       console.log("Message sent: %s", info.messageId);
-    //   if (shouldRejectEmail()) {
-    //     throw new Error("SMTP server rejected the email");
-    // }
+      //left for learning purposes 
+      //   if (shouldRejectEmail()) {
+      //     throw new Error("SMTP server rejected the email");
+      // }
 
       response.status(200).json({
         message: `info of ${name} were successfully sent!`,
@@ -55,14 +56,14 @@ export default (request, response) => {
         message: 'An error occurred while sending the email',
         error: error.message,
         success: false
-    });
+      });
     }
   }
   function shouldRejectEmail() {
     // Implement your rejection logic here
     // For example, you could randomly reject emails based on certain criteria
     return Math.random() < 0.5; // Reject 50% of emails
-}
+  }
   main().catch(console.error);
 };
 
