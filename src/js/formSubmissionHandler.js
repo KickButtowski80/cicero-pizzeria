@@ -10,6 +10,7 @@ form.addEventListener('submit', async function (e) {
     const formData = {
         name: name, email: email, subject: subject, message: message
     }
+    // left for learning purposes 
     // const formData = new FormData(dataForm);
 
     try {
