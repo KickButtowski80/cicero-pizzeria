@@ -33,7 +33,7 @@ form.addEventListener('submit', async function (e) {
         submitBtn.children[0].style.display = 'block'
         submitBtn.children[0].style.margin = "0 auto";
         submitBtn.children[1].innerHTML = "";
-      
+
         setTimeout(() => {
             submitBtn.children[0].style.display = 'none';
             submitBtn.children[1].innerHTML = data.success ? 'sent' : 'not sent';
@@ -42,29 +42,28 @@ form.addEventListener('submit', async function (e) {
             }, 1000);
             dialog.style.display = "block";
             message.innerHTML = `${data.message}`;
-        
+
             // Apply classes based on data.success
             if (data.success) {
                 successSvg.style.display = 'block';
                 failSvg.style.display = 'none';
                 successSvg.classList.add('text-green-600');
-                failSvg.classList.remove('text-red-600'); // Remove the red color class
+                failSvg.classList.remove('text-red-600');
                 contactFormDialogCloseBtn.classList.add('bg-green-600');
-                contactFormDialogCloseBtn.classList.remove('bg-red-600'); // Remove the red color class
-                circleAround.classList.add('bg-green-100');
-                circleAround.classList.remove('bg-red-100'); // Remove the red color class
+                contactFormDialogCloseBtn.classList.remove('bg-red-600'); circleAround.classList.add('bg-green-100');
+                circleAround.classList.remove('bg-red-100');
             } else {
                 successSvg.style.display = 'none';
                 failSvg.style.display = 'block';
                 failSvg.classList.add('text-red-600');
-                successSvg.classList.remove('text-green-600'); // Remove the green color class
+                successSvg.classList.remove('text-green-600');
                 contactFormDialogCloseBtn.classList.add('bg-red-600');
-                contactFormDialogCloseBtn.classList.remove('bg-green-600'); // Remove the green color class
+                contactFormDialogCloseBtn.classList.remove('bg-green-600');
                 circleAround.classList.add('bg-red-100');
-                circleAround.classList.remove('bg-green-100'); // Remove the green color class
+                circleAround.classList.remove('bg-green-100');
             }
         }, 2000);
-        
+
     } catch (error) {
         console.error('Error:', error);
     }
