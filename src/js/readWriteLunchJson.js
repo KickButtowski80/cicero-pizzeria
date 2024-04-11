@@ -1,7 +1,6 @@
 import data from "../assets/json/lunch.json"
 document.addEventListener("DOMContentLoaded", () => {
    const lunchMenuList = document.querySelector('#lunch-menu-list')
-  data = JSON.stringify(data)
  
   for (const category in data.lunchMenu) {
     const description = data.lunchMenu[category].description;
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     categoryCardEl.appendChild(itemsCard)
   }
-})();
+})
 
 function createCategory(category, description) {
   const card = document.createElement('div');
