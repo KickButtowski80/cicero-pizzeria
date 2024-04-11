@@ -1,14 +1,12 @@
 import data from "../assets/json/lunch.json"
 document.addEventListener("DOMContentLoaded", () => {
-
-  const lunchMenuList = document.querySelector('.lunch-menu-list')
+   const lunchMenuList = document.querySelector('#lunch-menu-list')
   data = JSON.stringify(data)
-
-  const imgSrc = './assets/svg/slicePizza.svg';
+ 
   for (const category in data.lunchMenu) {
     const description = data.lunchMenu[category].description;
     let items = data.lunchMenu[category].items
-    const categoryCard = createCategory(category, description, items, imgSrc);
+    const categoryCard = createCategory(category, description, items);
 
     lunchMenuList.appendChild(categoryCard);
     const itemsCard = document.createElement('ul');
@@ -21,18 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     categoryCardEl.appendChild(itemsCard)
   }
-});
+})();
 
-function createCategory(category, description, items, imgSrc) {
+function createCategory(category, description) {
   const card = document.createElement('div');
-  card.className = 'max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-5';
+  card.className = `bg-white rounded-xl shadow-md  
+   m-5`;
   const categoryItems = category.split(' ').join('-')
   const img = document.createElement('div');
-  img.className = 'md:flex';
+  img.className = 'md:flex md:flex-wrap';
   img.innerHTML = `
-     <!-- <div class="md:flex-shrink-0">
-          <img class="h-48 w-full object-cover md:w-48" src="${imgSrc}" alt="An image">
-      </div> -->
+    
       <div class="p-8">
           <div class="uppercase tracking-wide text-sm
            text-indigo-500 font-semibold">${category}</div>
@@ -50,7 +47,7 @@ function createItem(itemName, ingredients, price) {
 
   const itemCard = document.createElement('li')
   itemCard.innerHTML = `
-    <div class="max-w-sm rounded  shadow-lg m-2">
+    <div class="rounded  shadow-lg m-2">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${itemName}</div>
         <p class="text-gray-700 text-base">${ingredients}</p>
