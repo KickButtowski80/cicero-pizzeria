@@ -1,7 +1,7 @@
 (() => {
     let allMenuItems = document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a');
     const options = {
-        threshold: 0.3
+        threshold: window.location.pathname === ('/lunch.html' || '/dinner.html')? 0 : 0.3
     }
     allMenuItems.forEach(menuItem => {
         

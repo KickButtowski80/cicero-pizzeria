@@ -17,21 +17,19 @@
     opacity: 0;
     transform: translate(200px, 0%);
     animation: slideIn 1.5s ease forwards;
-  
-    
   }
   li::after {
-    content: var(--slice-pizza);
+    content:url('../assets/svg/slicePizza.svg');
     position: absolute;
     left: 0;
     top: 0.8lh;
-   width:0;
-    opacity: 0;
+    width: 0;
+    opacity:0;
     transition: all 1s ease-in-out;
   }
   li:nth-child(5)::after {
-    content:none;
-   }
+    content: none;
+  }
 
   li:hover::after,
   li:focus::after {
@@ -68,6 +66,6 @@
 
 #static-menu-logo {
   opacity: 0;
-  transform: translateY(-65px);
+  transform: translateY(-165px);
   animation: slideDown 0.4s forwards;
 }
