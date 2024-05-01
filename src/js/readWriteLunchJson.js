@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoryCardEl = document.querySelector(`.${categoryItems}`)
     for (const item in items) {
       let itemInfo = items[item];
-     
+      if(itemInfo['ingredients'] === undefined ){
+        itemInfo.ingredients = 'Beverage'; 
+        itemInfo.price = "$3"     
+      }
       const itemCard = createItem(item, itemInfo.ingredients, itemInfo.price);
       itemsCard.appendChild(itemCard)
     }
