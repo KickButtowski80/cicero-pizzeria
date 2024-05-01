@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lunchMenuList.appendChild(categoryCard);
     const itemsCard = document.createElement('ul');
+    
+    itemsCard.classList.add('grid','grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2' ,'gap-2')
     const categoryItems = category.split(' ').join('-')
     const categoryCardEl = document.querySelector(`.${categoryItems}`)
     for (const item in items) {
@@ -34,9 +36,9 @@ function createCategory(category, description) {
            text-indigo-500 font-semibold">${category}</div>
           <p class="mt-2 text-gray-500">${description}</p>
       </div> 
-      <div class='${categoryItems}'></div>
+      <div class='${categoryItems} '></div>
   `;
-
+ 
   card.appendChild(img);
   return card;
 }
