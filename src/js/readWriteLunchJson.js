@@ -47,9 +47,10 @@ function createItem(itemName, ingredients, price) {
   const itemCard = document.createElement('li')
   itemCard.innerHTML = `
   <div class="m-2 shadow-lg rounded-lg border border-gray-200
-  hover:bg-gray-500 md:p-6 text-base text-black hover:text-white
-  bg-gray-300 dark:border-gray-700 dark:bg-gray-800
-  dark:hover:bg-gray-700">
+  hover:bg-gray-500 md:p-6 text-base text-black dark:text-white
+   hover:text-white
+  bg-gray-300 dark:border-gray-700 dark:hover:bg-gray-800
+  dark:bg-gray-500">
   <div class="px-6 py-4">
     <div class="mb-2 text-xl font-bold flex justify-between items-center">      
       <span class="inline-block">${itemName} ${price} </span>
