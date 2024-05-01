@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoryCardEl = document.querySelector(`.${categoryItems}`)
     for (const item in items) {
       let itemInfo = items[item];
-      if(itemInfo['ingredients'] === undefined ){
-        itemInfo.ingredients = 'Beverage'; 
-        itemInfo.price = "$3"     
+      if (itemInfo['ingredients'] === undefined) {
+        itemInfo.ingredients = 'Beverage';
+        itemInfo.price = "$3.00"
       }
       const itemCard = createItem(item, itemInfo.ingredients, itemInfo.price);
       itemsCard.appendChild(itemCard)
@@ -28,19 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function createCategory(category, description) {
   const card = document.createElement('div');
-  card.className = `bg-white rounded-xl shadow-md  
-   m-5`;
+  card.className = `bg-gray-700  rounded-xl shadow-md  
+   m-5 p-2`;
   const categoryItems = category.split(' ').join('-')
   const img = document.createElement('div');
   img.className = 'md:flex md:flex-wrap';
   img.innerHTML = `
     
       <div class="p-8">
-          <div class="uppercase tracking-wide text-sm
-           text-indigo-500 font-semibold">${category}</div>
-          <p class="mt-2 text-gray-500">${description}</p>
+          <div class="uppercase tracking-wide text-2xl
+           text-white font-semibold">${category}</div>
+          <p class="mt-2 text-gray-300 text-xl">${description}</p>
       </div> 
-      <div class='${categoryItems} '></div>
+      <div class='${categoryItems}'></div>
   `;
 
   card.appendChild(img);
