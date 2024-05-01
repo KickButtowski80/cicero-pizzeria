@@ -47,16 +47,15 @@ function createItem(itemName, ingredients, price) {
   const itemCard = document.createElement('li')
   itemCard.innerHTML = `
   <div class="m-2 shadow-lg rounded-lg border border-gray-200
-  hover:bg-gray-500 p-6 text-base text-black hover:text-white
+  hover:bg-gray-500 md:p-6 text-base text-black hover:text-white
   bg-gray-300 dark:border-gray-700 dark:bg-gray-800
   dark:hover:bg-gray-700">
   <div class="px-6 py-4">
-    <div class="mb-2 text-xl font-bold flex justify-between">
-      
+    <div class="mb-2 text-xl font-bold flex justify-between items-center">      
       <span class="inline-block">${itemName} ${price} </span>
-      <div class="mb-2 mr-2 inline-block h-10 rounded-full bg-gray-100
-       px-6 py-3 text-sm font-semibold text-gray-700">
-       💓 Add to Cart
+      <div class="mb-2 mr-2 inline-block  rounded-full bg-gray-100
+       px-2 py-3 text-sm font-semibold text-gray-700">
+       💓 Add
       </div>
     </div>
     <p class="block max-w-sm ">
