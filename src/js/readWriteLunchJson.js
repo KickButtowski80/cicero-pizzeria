@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lunchMenuList.appendChild(categoryCard);
     const itemsCard = document.createElement('ul');
-    
-    itemsCard.classList.add('grid','grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2' ,'gap-2')
+
+    itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2')
     const categoryItems = category.split(' ').join('-')
     const categoryCardEl = document.querySelector(`.${categoryItems}`)
     for (const item in items) {
       let itemInfo = items[item];
+     
       const itemCard = createItem(item, itemInfo.ingredients, itemInfo.price);
       itemsCard.appendChild(itemCard)
     }
@@ -38,7 +39,7 @@ function createCategory(category, description) {
       </div> 
       <div class='${categoryItems} '></div>
   `;
- 
+
   card.appendChild(img);
   return card;
 }
@@ -48,20 +49,25 @@ function createItem(itemName, ingredients, price) {
 
   const itemCard = document.createElement('li')
   itemCard.innerHTML = `
-  <div class="m-2 shadow-lg rounded-lg border border-gray-200
-  hover:bg-gray-500 md:p-6 text-base text-black dark:text-white
-   hover:text-white
+  <div class="shadow-lg rounded-lg border border-gray-200
+  hover:bg-gray-500 md:p-1 text-base text-black dark:text-white
+   hover:text-gray-200 min-h-full
   bg-gray-300 dark:border-gray-700 dark:hover:bg-gray-800
   dark:bg-gray-500">
   <div class="px-6 py-4">
     <div class="mb-2 text-xl font-bold flex justify-between items-center">      
-      <span class="inline-block">${itemName} ${price} </span>
-      <div class="mb-2 mr-2 inline-block  rounded-full bg-gray-100
+      <span class="inline-block">${itemName} </span>
+      <button class="mb-2 mr-2 inline-block  rounded-full bg-gray-100
        px-2 py-3 text-sm font-semibold text-gray-700">
        💓 Add
+      </button>
       </div>
-    </div>
-    <p class="block max-w-sm ">
+      <div class="text-xl font-bold"> ${price}</div>
+    <p class="rounded-lg shadow-md bg-gray-200 bg-opacity-50 
+    backdrop-blur-lg mt-2
+    backdrop-filter border border-gray-200 p-2 leading-loose
+    dark:hover:text-white
+    ">
      ${ingredients}
     </p>
   </div>
