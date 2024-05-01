@@ -61,32 +61,3 @@ function createItem(itemName, ingredients, price) {
   return itemCard;
 }
 
-
-
-
-
-
-// function createCategoryElement(category, description) {
-//     const categoryItem = document.createElement('li');
-//     categoryItem.textContent = category;
-
-//     const categoryTitle = document.createElement('h1');
-//     categoryTitle.textContent = description;
-
-//     const categoryList = document.createElement('ul');
-//     categoryList.appendChild(categoryItem);
-//     categoryList.appendChild(categoryTitle);
-
-//     return categoryList;
-// }
-
-// for(const category in data.lunchMenu){
-//     console.log(category);
-//     const description = data.lunchMenu[category].description;
-//     const categoryList = createCategoryElement(category, description);
-//     lunchMenuList.appendChild(categoryList);
-// }
-
-
-
-
