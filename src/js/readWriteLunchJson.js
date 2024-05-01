@@ -1,7 +1,7 @@
 import data from "../assets/json/lunch.json"
 document.addEventListener("DOMContentLoaded", () => {
-   const lunchMenuList = document.querySelector('#lunch-menu-list')
- 
+  const lunchMenuList = document.querySelector('#lunch-menu-list')
+
   for (const category in data.lunchMenu) {
     const description = data.lunchMenu[category].description;
     let items = data.lunchMenu[category].items
@@ -46,15 +46,16 @@ function createItem(itemName, ingredients, price) {
 
   const itemCard = document.createElement('li')
   itemCard.innerHTML = `
-    <div class="rounded  shadow-lg m-2">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">${itemName}</div>
-        <p class="text-gray-700 text-base">${ingredients}</p>
-      </div>
-      <div class="px-6 pt-4 pb-2">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">${price}</span>
-      </div>
+  <div class="m-2 rounded shadow-lg">
+  <div class="px-6 py-4">
+    <div class="mb-2 text-xl font-bold">
+      ${itemName}
+      <span class="inline-block">${price} </span>
+      <div class="mb-2 mr-2 inline-block h-10 rounded-full bg-gray-200 px-6 py-3 text-sm font-semibold text-gray-700"> 💓 Add to Cart</div>
     </div>
+    <p class="text-base text-gray-700">${ingredients}</p>
+  </div>
+</div>
   `;
 
   return itemCard;
