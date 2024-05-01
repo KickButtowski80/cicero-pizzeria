@@ -222,11 +222,11 @@
             "price": "$6.95"
           }
         },
-        "Cold Sandwiches": [
-          "Submarine $6.95",
-          "Turkey $6.95",
-          "Avocado and Cheese $6.95"
-        ]
+        "Cold Sandwiches": {
+          "Submarine": { "price": 6.95 },
+          "Turkey": { "price": 6.95 },
+          "Avocado and Cheese": { "price": 6.95 }
+        }
       }
     }
   }
