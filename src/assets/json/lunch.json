@@ -94,7 +94,7 @@
           "price": "$5.75",
           "additional": "with grilled chicken breast. Add: $2.15"
         },
-        "Turkey & Salami": {
+        "Turkey and Salami": {
           "ingredients": "Turkey, salami, mixed greens, fresh tomatoes, kalamata olives, fresh basil, pepperoncini, and mozzarella cheese with balsamic vinaigrette.",
           "price": "$8.20"
         },
@@ -131,18 +131,18 @@
     },
     "Beverages": {
       "description": "Quench your thirst with our refreshing selection of beverages, ranging from classic sodas like Coke and 7UP to a variety of teas, fruit juices, and specialty drinks. Whether you're craving a fizzy cola, a zesty citrus soda, or a soothing cup of tea, we have the perfect beverage to complement your meal and keep you refreshed.",
-      "items": {
-        "Coke": { "id": 1, "name": "Coke" },
-        "Diet Coke": { "id": 2, "name": "Diet Coke" },
-        "7UP": { "id": 3, "name": "7UP" },
-        "Orange": { "id": 4, "name": "Orange" },
-        "Dr. Pepper": { "id": 5, "name": "Dr. Pepper" },
-        "Root Beer": { "id": 6, "name": "Root Beer" },
-        "Lipton Tea": { "id": 7, "name": "Lipton Tea" },
-        "Grape": { "id": 8, "name": "Grape" },
-        "Lemonade": { "id": 9, "name": "Lemonade" },
-        "Snapple": { "id": 10, "name": "Snapple" }
-    }
+      "items": [
+        "Coke",
+        "Diet Coke",
+        "7UP",
+        "Orange",
+        "Dr. Pepper",
+        "Root Beer",
+        "Lipton Tea",
+        "Grape",
+        "Lemonade",
+        "Snapples"
+      ]
     },
     "GOURMET SANDWICHES": {
       "description": "All sandwiches are served with salad or soup and soft drink. Your choice of wheat or sourdough bread.",
@@ -155,7 +155,7 @@
           "ingredients": "Fresh sliced avocados, sun-dried tomatoes, lettuce, tomatoes, alfalfa sprouts, provolone cheese, mayonnaise, and Dijon mustard.",
           "price": "$7.95"
         },
-        "Grilled Chicken & Avocado": {
+        "Grilled Chicken and Avocado": {
           "ingredients": "Grilled chicken breast, slices of avocado, lettuce, tomatoes, alfalfa sprouts, mayonnaise, Dijon mustard, and provolone cheese.",
           "price": "$7.95"
         },
@@ -201,11 +201,11 @@
             "ingredients": "Breast of chicken, mozzarella cheese, lettuce, tomatoes, and mayonnaise.",
             "price": "$6.95"
           },
-          "Meatballs & Cheese": {
+          "Meatballs and Cheese": {
             "ingredients": "Homemade meatballs, melted mozzarella cheese, and Italian tomato sauce.",
             "price": "$6.95"
           },
-          "Italian Sausage & Cheese": {
+          "Italian Sausage and Cheese": {
             "ingredients": "Italian sausage links, melted mozzarella cheese, and Italian tomato sauce.",
             "price": "$6.95"
           },
@@ -213,7 +213,7 @@
             "ingredients": "Slices of breaded eggplant, melted mozzarella, and Italian tomato sauce.",
             "price": "$6.95"
           },
-          "Ham & Cheese": {
+          "Ham and Cheese": {
             "ingredients": "Slices of ham, lettuce, tomatoes, mozzarella cheese, and mayonnaise.",
             "price": "$6.95"
           },

@@ -10,16 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     lunchMenuList.appendChild(categoryCard);
     const itemsCard = document.createElement('ul');
     
-    itemsCard.classList.add('grid','grid-cols-1', 'lg:grid-cols-4', 'md:grid-cols-3', 'sm:grid-cols-2' )
+    itemsCard.classList.add('grid','grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2' ,'gap-2')
     const categoryItems = category.split(' ').join('-')
     const categoryCardEl = document.querySelector(`.${categoryItems}`)
     for (const item in items) {
       let itemInfo = items[item];
-      console.log(itemInfo)
-      if(!itemInfo.hasOwnProperty('ingredients')) {
-        itemInfo.ingredients = 'Beverages';
-        itemInfo.price = '$3'
-      }
       const itemCard = createItem(item, itemInfo.ingredients, itemInfo.price);
       itemsCard.appendChild(itemCard)
     }
@@ -58,7 +53,7 @@ function createItem(itemName, ingredients, price) {
    hover:text-white
   bg-gray-300 dark:border-gray-700 dark:hover:bg-gray-800
   dark:bg-gray-500">
-  <div class="pr-2 pl-2 py-4">
+  <div class="px-6 py-4">
     <div class="mb-2 text-xl font-bold flex justify-between items-center">      
       <span class="inline-block">${itemName} ${price} </span>
       <div class="mb-2 mr-2 inline-block  rounded-full bg-gray-100
