@@ -132,17 +132,47 @@
     "Beverages": {
       "description": "Quench your thirst with our refreshing selection of beverages, ranging from classic sodas like Coke and 7UP to a variety of teas, fruit juices, and specialty drinks. Whether you're craving a fizzy cola, a zesty citrus soda, or a soothing cup of tea, we have the perfect beverage to complement your meal and keep you refreshed.",
       "items": {
-        "Coke": { "id": 1, "name": "Coke" },
-        "Diet Coke": { "id": 2, "name": "Diet Coke" },
-        "7UP": { "id": 3, "name": "7UP" },
-        "Orange": { "id": 4, "name": "Orange" },
-        "Dr. Pepper": { "id": 5, "name": "Dr. Pepper" },
-        "Root Beer": { "id": 6, "name": "Root Beer" },
-        "Lipton Tea": { "id": 7, "name": "Lipton Tea" },
-        "Grape": { "id": 8, "name": "Grape" },
-        "Lemonade": { "id": 9, "name": "Lemonade" },
-        "Snapple": { "id": 10, "name": "Snapple" }
-    }
+        "Coke": {
+          "id": 1,
+          "name": "Coke"
+        },
+        "Diet Coke": {
+          "id": 2,
+          "name": "Diet Coke"
+        },
+        "7UP": {
+          "id": 3,
+          "name": "7UP"
+        },
+        "Orange": {
+          "id": 4,
+          "name": "Orange"
+        },
+        "Dr. Pepper": {
+          "id": 5,
+          "name": "Dr. Pepper"
+        },
+        "Root Beer": {
+          "id": 6,
+          "name": "Root Beer"
+        },
+        "Lipton Tea": {
+          "id": 7,
+          "name": "Lipton Tea"
+        },
+        "Grape": {
+          "id": 8,
+          "name": "Grape"
+        },
+        "Lemonade": {
+          "id": 9,
+          "name": "Lemonade"
+        },
+        "Snapple": {
+          "id": 10,
+          "name": "Snapple"
+        }
+      }
     },
     "GOURMET SANDWICHES": {
       "description": "All sandwiches are served with salad or soup and soft drink. Your choice of wheat or sourdough bread.",
@@ -177,55 +207,65 @@
         }
       }
     },
-    "TRADITIONAL SANDWICHES": {
-      "description": "All sandwiches are served with salad or soup and soft drink.",
+    "Hot SANDWICHES": {
+      "description": "All sandwiches are Transitional and served with salad or soup and soft drink.",
       "items": {
-        "Hot Sandwiches": {
-          "Roast Beef": {
-            "ingredients": "Sliced roast beef mozzarella, tomatoes, lettuce, and mayonnaise.",
-            "price": "$6.95"
-          },
-          "Pastrami": {
-            "ingredients": "Lean slices of pastrami, mozzarella, pickles, and mustard.",
-            "price": "$6.95"
-          },
-          "Chicken Parmesan": {
-            "ingredients": "Chicken breast, mozzarella, and tomato sauce.",
-            "price": "$6.95"
-          },
-          "Club": {
-            "ingredients": "Sliced roast beef, turkey, and ham served with lettuce, tomatoes, mozzarella cheese, and mayonnaise.",
-            "price": "$6.95"
-          },
-          "Chicken Sub": {
-            "ingredients": "Breast of chicken, mozzarella cheese, lettuce, tomatoes, and mayonnaise.",
-            "price": "$6.95"
-          },
-          "Meatballs & Cheese": {
-            "ingredients": "Homemade meatballs, melted mozzarella cheese, and Italian tomato sauce.",
-            "price": "$6.95"
-          },
-          "Italian Sausage & Cheese": {
-            "ingredients": "Italian sausage links, melted mozzarella cheese, and Italian tomato sauce.",
-            "price": "$6.95"
-          },
-          "Eggplant": {
-            "ingredients": "Slices of breaded eggplant, melted mozzarella, and Italian tomato sauce.",
-            "price": "$6.95"
-          },
-          "Ham & Cheese": {
-            "ingredients": "Slices of ham, lettuce, tomatoes, mozzarella cheese, and mayonnaise.",
-            "price": "$6.95"
-          },
-          "Hero Sandwich": {
-            "ingredients": "Salami, Canadian bacon, pepperoni, mozzarella cheese, lettuce, tomatoes, and mayonnaise.",
-            "price": "$6.95"
-          }
+        "Roast Beef": {
+          "ingredients": "Sliced roast beef mozzarella, tomatoes, lettuce, and mayonnaise.",
+          "price": "$6.95"
         },
-        "Cold Sandwiches": {
-          "Submarine": { "price": 6.95 },
-          "Turkey": { "price": 6.95 },
-          "Avocado and Cheese": { "price": 6.95 }
+        "Pastrami": {
+          "ingredients": "Lean slices of pastrami, mozzarella, pickles, and mustard.",
+          "price": "$6.95"
+        },
+        "Chicken Parmesan": {
+          "ingredients": "Chicken breast, mozzarella, and tomato sauce.",
+          "price": "$6.95"
+        },
+        "Club": {
+          "ingredients": "Sliced roast beef, turkey, and ham served with lettuce, tomatoes, mozzarella cheese, and mayonnaise.",
+          "price": "$6.95"
+        },
+        "Chicken Sub": {
+          "ingredients": "Breast of chicken, mozzarella cheese, lettuce, tomatoes, and mayonnaise.",
+          "price": "$6.95"
+        },
+        "Meatballs & Cheese": {
+          "ingredients": "Homemade meatballs, melted mozzarella cheese, and Italian tomato sauce.",
+          "price": "$6.95"
+        },
+        "Italian Sausage & Cheese": {
+          "ingredients": "Italian sausage links, melted mozzarella cheese, and Italian tomato sauce.",
+          "price": "$6.95"
+        },
+        "Eggplant": {
+          "ingredients": "Slices of breaded eggplant, melted mozzarella, and Italian tomato sauce.",
+          "price": "$6.95"
+        },
+        "Ham & Cheese": {
+          "ingredients": "Slices of ham, lettuce, tomatoes, mozzarella cheese, and mayonnaise.",
+          "price": "$6.95"
+        },
+        "Hero Sandwich": {
+          "ingredients": "Salami, Canadian bacon, pepperoni, mozzarella cheese, lettuce, tomatoes, and mayonnaise.",
+          "price": "$6.95"
+        }
+      }
+    },
+    "Cold Sandwiches":{
+      "description": "All sandwiches are Transitional and served with salad or soup and soft drink.",
+      "items": {
+        "Submarine": {
+          "ingredients": "ham, turkey, roast beef, salami, provolone cheese, lettuce, tomato, onions, oil, vinegar, salt, pepper",
+          "price": "$6.95"
+        },
+        "Turkey": {
+          "ingredients": "turkey, provolone cheese, lettuce, tomato, onions, oil, vinegar, salt, pepper",
+          "price": "$6.95"
+        },
+        "Avocado and Cheese": {
+          "ingredients": "avocado, cheddar cheese, lettuce, tomato, onions, oil, vinegar, salt, pepper",
+          "price": "$6.95"
         }
       }
     }
