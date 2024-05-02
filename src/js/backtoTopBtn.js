@@ -7,6 +7,8 @@ const handleScroll = () => {
     button.classList.remove('show');
   }
 };
+
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', handleScroll);
+  
 });
