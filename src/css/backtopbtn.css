@@ -1,0 +1,43 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #back-to-top-page {
+    display: inline-block;
+    background-color: #c87828;
+    width: 80px;
+    height: 85px;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    transition:
+      background-color 0.3s,
+      opacity 0.5s,
+      visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 11;
+    color: #fff;
+  }
+  #back-to-top-page::before {
+    content: "^";
+    display: block;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: -0.5em;
+  }
+
+  #back-to-top-page:active {
+    background-color: #555;
+  }
+  #back-to-top-page.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
