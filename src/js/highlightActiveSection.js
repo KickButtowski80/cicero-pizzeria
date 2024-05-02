@@ -1,10 +1,12 @@
 (() => {
     let allMenuItems = document.querySelectorAll('#flyout-menu-items li a, #static-menu-items li a');
+   
     const options = {
-        threshold: window.location.pathname === ('/lunch.html' || '/dinner.html') ? 0 : 0.3
+         threshold: window.location.pathname.includes('/lunch.html' || '/dinner.html') ? 0 : 0.3
     }
-    allMenuItems.forEach(menuItem => {
 
+    allMenuItems.forEach(menuItem => {
+        
         const hashId = menuItem.hash;
         const observedElement = document.querySelector(hashId);
         if (observedElement === null) return;
