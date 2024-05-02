@@ -83,6 +83,51 @@
             "price": "$17.95"
           }
         }
+      },
+      "Beverages": {
+        "description": "Quench your thirst with our refreshing selection of beverages, ranging from classic sodas like Coke and 7UP to a variety of teas, fruit juices, and specialty drinks. Whether you're craving a fizzy cola, a zesty citrus soda, or a soothing cup of tea, we have the perfect beverage to complement your meal and keep you refreshed.",
+        "items": {
+          "Coke": {
+            "id": 1,
+            "name": "Coke"
+          },
+          "Diet Coke": {
+            "id": 2,
+            "name": "Diet Coke"
+          },
+          "7UP": {
+            "id": 3,
+            "name": "7UP"
+          },
+          "Orange": {
+            "id": 4,
+            "name": "Orange"
+          },
+          "Dr. Pepper": {
+            "id": 5,
+            "name": "Dr. Pepper"
+          },
+          "Root Beer": {
+            "id": 6,
+            "name": "Root Beer"
+          },
+          "Lipton Tea": {
+            "id": 7,
+            "name": "Lipton Tea"
+          },
+          "Grape": {
+            "id": 8,
+            "name": "Grape"
+          },
+          "Lemonade": {
+            "id": 9,
+            "name": "Lemonade"
+          },
+          "Snapple": {
+            "id": 10,
+            "name": "Snapple"
+          }
+        }
       }
     }
   }
