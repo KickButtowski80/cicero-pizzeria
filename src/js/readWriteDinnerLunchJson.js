@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (const item in items) {
         let itemInfo = items[item];
-        if (itemInfo['ingredients'] === undefined && itemInfo['description'] === undefined) {
+        if (!itemInfo['ingredients'] && !itemInfo['description']) {
           itemInfo.ingredients = 'Beverage';
           itemInfo.price = "$3.00";
         }
