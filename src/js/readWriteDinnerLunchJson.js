@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (const item in items) {
         let itemInfo = items[item];
-        if (itemInfo['ingredients'] === undefined) {
+        if (itemInfo['ingredients'] === undefined && itemInfo['description'] === undefined) {
           itemInfo.ingredients = 'Beverage';
           itemInfo.price = "$3.00";
         }
-        const itemCard = createItem(item, itemInfo.ingredients, itemInfo.price);
+        const itemCard = createItem(item, (itemInfo.ingredients || itemInfo.description), itemInfo.price);
         itemsCard.appendChild(itemCard);
       }
 
