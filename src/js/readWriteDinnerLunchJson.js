@@ -1,6 +1,5 @@
 import dinnerMenu from "../assets/json/dinner.json"
 import lunchMenu from "../assets/json/lunch.json"
-import { addInputEventListener } from './searchFood.js';
 
 let searchWord
 
