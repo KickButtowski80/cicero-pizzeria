@@ -1,51 +1,73 @@
 import dinnerMenu from "../assets/json/dinner.json"
 import lunchMenu from "../assets/json/lunch.json"
+import { addInputEventListener } from './searchFood.js';
 
+let searchWord
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Function to load JSON data dynamically based on meal type
-  function loadMenu(data, mealType) {
-    const menuList = document.querySelector(`#${mealType}-menu-list`);
 
-    // Iterate through categories in the JSON data
-    for (const category in data[`${mealType}Menu`]) {
-      const description = data[`${mealType}Menu`][category].description;
-      let items = data[`${mealType}Menu`][category].items;
-      // Create category card
-      const categoryCard = createCategory(category, description);
+  const foodSearchInput = document.querySelector("#food-search");
+  const foodSearchResult = document.querySelector('#food-search-result');
 
-      menuList.appendChild(categoryCard);
 
-      // Create items list and append it to the category card
-      const itemsCard = document.createElement('ul');
-      itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2');
+  foodSearchInput.addEventListener("input", (e) => {
+    foodSearchResult.textContent = e.target.value;
+    searchWord = e.target.value;
 
-      for (const item in items) {
-        let itemInfo = items[item];
-        if (!itemInfo['ingredients'] && !itemInfo['description']) {
-          itemInfo.ingredients = 'Beverage';
-          itemInfo.price = "$3.00";
+    // Function to load JSON data dynamically based on meal type
+    function loadMenu(data, mealType, searchWord) {
+      const menuList = document.querySelector(`#${mealType}-menu-list`);
+
+      // Iterate through categories in the JSON data
+      // for (let category in data[`${mealType}Menu`]) {
+      if (searchWord.length === 0) {
+        menuList.innerHTML = '';
+      } else {
+        let category = Object.keys(data.dinnerMenu).filter(a => a.includes(searchWord))[0]
+        let description = data[`${mealType}Menu`][category].description;
+        let items = data[`${mealType}Menu`][category].items;
+
+        // Create category card
+        const categoryCard = createCategory(category, description);
+
+        menuList.appendChild(categoryCard);
+
+        // Create items list and append it to the category card
+        const itemsCard = document.createElement('ul');
+        itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2');
+
+        for (const item in items) {
+          let itemInfo = items[item];
+          if (!itemInfo['ingredients'] && !itemInfo['description']) {
+            itemInfo.ingredients = 'Beverage';
+            itemInfo.price = "$3.00";
+          }
+          const itemCard = createItem(item, (itemInfo.ingredients || itemInfo.description), itemInfo.price);
+          itemsCard.appendChild(itemCard);
         }
-        const itemCard = createItem(item, (itemInfo.ingredients || itemInfo.description), itemInfo.price);
-        itemsCard.appendChild(itemCard);
+
+        categoryCard.appendChild(itemsCard);
       }
+      // }
 
-      categoryCard.appendChild(itemsCard);
     }
+    const pathName = window.location.pathname
+    // Call the loadMenu function for lunch and dinner
+    if (pathName.includes('lunch'))
+      loadMenu(lunchMenu, 'lunch');
+    else
+      loadMenu(dinnerMenu, 'dinner', searchWord);
 
-  }
-  const pathName = window.location.pathname
-  // Call the loadMenu function for lunch and dinner
-  if (pathName.includes('lunch'))
-    loadMenu(lunchMenu, 'lunch');
-  else
-    loadMenu(dinnerMenu, 'dinner');
+
+
+  })
 });
 
 // Function to create category card
 function createCategory(category, description) {
   const card = document.createElement('div');
   card.className = `bg-gray-700  rounded-xl shadow-md m-5 p-2`;
+  // debugger;
   const categoryItems = category.split(' ').join('-');
   const img = document.createElement('div');
   img.className = 'md:flex md:flex-wrap';
