@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   foodSearchInput.addEventListener("input", (e) => {
     foodSearchResult.textContent = e.target.value;
-    searchWord = e.target.value;
+    searchWord = e.target.value.toUpperCase();
 
     // Function to load JSON data dynamically based on meal type
     function loadMenu(data, mealType, searchWord) {
