@@ -1,6 +1,6 @@
 import dinnerMenu from "../assets/json/dinner.json"
 import lunchMenu from "../assets/json/lunch.json"
-let categoryOnPage = new Set();
+ 
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadMenu(data, mealType, searchWord) {
 
   const menuList = document.querySelector(`#${mealType}-menu-list`);
-  console.log('category on Page', categoryOnPage)
+ 
 
 
   if (searchWord.length === 0) {
