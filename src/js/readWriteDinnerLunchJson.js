@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let searchWord
   const foodSearchInput = document.querySelector("#food-search");
-  const foodSearchResult = document.querySelector('#food-search-result');
+ 
 
   const pathName = window.location.pathname
   if (pathName.includes('lunch'))
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadMenu(dinnerMenu, 'dinner', '');
 
   foodSearchInput.addEventListener("input", (e) => {
-    foodSearchResult.textContent = e.target.value;
+ 
     searchWord = e.target.value.toUpperCase();
 
     // Call the loadMenu function for lunch and dinner
