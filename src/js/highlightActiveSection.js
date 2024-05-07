@@ -11,7 +11,6 @@
         const observedElement = document.querySelector(hashId);
         if (observedElement === null) return;
         let observer = new IntersectionObserver((entries) => {
-            // debugger;
             const [entry] = entries;
             if (entry.isIntersecting) {
                 menuItem.parentElement.classList.add("active");
