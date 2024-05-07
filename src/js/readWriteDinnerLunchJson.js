@@ -1,12 +1,12 @@
 import dinnerMenu from "../assets/json/dinner.json"
 import lunchMenu from "../assets/json/lunch.json"
- 
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
   let searchWord
   const foodSearchInput = document.querySelector("#food-search");
- 
+
 
   const pathName = window.location.pathname
   if (pathName.includes('lunch'))
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadMenu(dinnerMenu, 'dinner', '');
 
   foodSearchInput.addEventListener("input", (e) => {
- 
+
     searchWord = e.target.value.toUpperCase();
 
     // Call the loadMenu function for lunch and dinner
@@ -30,12 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadMenu(data, mealType, searchWord) {
 
   const menuList = document.querySelector(`#${mealType}-menu-list`);
- 
-
 
   if (searchWord.length === 0) {
     menuList.innerHTML = '';
     renderMenuItems(data[`${mealType}Menu`], menuList)
+
 
   } else {
     let searchedMenus = {};
@@ -45,13 +44,10 @@ function loadMenu(data, mealType, searchWord) {
         searchedMenus[category] = menuItems;
       }
     }
-
-    renderMenuItems(searchedMenus, menuList)
-
-
+    renderMenuItems(searchedMenus, menuList, searchWord)
   }
 
-  function renderMenuItems(jsonMenu, element) {
+  function renderMenuItems(jsonMenu, element, searchWord = '') {
     element.innerHTML = '';
     for (let category in jsonMenu) {
 
@@ -61,7 +57,18 @@ function loadMenu(data, mealType, searchWord) {
       // Create category card
       const categoryCard = createCategory(category, description);
 
+
+
       element.appendChild(categoryCard);
+
+
+      //highlight the searched category 
+      if (searchWord.length > 0) {
+        let searchedCategory = document.querySelector(`#${category}`)
+        let currentContent = searchedCategory.innerHTML;
+        let newContent = `<mark>${currentContent}</mark>`;
+        searchedCategory.innerHTML = newContent;
+      }
 
       // Create items list and append it to the category card  
       let itemsCard = createItemsCard(items);
@@ -78,21 +85,24 @@ function loadMenu(data, mealType, searchWord) {
     const categoryItems = category.split(' ').join('-');
     const divCategory = document.createElement('div');
     divCategory.className = 'md:flex md:flex-wrap';
+
     divCategory.innerHTML = `
       <div class="p-8">
-          <div class="uppercase tracking-wide text-2xl text-white font-semibold">${category}</div>
+          <div id='${category}' class="uppercase tracking-wide text-2xl
+           text-white font-semibold">${category}</div>
           <p class="mt-2 text-gray-300 text-xl">${description}</p>
       </div> 
       <div class='${categoryItems}'></div>
   `;
 
     card.appendChild(divCategory);
+
     return card;
   }
 
   function createItemsCard(items) {
     const itemsCard = document.createElement('ul');
-    itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2');
+    itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2', 'ml-8');
     for (const item in items) {
       let itemInfo = items[item];
       if (!itemInfo['ingredients'] && !itemInfo['description']) {
