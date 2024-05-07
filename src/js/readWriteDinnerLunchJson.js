@@ -1,7 +1,7 @@
 import dinnerMenu from "../assets/json/dinner.json"
 import lunchMenu from "../assets/json/lunch.json"
 let categoryOnPage = new Set();
-let category;
+
 document.addEventListener("DOMContentLoaded", () => {
 
   let searchWord
