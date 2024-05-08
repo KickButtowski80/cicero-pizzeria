@@ -45,6 +45,7 @@ function loadMenu(data, mealType, searchWord) {
  
     if (Object.keys(searchedMenus).length === 0) {
       renderNotFoundItem( mealType, searchWord)
+      return;
     }
     renderMenuItems(searchedMenus, menuList, searchWord)
   }
@@ -61,11 +62,11 @@ function loadMenu(data, mealType, searchWord) {
       const categoryCard = createCategory(category, description);
 
       element.appendChild(categoryCard);
-
+      let CategoryId = category.split(" ").join('-')
 
       //highlight the searched category 
       if (searchWord.length > 0) {
-        let searchedCategory = document.querySelector(`#${category}`)
+        let searchedCategory = document.querySelector(`#${CategoryId}`)
         let currentContent = searchedCategory.innerHTML;
         let newContent = `<mark>${currentContent}</mark>`;
         searchedCategory.innerHTML = newContent;
@@ -102,10 +103,10 @@ function loadMenu(data, mealType, searchWord) {
     const categoryItems = category.split(' ').join('-');
     const divCategory = document.createElement('div');
     divCategory.className = 'md:flex md:flex-wrap';
-
+    let CategoryId = category.split(" ").join('-')
     divCategory.innerHTML = `
       <div class="p-8">
-          <div id='${category}' class="uppercase tracking-wide text-2xl
+          <div id='${CategoryId}' class="uppercase tracking-wide text-2xl
            text-white font-semibold">${category}</div>
           <p class="mt-2 text-gray-300 text-xl">${description}</p>
       </div> 
