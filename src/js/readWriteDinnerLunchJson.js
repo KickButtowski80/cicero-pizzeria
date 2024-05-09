@@ -42,12 +42,51 @@ function loadMenu(data, mealType, searchWord) {
         searchedMenus[category] = menuItems;
       }
     }
- 
+
     if (Object.keys(searchedMenus).length === 0) {
-      renderNotFoundItem( mealType, searchWord)
+      renderNotFoundItem(mealType, searchWord)
       return;
     }
+
     renderMenuItems(searchedMenus, menuList, searchWord)
+  }
+
+  function findMenuItem(jsonMenu) {
+    let foundItems = [];
+    for (let [category, categoryData] of Object.entries(jsonMenu)) {
+      console.log(`Category: ${category}`);
+      console.log(`Description: ${categoryData.description}`);
+
+
+      // Iterate over the items in the category
+      for (let [item, itemData] of Object.entries(categoryData.items)) {
+        console.log(`Item: ${item}`);
+        console.log(`Description: ${itemData.description}`);
+        console.log(`Price: ${itemData.price}`);
+        let key;
+        debugger;
+        if ('description' in itemData) {
+          key = 'description'
+        } else {
+          key = 'ingredients'
+        }
+
+        if (itemData[key].includes('steak')) {
+          foundItems.push(itemData);
+          let searchedCategory = document.querySelector(`#${item}`)
+          // let currentContent = searchedCategory.innerHTML;
+          // let newContent = `<mark>${currentContent}</mark>`;
+          const highlightedWord = "<span style='background-color: yellow;'>steak</span>";
+          debugger;
+          const highlightedString = itemData[key].replaceAll('steak', highlightedWord);
+          searchedCategory.innerHTML = highlightedString;
+        }
+
+      }
+    }
+
+    console.log(foundItems)
+    return foundItems;
   }
 
   function renderMenuItems(jsonMenu, element, searchWord = '') {
@@ -75,12 +114,15 @@ function loadMenu(data, mealType, searchWord) {
       // Create items list and append it to the category card  
       let itemsCard = createItemsCard(items);
       categoryCard.appendChild(itemsCard);
+      if (searchWord.length > 0)
+
+        categoryCard.innerHTML += findMenuItem(jsonMenu)
     }
   }
- function renderNotFoundItem( mealType, searchWord){
+  function renderNotFoundItem(mealType, searchWord) {
 
 
-      menuList.innerHTML = `
+    menuList.innerHTML = `
       <div id="alert-additional-content-1" class="mb-4 rounded-lg border border-gray-300 bg-blue-50 p-4 text-gray-800 dark:border-blue-800 dark:bg-gray-800 dark:text-gray-400" role="alert">
       <div class="flex items-center">
         <svg class="me-2 h-4 w-4 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -91,8 +133,8 @@ function loadMenu(data, mealType, searchWord) {
       </div>
       <p>please try different name</p>
     </div>`
-      return;
-    
+    return;
+
   }
 
   // Function to create category card
@@ -105,7 +147,7 @@ function loadMenu(data, mealType, searchWord) {
     divCategory.className = 'md:flex md:flex-wrap';
     let CategoryId = category.split(" ").join('-')
     divCategory.innerHTML = `
-      <div class="p-8">
+      <div class="py-8">
           <div id='${CategoryId}' class="uppercase tracking-wide text-2xl
            text-white font-semibold">${category}</div>
           <p class="mt-2 text-gray-300 text-xl">${description}</p>
@@ -120,7 +162,7 @@ function loadMenu(data, mealType, searchWord) {
 
   function createItemsCard(items) {
     const itemsCard = document.createElement('ul');
-    itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2', 'ml-8');
+    itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2');
     for (const item in items) {
       let itemInfo = items[item];
       if (!itemInfo['ingredients'] && !itemInfo['description']) {
@@ -147,7 +189,9 @@ function loadMenu(data, mealType, searchWord) {
       </button>
       </div>
       <div class="text-xl font-bold">${price}</div>
-    <p class="rounded-lg shadow-md bg-gray-200 bg-opacity-50 backdrop-blur-lg mt-2 backdrop-filter border border-gray-200 p-2 leading-loose dark:hover:text-white">
+    <p
+    id='${itemName}'
+    class="rounded-lg shadow-md bg-gray-200 bg-opacity-50 backdrop-blur-lg mt-2 backdrop-filter border border-gray-200 p-2 leading-loose dark:hover:text-white">
      ${ingredients}
     </p>
   </div>
@@ -156,4 +200,6 @@ function loadMenu(data, mealType, searchWord) {
 
     return itemCard;
   }
+
+
 }
