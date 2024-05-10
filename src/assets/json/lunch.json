@@ -1,6 +1,6 @@
 {
   "lunchMenu": {
-    "PIZZA OR CALZONE": {
+    "Pizza or Calzone": {
       "description": "Pizza and Calzone are served with choice of soup or green salad and soft drink. All Calzone Include Ricotta Cheese.",
       "items": {
         "Deluxe": {
@@ -33,11 +33,11 @@
         }
       }
     },
-    "INDIVIDUAL PIZZA": {
+    "Individual Pizza": {
       "description": "With choice of one topping. $6.55 Extra topping. 60 cent",
       "items": {}
     },
-    "PASTA": {
+    "Pasta": {
       "description": "All pastas are served with garlic bread choice of salad or soup and a soft drink.",
       "items": {
         "Angel Hair Pomedora": {
@@ -82,7 +82,7 @@
         }
       }
     },
-    "SALADS": {
+    "Salads": {
       "description": "All Salads Include Garlic Bread. Choice of Dressing: Italian, Ranch, Blue Cheese, Thousand Islands, Caesar, and Vinaigrette.",
       "items": {
         "Chicken Pasta Salad": {
