@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   foodSearchInput.addEventListener("input", (e) => {
 
-    searchWord = e.target.value.toUpperCase();
+    searchWord = e.target.value;
 
     // Call the loadMenu function for lunch and dinner
     if (pathName.includes('lunch')) {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadMenu(data, mealType, searchWord) {
-
+  // debugger;
   const menuList = document.querySelector(`#${mealType}-menu-list`);
 
   if (searchWord.length === 0) {
@@ -38,7 +38,7 @@ function loadMenu(data, mealType, searchWord) {
     let searchedMenus = {};
     for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
 
-      if (category.includes(searchWord)) {
+      if (category.toLowerCase().includes(searchWord.toLowerCase())) {
         searchedMenus[category] = menuItems;
       }
     }
@@ -51,41 +51,42 @@ function loadMenu(data, mealType, searchWord) {
     renderMenuItems(searchedMenus, menuList, searchWord)
   }
 
-  function findMenuItem(jsonMenu) {
-    let foundItems = [];
+  function highlightedItems(jsonMenu, searchedWord) {
+    let foundItems = {};
     for (let [category, categoryData] of Object.entries(jsonMenu)) {
-      console.log(`Category: ${category}`);
-      console.log(`Description: ${categoryData.description}`);
+      // console.log(`Category: ${category}`);
+      // console.log(`Description: ${categoryData.description}`);
 
 
       // Iterate over the items in the category
       for (let [item, itemData] of Object.entries(categoryData.items)) {
-        console.log(`Item: ${item}`);
-        console.log(`Description: ${itemData.description}`);
-        console.log(`Price: ${itemData.price}`);
+        // console.log(`Item: ${item}`);
+        // console.log(`Description: ${itemData.description}`);
+        // console.log(`Price: ${itemData.price}`);
         let key;
-        debugger;
+
         if ('description' in itemData) {
           key = 'description'
         } else {
           key = 'ingredients'
         }
+        let regex = new RegExp(`${searchedWord}`, 'i');
 
-        if (itemData[key].includes('steak')) {
-          foundItems.push(itemData);
-          let searchedCategory = document.querySelector(`#${item}`)
-          // let currentContent = searchedCategory.innerHTML;
-          // let newContent = `<mark>${currentContent}</mark>`;
-          const highlightedWord = "<span style='background-color: yellow;'>steak</span>";
-          debugger;
-          const highlightedString = itemData[key].replaceAll('steak', highlightedWord);
-          searchedCategory.innerHTML = highlightedString;
+        // if(foundItems.indexOf(itemData[key])) continue;
+        if (item.toLowerCase().includes(searchedWord.toLowerCase())) {
+          // if (regex.test(itemData[key])) {
+
+          const highlightedWord = `<mark>${searchedWord.toLowerCase()}</mark>`;
+          const highlightedString = item.replaceAll(searchedWord.toLowerCase(), highlightedWord);
+          item = highlightedString.replaceAll('\n', '');
+
+          foundItems[item] = item;
         }
 
       }
     }
 
-    console.log(foundItems)
+    console.log('found items', foundItems)
     return foundItems;
   }
 
@@ -96,7 +97,17 @@ function loadMenu(data, mealType, searchWord) {
 
       let description = jsonMenu[category].description;
       let items = jsonMenu[category].items;
-
+      let IsSearchedWordinDiscription = description.toLowerCase().includes(searchWord.toLowerCase());
+      if (searchWord.length > 0  && IsSearchedWordinDiscription) {
+        let highlightedWord = `<mark>${searchWord}</mark>`;
+        let regex = new RegExp(searchWord, 'gi');
+        let highlightedString = description.replace(regex, function(match) {
+          const hs = match === searchWord ? highlightedWord : highlightedWord;
+          return hs;
+        });
+        description = highlightedString;
+      }
+      
       // Create category card
       const categoryCard = createCategory(category, description);
 
@@ -109,14 +120,24 @@ function loadMenu(data, mealType, searchWord) {
         let currentContent = searchedCategory.innerHTML;
         let newContent = `<mark>${currentContent}</mark>`;
         searchedCategory.innerHTML = newContent;
+
+        //  let highlightedItemsResult =  highlightedItems(jsonMenu, searchWord)
+
+        //  let object = highlightedItemsResult.reduce((obj, str) => {
+        //   let key = str.replace(/<\/?mark>/g, "")
+        //     console.log(key)
+        //   obj[key] = {str}; // Initialize each string as a key with an empty object as its value
+        //   return obj;
+        // }, {});
+      
+        // jsonMenu[category].items = Array.of(Object.values(highlightedItemsResult))[0];
       }
 
       // Create items list and append it to the category card  
+
       let itemsCard = createItemsCard(items);
       categoryCard.appendChild(itemsCard);
-      if (searchWord.length > 0)
 
-        categoryCard.innerHTML += findMenuItem(jsonMenu)
     }
   }
   function renderNotFoundItem(mealType, searchWord) {
@@ -139,7 +160,6 @@ function loadMenu(data, mealType, searchWord) {
 
   // Function to create category card
   function createCategory(category, description) {
-
     const card = document.createElement('div');
     card.className = `bg-gray-700  rounded-xl shadow-md m-5 p-2`;
     const categoryItems = category.split(' ').join('-');
@@ -148,7 +168,7 @@ function loadMenu(data, mealType, searchWord) {
     let CategoryId = category.split(" ").join('-')
     divCategory.innerHTML = `
       <div class="py-8">
-          <div id='${CategoryId}' class="uppercase tracking-wide text-2xl
+          <div id='${CategoryId}' class=" tracking-wide text-2xl
            text-white font-semibold">${category}</div>
           <p class="mt-2 text-gray-300 text-xl">${description}</p>
       </div> 
