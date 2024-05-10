@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadMenu(data, mealType, searchWord) {
-  // debugger;
+ 
   const menuList = document.querySelector(`#${mealType}-menu-list`);
 
   if (searchWord.length === 0) {
