@@ -33,8 +33,9 @@ function loadMenu(data, mealType, searchWord) {
 
   if (searchWord.length === 0) {
     menuList.innerHTML = '';
-    renderMenuItems(data[`${mealType}Menu`], menuList)
-  } else {
+    renderMenuItems(data[`${mealType}Menu`], menuList);
+    return;
+  }
     let searchedMenus = {};
     // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
     //   let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
@@ -61,27 +62,26 @@ function loadMenu(data, mealType, searchWord) {
     //   }
     // }
 
-    // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
-    //   let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
-    //   if (isInCategory) {
+    for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
+      let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
+      if (isInCategory) {
+        searchedMenus[category] = menuItems;
+      }
 
-    //     searchedMenus[category] = menuItems;
-    //   }
+      for (let item in menuItems.items) {
+        // let pizza = menuItems.items[pizzaName]; // Access the value (details) of each item
 
-    //   for (let item in menuItems.items) {
-    //     // let pizza = menuItems.items[pizzaName]; // Access the value (details) of each item
+        let isInMenuItem = item.toLowerCase()
+          .includes(searchWord.toLowerCase());
+        debugger;
+        // if (isInMenuItem) {
+        //      searchedMenus[pizzaName] = pizzaName
 
-    //     let isInMenuItem = item.toLowerCase()
-    //     .includes(searchWord.toLowerCase());
-    //     debugger;
-    //     // if (isInMenuItem) {
-    //     //      searchedMenus[pizzaName] = pizzaName
+        // }
 
-    //     // }
+      }
 
-    //   }
-
-    // }
+    }
 
     // if (Object.keys(searchedMenus).length === 0) {
     //   renderNotFoundItem(mealType, searchWord)
@@ -90,8 +90,8 @@ function loadMenu(data, mealType, searchWord) {
 
     renderMenuItems(data[`${mealType}Menu`], menuList, searchWord)
 
-  }
-
+   
+}
   function highlightedItems(items, searchedWord) {
 
     // for (let [category, categoryData] of Object.entries(jsonMenu)) {
@@ -137,7 +137,7 @@ function loadMenu(data, mealType, searchWord) {
   function renderMenuItems(jsonMenu, element, searchWord = '') {
 
     element.innerHTML = '';
-    
+
 
     for (let category in jsonMenu) {
 
@@ -153,22 +153,22 @@ function loadMenu(data, mealType, searchWord) {
       let CategoryId = category.split(" ").join('-')
 
       //highlight the searched category 
- 
-      if (searchWord.length > 0 ) {
+
+      if (searchWord.length > 0) {
         let searchedCategory = document.querySelector(`#${CategoryId}`)
         let currentContent = searchedCategory.innerHTML;
-        if(category.toLowerCase().includes(`${searchWord}`.toLocaleLowerCase())){
-          let regex = new RegExp(searchWord, 'gi'); 
-          searchedCategory.innerHTML =  currentContent.replace(regex,`<mark>${searchWord}</mark>`);
-          
+        if (category.toLowerCase().includes(`${searchWord}`.toLocaleLowerCase())) {
+          let regex = new RegExp(searchWord, 'gi');
+          searchedCategory.innerHTML = currentContent.replace(regex, `<mark>${searchWord}</mark>`);
+
         }
-     
+
 
         let highlightedItemsResult = highlightedItems(items, searchWord);
         let newKeys = [...highlightedItemsResult]
 
         if (JSON.stringify(jsonMenu[category].items) === JSON.stringify(highlightedItemsResult)) {
-           return;
+          return;
         }
         let newObj = {}
         newKeys.forEach((newKey, i) => {
@@ -266,4 +266,3 @@ function loadMenu(data, mealType, searchWord) {
     return itemCard;
   }
 
-}
