@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadMenu(data, mealType, searchWord) {
- 
+
   const menuList = document.querySelector(`#${mealType}-menu-list`);
 
   if (searchWord.length === 0) {
@@ -36,78 +36,116 @@ function loadMenu(data, mealType, searchWord) {
     renderMenuItems(data[`${mealType}Menu`], menuList)
   } else {
     let searchedMenus = {};
-    for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
+    // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
+    //   let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
 
-      if (category.toLowerCase().includes(searchWord.toLowerCase())) {
-        searchedMenus[category] = menuItems;
-      }
-    }
+    //   for (let item in menuItems.items) {
 
-    if (Object.keys(searchedMenus).length === 0) {
-      renderNotFoundItem(mealType, searchWord)
-      return;
-    }
+    //     let isInMenuItem = item.toLowerCase().includes(searchWord.toLowerCase());
+    //     debugger;
+    //     if (!searchedMenus[category]) {
+    //       searchedMenus[category] = {
+    //         description: category.description,
+    //         items: {}
+    //       };
+    //     }
+    //     if (isInCategory || isInMenuItem) {
+    //       // Ensure searchedMenus[category] is an object
+    //       if (!searchedMenus[category]) {
+    //         searchedMenus[category] = { ...menuItems, items: {} };
+    //       }
 
-    renderMenuItems(searchedMenus, menuList, searchWord)
+    //       // Add the item to searchedMenus[category]
+    //       searchedMenus[category].items[item] = menuItems.items[item];
+    //     }
+    //   }
+    // }
+
+    // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
+    //   let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
+    //   if (isInCategory) {
+
+    //     searchedMenus[category] = menuItems;
+    //   }
+
+    //   for (let item in menuItems.items) {
+    //     // let pizza = menuItems.items[pizzaName]; // Access the value (details) of each item
+
+    //     let isInMenuItem = item.toLowerCase()
+    //     .includes(searchWord.toLowerCase());
+    //     debugger;
+    //     // if (isInMenuItem) {
+    //     //      searchedMenus[pizzaName] = pizzaName
+
+    //     // }
+
+    //   }
+
+    // }
+
+    // if (Object.keys(searchedMenus).length === 0) {
+    //   renderNotFoundItem(mealType, searchWord)
+    //   return;
+    // }
+
+    renderMenuItems(data[`${mealType}Menu`], menuList, searchWord)
+
   }
 
-  function highlightedItems(jsonMenu, searchedWord) {
-    let foundItems = {};
-    for (let [category, categoryData] of Object.entries(jsonMenu)) {
-      // console.log(`Category: ${category}`);
-      // console.log(`Description: ${categoryData.description}`);
+  function highlightedItems(items, searchedWord) {
 
+    // for (let [category, categoryData] of Object.entries(jsonMenu)) {
+    //   // console.log(`Category: ${category}`);
+    //   // console.log(`Description: ${categoryData.description}`);
+    // console.log('items in highlightedItems', items)
 
-      // Iterate over the items in the category
-      for (let [item, itemData] of Object.entries(categoryData.items)) {
-        // console.log(`Item: ${item}`);
-        // console.log(`Description: ${itemData.description}`);
-        // console.log(`Price: ${itemData.price}`);
-        let key;
+    let searchedWordPattern = new RegExp(`${searchedWord}`, 'ig');
+    let itemWHighlightedKeys = [];
+    for (el of Object.keys(items)) {
 
-        if ('description' in itemData) {
-          key = 'description'
-        } else {
-          key = 'ingredients'
-        }
-        let regex = new RegExp(`${searchedWord}`, 'i');
-
-        // if(foundItems.indexOf(itemData[key])) continue;
-        if (item.toLowerCase().includes(searchedWord.toLowerCase())) {
-          // if (regex.test(itemData[key])) {
-
-          const highlightedWord = `<mark>${searchedWord.toLowerCase()}</mark>`;
-          const highlightedString = item.replaceAll(searchedWord.toLowerCase(), highlightedWord);
-          item = highlightedString.replaceAll('\n', '');
-
-          foundItems[item] = item;
-        }
-
+      if (searchedWordPattern.test(el)) {
+        // Use capture group for efficiency
+        // Capture groups are a powerful feature in regular expressions
+        // that allow you to extract and reuse portions of the matched text.
+        // They play a crucial role in various tasks like highlighting
+        // search terms, extracting data from text, and validating user
+        // input.
+        el = el.replace(searchedWordPattern, `<mark>$&</mark>`)
       }
-    }
+      console.log('element;, ', el)
 
-    console.log('found items', foundItems)
-    return foundItems;
+      itemWHighlightedKeys.push(el)
+    }
+    return itemWHighlightedKeys;
+  }
+
+  function highlightDescription(description, searchWord) {
+    let IsSearchedWordinDescripton = description.toLowerCase().includes(searchWord.toLowerCase());
+    if (searchWord.length > 0 && IsSearchedWordinDescripton) {
+      let highlightedWord = `<mark>${searchWord}</mark>`;
+      let regex = new RegExp(searchWord, 'gi');
+      let highlightedString = description.replace(regex, function (match) {
+        const hs = match === searchWord ? highlightedWord : highlightedWord;
+        return hs;
+      });
+
+      description = highlightedString;
+    }
+    return description;
   }
 
   function renderMenuItems(jsonMenu, element, searchWord = '') {
+
     element.innerHTML = '';
+    
 
     for (let category in jsonMenu) {
 
       let description = jsonMenu[category].description;
       let items = jsonMenu[category].items;
-      let IsSearchedWordinDiscription = description.toLowerCase().includes(searchWord.toLowerCase());
-      if (searchWord.length > 0  && IsSearchedWordinDiscription) {
-        let highlightedWord = `<mark>${searchWord}</mark>`;
-        let regex = new RegExp(searchWord, 'gi');
-        let highlightedString = description.replace(regex, function(match) {
-          const hs = match === searchWord ? highlightedWord : highlightedWord;
-          return hs;
-        });
-        description = highlightedString;
-      }
-      
+
+      if (searchWord.length > 0) description = highlightDescription(description, searchWord)
+
       // Create category card
       const categoryCard = createCategory(category, description);
 
@@ -115,33 +153,41 @@ function loadMenu(data, mealType, searchWord) {
       let CategoryId = category.split(" ").join('-')
 
       //highlight the searched category 
-      if (searchWord.length > 0) {
+ 
+      if (searchWord.length > 0 ) {
         let searchedCategory = document.querySelector(`#${CategoryId}`)
         let currentContent = searchedCategory.innerHTML;
-        let newContent = `<mark>${currentContent}</mark>`;
-        searchedCategory.innerHTML = newContent;
+        if(category.toLowerCase().includes(`${searchWord}`.toLocaleLowerCase())){
+          let regex = new RegExp(searchWord, 'gi'); 
+          searchedCategory.innerHTML =  currentContent.replace(regex,`<mark>${searchWord}</mark>`);
+          
+        }
+     
 
-        //  let highlightedItemsResult =  highlightedItems(jsonMenu, searchWord)
+        let highlightedItemsResult = highlightedItems(items, searchWord);
+        let newKeys = [...highlightedItemsResult]
 
-        //  let object = highlightedItemsResult.reduce((obj, str) => {
-        //   let key = str.replace(/<\/?mark>/g, "")
-        //     console.log(key)
-        //   obj[key] = {str}; // Initialize each string as a key with an empty object as its value
-        //   return obj;
-        // }, {});
-      
-        // jsonMenu[category].items = Array.of(Object.values(highlightedItemsResult))[0];
+        if (JSON.stringify(jsonMenu[category].items) === JSON.stringify(highlightedItemsResult)) {
+           return;
+        }
+        let newObj = {}
+        newKeys.forEach((newKey, i) => {
+          newObj[newKey] = items[Object.keys(items)[i]]
+        })
+
+        items = { ...newObj }
       }
 
       // Create items list and append it to the category card  
-
       let itemsCard = createItemsCard(items);
+
       categoryCard.appendChild(itemsCard);
 
     }
   }
-  function renderNotFoundItem(mealType, searchWord) {
 
+
+  function renderNotFoundItem(mealType, searchWord) {
 
     menuList.innerHTML = `
       <div id="alert-additional-content-1" class="mb-4 rounded-lg border border-gray-300 bg-blue-50 p-4 text-gray-800 dark:border-blue-800 dark:bg-gray-800 dark:text-gray-400" role="alert">
@@ -181,6 +227,7 @@ function loadMenu(data, mealType, searchWord) {
   }
 
   function createItemsCard(items) {
+
     const itemsCard = document.createElement('ul');
     itemsCard.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-5', 'md:grid-cols-3', 'sm:grid-cols-2', 'gap-2');
     for (const item in items) {
@@ -209,17 +256,14 @@ function loadMenu(data, mealType, searchWord) {
       </button>
       </div>
       <div class="text-xl font-bold">${price}</div>
-    <p
-    id='${itemName}'
+    <p id='${itemName}'
     class="rounded-lg shadow-md bg-gray-200 bg-opacity-50 backdrop-blur-lg mt-2 backdrop-filter border border-gray-200 p-2 leading-loose dark:hover:text-white">
      ${ingredients}
     </p>
   </div>
 </div>
   `;
-
     return itemCard;
   }
-
 
 }
