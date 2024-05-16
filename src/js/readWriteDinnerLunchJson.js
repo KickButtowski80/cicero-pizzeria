@@ -40,7 +40,6 @@ function loadMenu(data, mealType, searchWord) {
   }
   let searchMenu = {};
   let searchMenus = {};
-  let notFoundInMenu = false;
   for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
     let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
     let description = data[`${mealType}Menu`][category].description;
@@ -49,12 +48,14 @@ function loadMenu(data, mealType, searchWord) {
     if (isInCategory || isInDescription) {
       searchMenu = { [category]: { description: description } }
       searchMenus[category] = searchMenu[category];
+      //if cat includes searchWord no need to check for the items just
+      // add menuItems to searchMenu obj
     }
 
     let menuItems = data[`${mealType}Menu`][category].items
     let isItemNameMatch = false;
     for (const [itemName, itemInfo] of Object.entries(menuItems)) {
-
+      debugger;
       isInItemName = itemName?.toLowerCase().includes(searchWord.toLowerCase());
       if (isInItemName) {
         isItemNameMatch = true;
@@ -67,19 +68,14 @@ function loadMenu(data, mealType, searchWord) {
         description: description,
         items: menuItems
       }
-    } else {
-      notFoundInMenu = true;
     }
-  }
-  if (notFoundInMenu) {
-    renderNotFoundItem(mealType, menuList, searchWord)
+  }  // debugger;
+  if (Object.keys(searchMenus).length === 0) {
+    renderNotFoundItem(mealType, menuList, searchWord);
     return;
   }
-
   renderMenuItems(searchMenus, menuList, searchWord)
-
 }
-
 function highlightCategoryAndItems(searchedMenus, i, searchWord) {
   let newMenu = {};
   // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
