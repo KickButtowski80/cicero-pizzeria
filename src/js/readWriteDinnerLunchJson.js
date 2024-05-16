@@ -38,8 +38,6 @@ function loadMenu(data, mealType, searchWord) {
     renderMenuItems(data[`${mealType}Menu`], menuList);
     return;
   }
-
-
   let searchMenu = {};
   let searchMenus = {};
   let notFoundInMenu = false;
@@ -73,9 +71,6 @@ function loadMenu(data, mealType, searchWord) {
       notFoundInMenu = true;
     }
   }
-
-  debugger;
-
   if (notFoundInMenu) {
     renderNotFoundItem(mealType, menuList, searchWord)
     return;
