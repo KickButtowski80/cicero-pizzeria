@@ -4,17 +4,15 @@ import lunchMenu from "../assets/json/lunch.json"
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  let searchWord
+  let searchWord;
   const foodSearchInput = document.querySelector("#food-search");
 
 
-  const pathName = window.location.pathname;
-  if (pathName.includes('lunch')) {
+  const pathName = window.location.pathname
+  if (pathName.includes('lunch'))
     loadMenu(lunchMenu, 'lunch', '');
-  }
-  else {
+  else
     loadMenu(dinnerMenu, 'dinner', '');
-  }
 
   foodSearchInput.addEventListener("input", (e) => {
 
@@ -26,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       loadMenu(dinnerMenu, 'dinner', searchWord);
     }
-  });
+  })
 });
 
 function loadMenu(data, mealType, searchWord) {
@@ -38,95 +36,62 @@ function loadMenu(data, mealType, searchWord) {
     renderMenuItems(data[`${mealType}Menu`], menuList);
     return;
   }
-
-
-  let searchMenu = {};
-  let searchMenus = {};
-  let notFoundInMenu = false;
-  for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
-    let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
-    let description = data[`${mealType}Menu`][category].description;
-    let isInDescription = description.toLowerCase().includes(searchWord.toLowerCase());
-    let isInItemName;
-    if (isInCategory || isInDescription) {
-      searchMenu = { [category]: { description: description } }
-      searchMenus[category] = searchMenu[category];
-    }
-
-    let menuItems = data[`${mealType}Menu`][category].items
-    let isItemNameMatch = false;
-    for (const [itemName, itemInfo] of Object.entries(menuItems)) {
-
-      isInItemName = itemName?.toLowerCase().includes(searchWord.toLowerCase());
-      if (isInItemName) {
-        isItemNameMatch = true;
-        break;
-      }
-
-    }
-    if (isInCategory || isInDescription || isItemNameMatch) {
-      searchMenus[category] = {
-        description: description,
-        items: menuItems
-      }
-    } else {
-      notFoundInMenu = true;
-    }
-  }
-
-  debugger;
-
-  if (notFoundInMenu) {
-    renderNotFoundItem(mealType, menuList, searchWord)
-    return;
-  }
-
-  renderMenuItems(searchMenus, menuList, searchWord)
-
-}
-
-function highlightCategoryAndItems(searchedMenus, i, searchWord) {
-  let newMenu = {};
+  let searchedMenus = {};
   // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
-  // let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
+  //   let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
 
-  let description = searchedMenus[i].description;
-  let items = searchedMenus[i].items;
+  //   for (let item in menuItems.items) {
 
-  let markedDescription = highlightDescription(description, searchWord)
-  // delete searchedMenus[category].description
-  searchedMenus[i].description = markedDescription;
+  //     let isInMenuItem = item.toLowerCase().includes(searchWord.toLowerCase());
+  //     debugger;
+  //     if (!searchedMenus[category]) {
+  //       searchedMenus[category] = {
+  //         description: category.description,
+  //         items: {}
+  //       };
+  //     }
+  //     if (isInCategory || isInMenuItem) {
+  //       // Ensure searchedMenus[category] is an object
+  //       if (!searchedMenus[category]) {
+  //         searchedMenus[category] = { ...menuItems, items: {} };
+  //       }
 
-  // the info needs to be sent to renderMenuItems
-  // const categoryCard = createCategory(category, description);
-
-  // menuList.appendChild(categoryCard);
-
-  if (searchWord.length > 0) {
-    if (searchedMenus[i].category.toLowerCase().includes(`${searchWord}`.toLocaleLowerCase())) {
-      let regex = new RegExp(searchWord, 'gi');
-      category = searchedMenus[i].category.replace(regex, `<mark>${searchWord}</mark>`);
-    }
-
-    let highlightedItemsKeys = highlightedItems(items, searchWord);
-
-
-    if (JSON.stringify(category.items) === JSON.stringify(highlightedItemsKeys)) {
-      return;
-    }
-    let markDownItems = {}
-    highlightedItemsKeys.forEach((newKey, i) => {
-      markDownItems[newKey] = items[Object.keys(items)[i]]
-    })
-
-    items = { ...markDownItems }
-
-  }
+  //       // Add the item to searchedMenus[category]
+  //       searchedMenus[category].items[item] = menuItems.items[item];
+  //     }
+  //   }
   // }
 
-  return searchedMenus;
-}
+  // for (const [category, menuItems] of Object.entries(data[`${mealType}Menu`])) {
+  //   let isInCategory = category.toLowerCase().includes(searchWord.toLowerCase());
+  //   if (isInCategory) {
+  //     searchedMenus[category] = menuItems;
+  //   }
 
+  //   for (let item in menuItems.items) {
+  //     // let pizza = menuItems.items[pizzaName]; // Access the value (details) of each item
+
+  //     let isInMenuItem = item.toLowerCase()
+  //       .includes(searchWord.toLowerCase());
+  //     debugger;
+  //     // if (isInMenuItem) {
+  //     //      searchedMenus[pizzaName] = pizzaName
+
+  //     // }
+
+  //   }
+
+  // }
+
+  // if (Object.keys(searchedMenus).length === 0) {
+  //   renderNotFoundItem(mealType, searchWord)
+  //   return;
+  // }
+
+  renderMenuItems(data[`${mealType}Menu`], menuList, searchWord)
+
+
+}
 function highlightedItems(items, searchedWord) {
 
   // for (let [category, categoryData] of Object.entries(jsonMenu)) {
@@ -137,7 +102,6 @@ function highlightedItems(items, searchedWord) {
   let searchedWordPattern = new RegExp(`${searchedWord}`, 'ig');
   let itemWHighlightedKeys = [];
   for (el of Object.keys(items)) {
-
     if (searchedWordPattern.test(el)) {
       // Use capture group for efficiency
       // Capture groups are a powerful feature in regular expressions
@@ -147,6 +111,7 @@ function highlightedItems(items, searchedWord) {
       // input.
       el = el.replace(searchedWordPattern, `<mark>$&</mark>`)
     }
+    console.log('element;, ', el)
 
     itemWHighlightedKeys.push(el)
   }
@@ -156,14 +121,10 @@ function highlightedItems(items, searchedWord) {
 function highlightDescription(description, searchWord) {
   let IsSearchedWordinDescripton = description.toLowerCase().includes(searchWord.toLowerCase());
   if (searchWord.length > 0 && IsSearchedWordinDescripton) {
-    let highlightedWord = `<mark>${searchWord}</mark>`;
-    let regex = new RegExp(searchWord, 'gi');
-    let highlightedString = description.replace(regex, function (match) {
-      const hs = match === searchWord ? highlightedWord : highlightedWord;
-      return hs;
-    });
 
-    description = highlightedString;
+    let regex = new RegExp(searchWord, 'gi');
+    let highlightedDescription = description.replace(regex, '<mark>$&</mark>');
+    description = highlightedDescription;
   }
   return description;
 }
@@ -171,16 +132,44 @@ function highlightDescription(description, searchWord) {
 function renderMenuItems(jsonMenu, element, searchWord = '') {
 
   element.innerHTML = '';
-
   for (let category in jsonMenu) {
 
     let description = jsonMenu[category].description;
     let items = jsonMenu[category].items;
-    // Create category card
 
+    if (searchWord.length > 0) description = highlightDescription(description, searchWord)
+
+    // Create category card
     const categoryCard = createCategory(category, description);
 
     element.appendChild(categoryCard);
+    let CategoryId = category.split(" ").join('-')
+
+    //highlight the searched category
+    if (searchWord.length > 0) {
+      let searchedCategory = document.querySelector(`#${CategoryId}`)
+      let currentContent = searchedCategory.innerHTML;
+      if (category.toLowerCase().includes(`${searchWord}`.toLocaleLowerCase())) {
+        let regex = new RegExp(searchWord, 'gi');
+        searchedCategory.innerHTML = currentContent.replace(regex, `<mark>$&</mark>`);
+      }
+
+
+      let highlightedItemsResult = highlightedItems(items, searchWord);
+      let newKeys = [...highlightedItemsResult]
+
+      if (JSON.stringify(jsonMenu[category].items) === JSON.stringify(highlightedItemsResult)) {
+        return;
+      }
+      let newObj = {}
+      newKeys.forEach((newKey, i) => {
+        newObj[newKey] = items[Object.keys(items)[i]]
+      })
+
+      items = { ...newObj }
+    }
+
+    // Create items list and append it to the category card  
     let itemsCard = createItemsCard(items);
 
     categoryCard.appendChild(itemsCard);
@@ -189,7 +178,7 @@ function renderMenuItems(jsonMenu, element, searchWord = '') {
 }
 
 
-function renderNotFoundItem(mealType, menuList, searchWord) {
+function renderNotFoundItem(mealType, searchWord) {
 
   menuList.innerHTML = `
       <div id="alert-additional-content-1" class="mb-4 rounded-lg border border-gray-300 bg-blue-50 p-4 text-gray-800 dark:border-blue-800 dark:bg-gray-800 dark:text-gray-400" role="alert">
@@ -219,7 +208,7 @@ function createCategory(category, description) {
           <div id='${CategoryId}' class=" tracking-wide text-2xl
            text-white font-semibold">${category}</div>
           <p class="mt-2 text-gray-300 text-xl">${description}</p>
-      </div> 
+      </div>
       <div class='${categoryItems}'></div>
   `;
 
@@ -251,7 +240,7 @@ function createItem(itemName, ingredients, price) {
   itemCard.innerHTML = `
   <div class="shadow-lg rounded-lg border border-gray-200 hover:bg-gray-500 md:p-1 text-base text-black dark:text-white hover:text-gray-200 min-h-full bg-gray-300 dark:border-gray-700 dark:hover:bg-gray-800 dark:bg-gray-500">
   <div class="px-6 py-4">
-    <div class="mb-2 text-xl font-bold flex justify-between items-center">      
+    <div class="mb-2 text-xl font-bold flex justify-between items-center">
       <span class="inline-block">${itemName} </span>
       <button class="mb-2 mr-2 inline-block  rounded-full bg-gray-100 px-2 py-3 text-sm font-semibold text-gray-700">
        💓 Add
