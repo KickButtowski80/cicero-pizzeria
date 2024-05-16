@@ -174,7 +174,7 @@
         }
       }
     },
-    "GOURMET SANDWICHES": {
+    "Gourmet Sandwiches": {
       "description": "All sandwiches are served with salad or soup and soft drink. Your choice of wheat or sourdough bread.",
       "items": {
         "Eggplant Chicken": {
@@ -207,7 +207,7 @@
         }
       }
     },
-    "Hot SANDWICHES": {
+    "Hot Sandwiches": {
       "description": "All sandwiches are Transitional and served with salad or soup and soft drink.",
       "items": {
         "Roast Beef": {
