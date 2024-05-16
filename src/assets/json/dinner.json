@@ -3,7 +3,7 @@
       "STEAKS": {
         "description": "All steaks are served with your choice of side dish and a garden salad.",
         "items": {
-          "Ribeye Steak": {
+          "Ribeye": {
             "description": "A juicy ribeye steak grilled to perfection.",
             "price": "$19.95"
           },
@@ -15,7 +15,7 @@
             "description": "A classic New York strip steak, char-grilled to perfection.",
             "price": "$22.95"
           },
-          "T-Bone Steak": {
+          "T-Bone": {
             "description": "A hearty T-bone steak, grilled to your preference.",
             "price": "$26.95"
           }
