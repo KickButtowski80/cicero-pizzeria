@@ -1,6 +1,6 @@
 import dinnerMenu from "../assets/json/dinner.json";
 import lunchMenu from "../assets/json/lunch.json";
-import highlightCategory from "./highlightCategory";
+import highlightSearchWord from "./highlightSearchWord";
 
 document.addEventListener("DOMContentLoaded", () => {
   let searchWord;
@@ -58,8 +58,8 @@ function loadMenu(data, mealType, searchWord) {
     }
 
     if (isInCategory || isInDescription || isItemNameMatch) {
-      searchMenus[highlightCategory(category, searchWord)] = {
-        description: highlightDescription(description, searchWord),
+      searchMenus[highlightSearchWord(category, searchWord)] = {
+        description: highlightSearchWord(description, searchWord),
         items: menuItems,
       };
     }
@@ -69,62 +69,6 @@ function loadMenu(data, mealType, searchWord) {
     return;
   }
   renderMenuItems(searchMenus, menuList, searchWord);
-}
-// function highlightItems(searchedMenus, searchWord) {
-//   let newMenu = {};
-//   Object.entries(searchedMenus).forEach((category, items) => {
-
-//   });
-
-
-//   if (searchWord.length > 0) {
-//     let highlightedItemsKeys = highlightedItemsKeys(items, searchWord);
-
-//     if (
-//       JSON.stringify(category.items) === JSON.stringify(highlightedItemsKeys)
-//     ) {
-//       return;
-//     }
-//     let markDownItems = {};
-//     highlightedItemsKeys.forEach((newKey, i) => {
-//       markDownItems[newKey] = items[Object.keys(items)[i]];
-//     });
-
-//     items = { ...markDownItems };
-//   }
-//   // }
-
-//   return searchedMenus;
-// }
-
-// function highlightedItemsKeys(items, searchedWord) {
-
-//   let searchedWordPattern = new RegExp(`${searchedWord}`, "ig");
-//   let itemWHighlightedKeys = [];
-//   for (el of Object.keys(items)) {
-//     if (searchedWordPattern.test(el)) {
-//       // Use capture group for efficiency
-//       // Capture groups are a powerful feature in regular expressions
-//       // that allow you to extract and reuse portions of the matched text.
-//       // They play a crucial role in various tasks like highlighting
-//       // search terms, extracting data from text, and validating user
-//       // input.
-//       el = el.replace(searchedWordPattern, `<mark>$&</mark>`);
-//     }
-
-//     itemWHighlightedKeys.push(el);
-//   }
-//   return itemWHighlightedKeys;
-// }
-// function highlightCategory(category, searchWord) {
-//   debugger;
-//   let regex = new RegExp(searchWord, "gi");
-//   category = category.replace(regex, `<mark>$&</mark>`);
-//   return category;
-// }
-function highlightDescription(description, searchWord) {
-  let regex = new RegExp(searchWord, "gi");
-  return description.replace(regex, "<mark>$&</mark>");
 }
 
 function renderMenuItems(jsonMenu, element, searchWord) {
@@ -139,9 +83,8 @@ function renderMenuItems(jsonMenu, element, searchWord) {
     categoryCard.appendChild(itemsCard);
   }
 }
-function currentMenu() {
+function getOppositeMenu() {
   const pathName = window.location.pathname;
-  debugger;
   if (pathName.includes("lunch")) {
     return "/dinner.html";
   } else {
@@ -159,7 +102,7 @@ function renderNotFoundItem(mealType, menuList, searchWord) {
         <h3 class="text-lg font-medium">there is no ${searchWord} item in the ${mealType} menu.</h3>
       </div>
       <p>please try different name or
-       <a href=".${currentMenu()}">${currentMenu().split(/[./]/)[1]} Menu</a>
+       <a href=".${getOppositeMenu()}">${getOppositeMenu().split(/[./]/)[1]} Menu</a>
       </p>
     </div>`;
   return;
@@ -216,14 +159,13 @@ function createItemsCard(items, searchWord) {
 }
 
 // Function to create item card
-function createItem(itemName, ingredients, price, searchWord = "4") {
-  // debugger
+function createItem(itemName, ingredients, price, searchWord) {
   const itemCard = document.createElement("li");
   itemCard.innerHTML = `
   <div class="shadow-lg rounded-lg border border-gray-200 hover:bg-gray-500 md:p-1 text-base text-black dark:text-white hover:text-gray-200 min-h-full bg-gray-300 dark:border-gray-700 dark:hover:bg-gray-800 dark:bg-gray-500">
   <div class="px-6 py-4">
     <div class="mb-2 text-xl font-bold flex justify-between items-center">      
-      <span class="inline-block">${highlightCategory(itemName, searchWord)} </span>
+      <span class="inline-block">${highlightSearchWord(itemName, searchWord)} </span>
       <button class="mb-2 mr-2 inline-block  rounded-full bg-gray-100 px-2 py-3 text-sm font-semibold text-gray-700">
        💓 Add
       </button>
