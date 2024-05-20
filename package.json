@@ -26,7 +26,6 @@
     "@parcel/transformer-posthtml": "^2.11.0",
     "dotenv": "^16.4.5",
     "htmlnano": "^2.1.0",
-    "jslint": "^0.12.1",
     "nodemailer": "^6.9.12",
     "posthtml": "^0.16.6"
   }
