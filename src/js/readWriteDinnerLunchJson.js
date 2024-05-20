@@ -76,7 +76,6 @@ function loadMenu(data, mealType, searchWord) {
 
 //   });
 
-//  ;
 
 //   if (searchWord.length > 0) {
 //     let highlightedItemsKeys = highlightedItemsKeys(items, searchWord);
