@@ -1,3 +1,4 @@
+(() => {
 const button = document.getElementById('back-to-top-page');
 
 const handleScroll = () => {
@@ -12,3 +13,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', handleScroll);
   
 });
+})();
