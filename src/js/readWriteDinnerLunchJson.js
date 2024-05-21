@@ -74,16 +74,39 @@ function loadMenu(data, mealType, searchWord) {
     }
   }
 
+  let searchWordCount = getSearchWordCount(searchMenus);
+
   if (Object.keys(searchMenus).length === 0) {
     renderNotFoundItem(mealType, menuList, searchWord);
     return;
   }
-  renderMenuItems(searchMenus, menuList, searchWord);
+  renderMenuItems(searchMenus, menuList, searchWord, searchWordCount);
 }
 
-function renderMenuItems(jsonMenu, element, searchWord) {
-  element.innerHTML = "";
+function getSearchWordCount(searchMenus) {
+  let searchWordCount = 0;
+  for (let cat in searchMenus) {
+    searchWordCount += Object.keys(searchMenus[cat].items).length;
+  }
+  return searchWordCount
+}
 
+function renderMenuItems(jsonMenu, element, searchWord, searchWordCount) {
+ 
+  element.innerHTML = "";
+  const info= document.getElementById('info');
+  if(!searchWord) info.innerHTML = ''
+  if (searchWordCount) {
+    const newDiv = document.createElement("div");
+    newDiv.innerHTML = `number of <mark>${searchWord}</mark> was found is <mark>${searchWordCount}<mark>`;
+    newDiv.style.padding = '10px';
+    newDiv.style.margin = '10px';
+    newDiv.style.border = '1px solid #000';
+    newDiv.style.backgroundColor = '#f0f0f0';
+    newDiv.style.display='inline-block';
+    info.innerHTML=''
+    info.append(newDiv)
+  }
   for (let category in jsonMenu) {
     let description = jsonMenu[category].description;
 
