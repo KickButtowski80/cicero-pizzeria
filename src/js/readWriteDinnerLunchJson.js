@@ -42,28 +42,42 @@ function loadMenu(data, mealType, searchWord) {
     let description = data[`${mealType}Menu`][category].description;
     let isInDescription = description
       .toLowerCase()
+      .replace("include", "")
       .includes(searchWord.toLowerCase());
+
     let isInItemName;
-    if (isInCategory || isInDescription) {
-      searchMenu = { [category]: { description: description } };
+
+    if (!searchMenu[category] || isInCategory || isInDescription) {
+      searchMenu[category] = { description: description, items: {} };
     }
     let menuItems = data[`${mealType}Menu`][category].items;
-    let isItemNameMatch = false;
     for (const [itemName, itemInfo] of Object.entries(menuItems)) {
-      isInItemName = itemName?.toLowerCase().includes(searchWord.toLowerCase());
+      isInItemName = itemName.toLowerCase().includes(searchWord.toLowerCase());
       if (isInItemName) {
-        isItemNameMatch = true;
-        break;
+        searchMenu[category].items[itemName] = itemInfo;
       }
     }
 
-    if (isInCategory || isInDescription || isItemNameMatch) {
+    if (isInCategory) {
       searchMenus[highlightSearchWord(category, searchWord)] = {
         description: highlightSearchWord(description, searchWord),
         items: menuItems,
       };
+      break;
+    }
+
+    let isItemsinSearchMenu =
+      searchMenu[category]?.items &&
+      Object.keys(searchMenu[category].items).length > 0;
+
+    if (isInCategory || isInDescription || isItemsinSearchMenu) {
+      searchMenus[highlightSearchWord(category, searchWord)] = {
+        description: highlightSearchWord(description, searchWord),
+        items: searchMenu[category]?.items || {},
+      };
     }
   }
+
   if (Object.keys(searchMenus).length === 0) {
     renderNotFoundItem(mealType, menuList, searchWord);
     return;
@@ -76,9 +90,11 @@ function renderMenuItems(jsonMenu, element, searchWord) {
 
   for (let category in jsonMenu) {
     let description = jsonMenu[category].description;
+
     let items = jsonMenu[category].items;
     const categoryCard = createCategory(category, description);
     element.appendChild(categoryCard);
+    debugger;
     let itemsCard = createItemsCard(items, searchWord);
     categoryCard.appendChild(itemsCard);
   }
