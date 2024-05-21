@@ -1,10 +1,9 @@
-
 const nodemailer = require("nodemailer");
-require('dotenv').config()
+require("dotenv").config();
 export default (request, response) => {
-  if (request.method !== 'POST') {
+  if (request.method !== "POST") {
     return response.status(400).json({
-      message: 'bad request',
+      message: "bad request",
       success: false,
     });
   }
@@ -13,9 +12,9 @@ export default (request, response) => {
   if (!name || !email || !subject || !message) {
     return response.status(400).json({
       data: request.body,
-      message: 'all the fields are required, please try again',
-      success: false
-    })
+      message: "all the fields are required, please try again",
+      success: false,
+    });
   }
 
   const transporter = nodemailer.createTransport({
@@ -28,8 +27,6 @@ export default (request, response) => {
     },
   });
 
-
-
   async function main() {
     try {
       const info = await transporter.sendMail({
@@ -40,22 +37,21 @@ export default (request, response) => {
         html: `<b>${message}?</b>`,
       });
 
-      console.log("Message sent: %s", info.messageId);
-      //left for learning purposes 
+      //left for learning purposes
       //   if (shouldRejectEmail()) {
       //     throw new Error("SMTP server rejected the email");
       // }
 
       response.status(200).json({
         message: `info of ${name} were successfully sent!`,
-        success: true
+        success: true,
       });
     } catch (error) {
       console.error("Error sending email:", error);
       response.status(500).json({
-        message: 'An error occurred while sending the email',
+        message: "An error occurred while sending the email",
         error: error.message,
-        success: false
+        success: false,
       });
     }
   }
@@ -66,8 +62,3 @@ export default (request, response) => {
   }
   main().catch(console.error);
 };
-
-
-
-
-
