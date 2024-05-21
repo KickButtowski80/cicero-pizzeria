@@ -8,10 +8,29 @@
 
     <title>Dinner Menu</title>
   </head>
-  <body> 
+  <body>
     <include src="./src/components/menu.html"></include>
     <main id="food-menu" class="mt-20">
-      <h1 id="top" class="text-center py-10">Dinner Menu</h1>
+      <header class="flex flex-col md:flex-row 
+      justify-center items-center py-4 px-6
+       bg-white shadow-md">
+        <h1 class="text-2xl font-bold text-gray-800 flex-1 text-center">
+          Dinner Menu</h1>     
+      </header>
+      <include src="src/components/food-search.html"></include>
+      <div class="flex justify-between items-center">
+      <a href="lunch.html" 
+      class="inline-block mx-3 px-3 py-2 text-sm font-medium
+       leading-6 text-center text-white uppercase transition
+        bg-yellow-700 rounded shadow ripple hover:shadow-lg
+         hover:bg-red-800 focus:outline-none">
+        View 
+        <span class="bg-yellow-500 p-3 text-black font-medium
+        dark:bg-gray-600 dark:text-white hover:text-xl hover:text-white">Lunch Menu</span>
+        
+      </a>
+      <div id="info"></div>
+      </div>
       <div id="dinner-menu-list"></div>
       <a id="back-to-top-page" href="dinner.html/#top">Back to Top</a>
     </main>

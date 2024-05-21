@@ -3,7 +3,7 @@
       "STEAKS": {
         "description": "All steaks are served with your choice of side dish and a garden salad.",
         "items": {
-          "Ribeye Steak": {
+          "Ribeye": {
             "description": "A juicy ribeye steak grilled to perfection.",
             "price": "$19.95"
           },
@@ -15,7 +15,7 @@
             "description": "A classic New York strip steak, char-grilled to perfection.",
             "price": "$22.95"
           },
-          "T-Bone Steak": {
+          "T-Bone": {
             "description": "A hearty T-bone steak, grilled to your preference.",
             "price": "$26.95"
           }
@@ -84,7 +84,7 @@
           }
         }
       },
-      "Beverages": {
+      "BEVERAGES": {
         "description": "Quench your thirst with our refreshing selection of beverages, ranging from classic sodas like Coke and 7UP to a variety of teas, fruit juices, and specialty drinks. Whether you're craving a fizzy cola, a zesty citrus soda, or a soothing cup of tea, we have the perfect beverage to complement your meal and keep you refreshed.",
         "items": {
           "Coke": {

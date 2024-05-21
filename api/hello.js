@@ -14,9 +14,9 @@ export default (request, response) => {
   //   data: `hello ${name}`,
   // });
 
-console.log('the request body', request.body)
+ 
 const {name, email, subject, message} =  request.body;
-console.log(name,email, subject, message)
+ 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
@@ -37,8 +37,7 @@ async function main() {
     text: `${message}`, // plain text body
     html: `<b>${message}?</b>`, // html body
   });
-
-  console.log("Message sent: %s", info.messageId);
+ 
   // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 }
  
