@@ -57,20 +57,16 @@ function loadMenu(data, mealType, searchWord) {
         searchMenu[category].items[itemName] = itemInfo;
       }
     }
-
-    if (isInCategory) {
-      searchMenus[highlightSearchWord(category, searchWord)] = {
-        description: highlightSearchWord(description, searchWord),
-        items: menuItems,
-      };
-      break;
-    }
-
     let isItemsinSearchMenu =
       searchMenu[category]?.items &&
       Object.keys(searchMenu[category].items).length > 0;
 
-    if (isInCategory || isInDescription || isItemsinSearchMenu) {
+    if (isInCategory || isInDescription) {
+      searchMenus[highlightSearchWord(category, searchWord)] = {
+        description: highlightSearchWord(description, searchWord),
+        items: menuItems,
+      };
+    } else if (isItemsinSearchMenu) {
       searchMenus[highlightSearchWord(category, searchWord)] = {
         description: highlightSearchWord(description, searchWord),
         items: searchMenu[category]?.items || {},
