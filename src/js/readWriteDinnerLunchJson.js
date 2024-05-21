@@ -94,7 +94,6 @@ function renderMenuItems(jsonMenu, element, searchWord) {
     let items = jsonMenu[category].items;
     const categoryCard = createCategory(category, description);
     element.appendChild(categoryCard);
-    debugger;
     let itemsCard = createItemsCard(items, searchWord);
     categoryCard.appendChild(itemsCard);
   }
