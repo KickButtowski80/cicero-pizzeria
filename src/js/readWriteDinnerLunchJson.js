@@ -74,40 +74,57 @@ function loadMenu(data, mealType, searchWord) {
     }
   }
 
-  let searchWordCount = getSearchWordCount(searchMenus);
+  let searchWordCount = getSearchWordCount(searchMenus, searchWord);
 
   if (Object.keys(searchMenus).length === 0) {
     renderNotFoundItem(mealType, menuList, searchWord);
-    const info= document.getElementById('info');
-    info.innerHTML = ''
+    const info = document.getElementById("info");
+    info.innerHTML = "";
     return;
   }
   renderMenuItems(searchMenus, menuList, searchWord, searchWordCount);
 }
 
-function getSearchWordCount(searchMenus) {
+function countOccurrences(sentence, searchWord) {
+  const regex = new RegExp(searchWord, "gi"); // Create a global regex for the search word
+  const matches = sentence.match(regex); // Find all matches
+  return matches ? matches.length : 0; // Return the count of matches, or 0 if no matches
+}
+function getSearchWordCount(searchMenus, searchWord) {
+  debugger;
+  let lowerCaseSearchWord = searchWord.toLowerCase();
   let searchWordCount = 0;
+  debugger;
   for (let cat in searchMenus) {
-    searchWordCount += Object.keys(searchMenus[cat].items).length;
+    const lowerCaseCat = cat.toLowerCase();
+    if (lowerCaseCat.includes(lowerCaseSearchWord)) {
+       searchWordCount += countOccurrences(cat, searchWord);
+    }
+    let lowerCaseDescription = searchMenus[cat].description.toLowerCase();
+    searchWordCount += countOccurrences(lowerCaseDescription, searchWord);
+    for (let item in searchMenus[cat].items) {
+      if (item.toLowerCase().includes(lowerCaseSearchWord)) {
+        searchWordCount += 1;
+      }
+    }
   }
-  return searchWordCount
+  return searchWordCount;
 }
 
 function renderMenuItems(jsonMenu, element, searchWord, searchWordCount) {
- debugger;
   element.innerHTML = "";
-  const info= document.getElementById('info');
-  if(!searchWord) info.innerHTML = ''
+  const info = document.getElementById("info");
+  if (!searchWord) info.innerHTML = "";
   if (searchWordCount) {
     const newDiv = document.createElement("div");
     newDiv.innerHTML = `number of <mark>${searchWord}</mark> was found is <mark>${searchWordCount}<mark>`;
-    newDiv.style.padding = '10px';
-    newDiv.style.margin = '10px';
-    newDiv.style.border = '1px solid #000';
-    newDiv.style.backgroundColor = '#f0f0f0';
-    newDiv.style.display='inline-block';
-    info.innerHTML=''
-    info.append(newDiv)
+    newDiv.style.padding = "10px";
+    newDiv.style.margin = "10px";
+    newDiv.style.border = "1px solid #000";
+    newDiv.style.backgroundColor = "#f0f0f0";
+    newDiv.style.display = "inline-block";
+    info.innerHTML = "";
+    info.append(newDiv);
   }
   for (let category in jsonMenu) {
     let description = jsonMenu[category].description;
