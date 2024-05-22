@@ -78,6 +78,8 @@ function loadMenu(data, mealType, searchWord) {
 
   if (Object.keys(searchMenus).length === 0) {
     renderNotFoundItem(mealType, menuList, searchWord);
+    const info= document.getElementById('info');
+    info.innerHTML = ''
     return;
   }
   renderMenuItems(searchMenus, menuList, searchWord, searchWordCount);
@@ -92,7 +94,7 @@ function getSearchWordCount(searchMenus) {
 }
 
 function renderMenuItems(jsonMenu, element, searchWord, searchWordCount) {
- 
+ debugger;
   element.innerHTML = "";
   const info= document.getElementById('info');
   if(!searchWord) info.innerHTML = ''
