@@ -91,14 +91,13 @@ function countOccurrences(sentence, searchWord) {
   return matches ? matches.length : 0; // Return the count of matches, or 0 if no matches
 }
 function getSearchWordCount(searchMenus, searchWord) {
-  debugger;
   let lowerCaseSearchWord = searchWord.toLowerCase();
   let searchWordCount = 0;
-  debugger;
+
   for (let cat in searchMenus) {
     const lowerCaseCat = cat.toLowerCase();
     if (lowerCaseCat.includes(lowerCaseSearchWord)) {
-       searchWordCount += countOccurrences(cat, searchWord);
+      searchWordCount += countOccurrences(cat, searchWord);
     }
     let lowerCaseDescription = searchMenus[cat].description.toLowerCase();
     searchWordCount += countOccurrences(lowerCaseDescription, searchWord);
