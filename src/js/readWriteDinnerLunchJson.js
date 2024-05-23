@@ -91,23 +91,17 @@ function countOccurrences(sentence, searchWord) {
   return matches ? matches.length : 0; // Return the count of matches, or 0 if no matches
 }
 function getSearchWordCount(searchMenus, searchWord) {
-  let lowerCaseSearchWord = searchWord.toLowerCase();
-  let searchWordCount = 0;
+  const lowerCaseSearchWord = searchWord.toLowerCase();
+  let concatenatedText = "";
+ 
 
-  for (let cat in searchMenus) {
-    const lowerCaseCat = cat.toLowerCase();
-    if (lowerCaseCat.includes(lowerCaseSearchWord)) {
-      searchWordCount += countOccurrences(cat, searchWord);
-    }
-    let lowerCaseDescription = searchMenus[cat].description.toLowerCase();
-    searchWordCount += countOccurrences(lowerCaseDescription, searchWord);
-    for (let item in searchMenus[cat].items) {
-      if (item.toLowerCase().includes(lowerCaseSearchWord)) {
-        searchWordCount += 1;
-      }
+  for (const cat in searchMenus) {
+    concatenatedText += ` ${cat.toLowerCase()} ${searchMenus[cat].description.toLowerCase()}`;
+    for (const item in searchMenus[cat].items) {
+      concatenatedText += ` ${item.toLowerCase()}`;
     }
   }
-  return searchWordCount;
+  return countOccurrences(concatenatedText, lowerCaseSearchWord);
 }
 
 function renderMenuItems(jsonMenu, element, searchWord, searchWordCount) {
