@@ -74,7 +74,10 @@ function loadMenu(data, mealType, searchWord) {
     }
   }
 
-  let searchWordCount = getSearchWordCount(searchMenus, searchWord);
+  let messageSearchWordCount = getSearchWordCountInCatDesItems(
+    searchMenus,
+    searchWord,
+  );
 
   if (Object.keys(searchMenus).length === 0) {
     renderNotFoundItem(mealType, menuList, searchWord);
@@ -82,7 +85,7 @@ function loadMenu(data, mealType, searchWord) {
     info.innerHTML = "";
     return;
   }
-  renderMenuItems(searchMenus, menuList, searchWord, searchWordCount);
+  renderMenuItems(searchMenus, menuList, searchWord, messageSearchWordCount);
 }
 
 function countOccurrences(sentence, searchWord) {
@@ -90,40 +93,61 @@ function countOccurrences(sentence, searchWord) {
   const matches = sentence.match(regex); // Find all matches
   return matches ? matches.length : 0; // Return the count of matches, or 0 if no matches
 }
-function getSearchWordCount(searchMenus, searchWord) {
+function getSearchWordCountInCatDesItems(searchMenus, searchWord) {
   let lowerCaseSearchWord = searchWord.toLowerCase();
-  let searchWordCount = 0;
-
+  let searchWordInCatCount = 0;
+  let searchWordInDescriptionCount = 0;
+  let searchWordInItemsCount = 0;
   for (let cat in searchMenus) {
     const lowerCaseCat = cat.toLowerCase();
     if (lowerCaseCat.includes(lowerCaseSearchWord)) {
-      searchWordCount += countOccurrences(cat, searchWord);
+      searchWordInCatCount += countOccurrences(cat, searchWord);
     }
     let lowerCaseDescription = searchMenus[cat].description.toLowerCase();
-    searchWordCount += countOccurrences(lowerCaseDescription, searchWord);
+    searchWordInDescriptionCount += countOccurrences(
+      lowerCaseDescription,
+      searchWord,
+    );
     for (let item in searchMenus[cat].items) {
       if (item.toLowerCase().includes(lowerCaseSearchWord)) {
-        searchWordCount += 1;
+        searchWordInItemsCount += 1;
       }
     }
   }
-  return searchWordCount;
+  return `${searchWordInCatCount} categories,<br>
+    ${searchWordInDescriptionCount} description<br>
+    ,and  ${searchWordInItemsCount} items that<br>
+    match your ${searchWord}      
+  `;
 }
 
-function renderMenuItems(jsonMenu, element, searchWord, searchWordCount) {
+function renderMenuItems(
+  jsonMenu,
+  element,
+  searchWord,
+  messageSearchWordCount,
+) {
   element.innerHTML = "";
   const info = document.getElementById("info");
-  if (!searchWord) info.innerHTML = "";
-  if (searchWordCount) {
-    const newDiv = document.createElement("div");
-    newDiv.innerHTML = `number of <mark>${searchWord}</mark> was found is <mark>${searchWordCount}<mark>`;
-    newDiv.style.padding = "10px";
-    newDiv.style.margin = "10px";
-    newDiv.style.border = "1px solid #000";
-    newDiv.style.backgroundColor = "#f0f0f0";
-    newDiv.style.display = "inline-block";
+
+  if (!messageSearchWordCount) info.innerHTML = "";
+  if (messageSearchWordCount) {
+    const searchInfoBox = document.createElement("div");
+    const h1 = document.createElement("h1");
+    h1.style.fontSize = "1em";
+    h1.style.textAlign = "center";
+    h1.textContent = `${searchWord} count info`;
+    searchInfoBox.appendChild(h1);
+    const messageElement = document.createElement("div");
+    messageElement.innerHTML = messageSearchWordCount;
+    searchInfoBox.appendChild(messageElement);
+    searchInfoBox.style.padding = "10px";
+    searchInfoBox.style.margin = "10px";
+    searchInfoBox.style.border = "1px solid #000";
+    searchInfoBox.style.backgroundColor = "#f0f0f0";
+    searchInfoBox.style.display = "inline-block";
     info.innerHTML = "";
-    info.append(newDiv);
+    info.append(searchInfoBox);
   }
   for (let category in jsonMenu) {
     let description = jsonMenu[category].description;
