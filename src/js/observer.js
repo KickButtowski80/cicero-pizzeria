@@ -1,4 +1,3 @@
-// js/observer.js
 const Observer = (function() {
     let events = {};
 
