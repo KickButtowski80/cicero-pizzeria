@@ -2,11 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
- #hero {
-    background-image: url('../assets/images/hero/stone-oven-smaller.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
- }
+@layer base {
+  #hero {
+    .pizza-base {
+      height: 100vh;
+      background: url("../assets/images/hero/pizza-dough-on-tray.webp");
+      background-size: cover;
+      background-position: center;
+    }
 
+    @media screen and (max-width: 480px) {
+      .pizza-base {
+        background-color: lightcoral;
+        background-repeat: no-repeat;
+        background-position: 25% 75%;
+      }
+    }
+  }
 }
