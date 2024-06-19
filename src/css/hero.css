@@ -9,6 +9,30 @@
       background: url("../assets/images/hero/pizza-dough-on-tray.webp");
       background-size: cover;
       background-position: center;
+      position: relative;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      animation: show-bg 2s ease-in-out forwards;
+    }
+
+    svg {
+      /* transform: translateY(-125px); */
+      position: relative;
+      top: -70px;
+      left:-20px;
+      width: 100%; /* 50% of the viewport width */
+      height: 100%; /* 50% of the viewport width */
+      max-width: 650px;
+      max-height: 850px;
+      /* border: 1px solid blue; */
+      border-radius: 50%;
+      fill: none;
+      stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
+      stroke-width: 30; /* Increase thickness as needed */
+      stroke-dasharray: 600; /* Length of the path, adjust based on the path length */
+      stroke-dashoffset: 600;
+      animation: draw-path 4s ease-in-out 2s forwards;
     }
 
     @media screen and (max-width: 480px) {
@@ -17,6 +41,27 @@
         background-repeat: no-repeat;
         background-position: 20% 75%;
       }
+
+      svg {
+        /* transform: translateX(217px) translateY(-125px); */
+       position: relative;
+       left: 220px;
+       top: -100px;
+      }
+    }
+  }
+}
+
+@layer utilities {
+
+  @keyframes show-bg {
+    100%{
+      opacity: 1;
+    }
+  }
+  @keyframes draw-path {
+    100% {
+      stroke-dashoffset: 0;
     }
   }
 }
