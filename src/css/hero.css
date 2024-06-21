@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --fluid-16-48: clamp(25rem, 55vw, 30rem);
+}
+
 @layer base {
   #hero {
-     
     .pizza-base {
       height: 100vh;
       background: url("../assets/images/hero/pizza-dough-on-tray.webp");
@@ -13,36 +16,36 @@
       position: relative;
       display: grid;
       place-items: center;
-    
+
       opacity: 0;
       overflow: hidden;
       animation: show-bg 2s ease-in-out forwards;
       border: 2px solid blue;
     }
 
-    .spiral-svg {  
-      display: flex;
-      align-items: center;
-      justify-content: center;  
+    .spiral-svg {
+  
       /* border: 5px solid rgb(179, 255, 0); */
       position: absolute;
       top: 58%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: clamp(600px, 50vw, 650px);
-     height: clamp(600px, 50vw, 650px);
+      /* width: clamp(600px, 50vw, 650px);
+     height: clamp(600px, 50vw, 650px); */
       /* max-width: clamp(600px, 50vw, 700px);
       max-height: clamp(600px, 50vw, 700px); */
+      height: var(--fluid-16-48);
+      width: var(--fluid-16-48);
       border-radius: 50%;
       overflow-x: hidden;
     }
-    .spiral-svg::after{
+    .spiral-svg::after {
       content: "";
       padding-bottom: 100%;
     }
-    .spiral-path{
+    .spiral-path {
       fill: none;
-      
+
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
       stroke-width: 26; /* Increase thickness as needed */
       stroke-dasharray: 1000; /* Length of the path, adjust based on the path length */
@@ -56,16 +59,14 @@
         background-position: 20% 75%;
       }
 
-      .spiral-svg { 
+      .spiral-svg {
         /* width: 100%; 
         height: 70%;  */
-        top: 0%;
-        left: 0;
-        transform: translateX(217px) translateY(181px) translateZ(0);
-  
+        /* top: 50%;
+        left: 50%;*/
+        transform: translateX(0px) translateY(-203px) translateZ(0); 
       }
     }
-
 
     /* @media screen and (min-width: 1441px) {
 
@@ -78,9 +79,8 @@
 }
 
 @layer utilities {
-
   @keyframes show-bg {
-    100%{
+    100% {
       opacity: 1;
     }
   }
