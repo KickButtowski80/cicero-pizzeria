@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --fluid-16-48: clamp(25rem, 100vw, 50rem);
+  --fluid-16-48: clamp(25rem, 70vh, 35rem);
 }
 
 @layer base {
@@ -24,14 +24,17 @@
     }
 
     .spiral-svg {
-      border: 5px solid #950202 ;
+      /* border: 5px solid #950202 ; */
       position: absolute;
       top: 58%;
       left: 48%;
       transform: translate(-50%, -50%);
 
-      height: var(--fluid-16-48);
-      width: var(--fluid-16-48);
+        height: 70vh; 
+     
+
+      aspect-ratio: 1 / 1;
+
       border-radius: 50%;
       overflow-x: hidden;
       transition: border 2s;
@@ -54,10 +57,8 @@
       }
 
       .spiral-svg {
-        /* height: 35rem; */
-        /* width: 30rem; */
-        top: 60%;
-        transform: translateX(20px) translateY(-223px) translateZ(0);
+        height: 75vh;
+        transform: translateX(4%) translateY(-50%) translateZ(0);
       }
     }
 
