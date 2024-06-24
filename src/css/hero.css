@@ -29,9 +29,7 @@
       top: 58%;
       left: 48%;
       transform: translate(-50%, -50%);
-
-        height: 70vh; 
-     
+      height: 70vh;
 
       aspect-ratio: 1 / 1;
 
@@ -58,11 +56,9 @@
 
       .spiral-svg {
         height: 75vh;
-        transform: translateX(4%) translateY(-50%) translateZ(0);
+        transform: translateX(0%) translateY(-50%) translateZ(0);
       }
     }
-
- 
   }
 }
 
