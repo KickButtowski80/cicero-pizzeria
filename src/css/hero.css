@@ -55,8 +55,8 @@
       }
 
       .spiral-svg {
-        height: 75vh;
-        transform: translateX(0%) translateY(-50%) translateZ(0);
+        /* height: 65vh; */
+        transform: translateX(clamp(-5%, 2%, 5%)) translateY(-50%) translateZ(0);
       }
     }
   }
