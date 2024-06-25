@@ -23,7 +23,7 @@
       /* border: 2px solid blue; */
     }
 
-    .spiral-svg {
+    .sauce-svg {
       /* border: 5px solid #950202 ; */
       position: absolute;
       top: 58%;
@@ -38,9 +38,8 @@
       transition: border 2s;
     }
 
-    .spiral-path {
+    .sauce-animation {
       fill: none;
-
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
       stroke-width: 18; /* Increase thickness as needed */
       stroke-dasharray: 1000; /* Length of the path, adjust based on the path length */
@@ -54,7 +53,7 @@
         background-position: 20% 75%;
       }
 
-      .spiral-svg {
+      .sauce-svg {
         /* height: 65vh; */
         transform: translateX(clamp(-5%, 2%, 5%)) translateY(-50%) translateZ(0);
       }
