@@ -44,7 +44,7 @@
       stroke-width: 18; /* Increase thickness as needed */
       stroke-dasharray: 1000; /* Length of the path, adjust based on the path length */
       stroke-dashoffset: 1000;
-      animation: draw-path 4s ease-in-out 2s forwards;
+      animation: sauce-path 4s ease-in-out 2s forwards;
     }
 
     .spoon-svg {
@@ -75,7 +75,7 @@
       opacity: 1;
     }
   }
-  @keyframes draw-path {
+  @keyframes sauce-path {
     100% {
       stroke-dashoffset: 0;
     }
