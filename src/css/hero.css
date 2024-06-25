@@ -47,6 +47,14 @@
       animation: draw-path 4s ease-in-out 2s forwards;
     }
 
+    .spoon-svg {
+      position: absolute;
+    }
+
+    .spoon-animation{
+      animation: spoon-path 4s eas-in-out 2s forwards;
+    }
+
     @media screen and (max-width: 480px) {
       .pizza-base {
         background-repeat: no-repeat;
