@@ -47,19 +47,19 @@
 
     .spoon-svg {
       /* border: 1px solid red; */
-      position: absolute;  
- 
+      position: absolute;
+
       /* left:-10%; */
       top: 40%;
       height: 40vh;
       aspect-ratio: 1 / 1;
-    
+
       /* border-radius: 50%; */
       overflow-x: hidden;
-    
+
       z-index: 1;
 
-      opacity: 1;
+      opacity: 0;
     }
 
     .spoon-animation {
@@ -78,8 +78,23 @@
       }
 
       .sauce-svg {
-        /* height: 65vh; */
         transform: translateX(2%) translateY(-50%) translateZ(0);
+      }
+
+      .spoon-svg {
+        top: 50%;
+        left: 60%;
+        scale: -1 1;
+        opacity: 0;
+      }
+      .spoon-animation {
+        offset-anchor: 20%;
+        offset-rotate: 0deg;
+        /* offset-position: bottom; */
+        offset-path: path(
+          "m 313.6 17.6 c -73.6 35.2 -51.2 131.2 -27.2 192 c 19.2 51.2 14.4 129.6 -48 147.2 l -3.2 1.6 l -1.6 0"
+        );
+        animation: spoon-path 2s ease-in-out 1s reverse;
       }
     }
   }
@@ -111,8 +126,28 @@
   }
 
   100% {
-    opacity: 1;
-
+    opacity: 0;
     offset-distance: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  @keyframes spoon-path {
+    0% {
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      offset-distance: 100%;
+    }
   }
 }
