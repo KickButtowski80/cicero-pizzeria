@@ -29,7 +29,8 @@
       left: 48%;
 
       transform: translate(-50%, -50%);
-      height: 750px;
+      /* height: 750px; */
+      height: calc(1000px - 12rem);
       aspect-ratio: 1 / 1;
 
       border-radius: 50%;
@@ -39,7 +40,7 @@
     .sauce-animation {
       fill: none;
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
-      stroke-width: 400; /* Increase thickness as needed */
+      stroke-width: 250; /* Increase thickness as needed */
       stroke-dasharray: 50000; /* Length of the path, adjust based on the path length */
       stroke-dashoffset: 50000;
       animation: sauce-path 3s ease-in-out 1s forwards;
@@ -48,21 +49,16 @@
     .spoon-svg {
       /* border: 1px solid red; */
       position: absolute;
-
-      /* left:-10%; */
       top: 40%;
       height: 40vh;
       aspect-ratio: 1 / 1;
-
       /* border-radius: 50%; */
       overflow-x: hidden;
-
       z-index: 1;
-
       opacity: 1;
     }
 
-    .spoon-animation{
+    .spoon-animation {
       /* offset-position: bottom; */
       offset-anchor: 50% 0%;
       offset-path: path(
@@ -78,7 +74,8 @@
       }
 
       .sauce-svg {
-        transform: translateX(2%) translateY(-50%) translateZ(0);
+        /* height: calc(700px - 12rem); */
+        transform: translateX(-4%) translateY(-50%) translateZ(0);
       }
 
       .spoon-svg {
