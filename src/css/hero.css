@@ -37,35 +37,38 @@
     .slices-svg {
       border: 2px solid green;
       position: absolute;
-      /* top: 58%;
-      left: 48%;
-      transform: translate(-50%, -50%); */
+  
       z-index: 2;
-      /* height: 100vh;
-      aspect-ratio: 1 / 1; */
-
+      height: 650px;
+      aspect-ratio: 1 / 1;
+      top: 58%;
+      left: 48%;
+      transform: translate(-50%, -50%);
       border-radius: 50%;
-      overflow-x: hidden;
+  
 
-      stroke-dasharray: 100%; /* Initial hidden state */
-      stroke-dashoffset: 100%;
-      animation: draw-slices 1s ease-in-out 3s forwards;
+    }
+
+    .animated-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw-slices 2s ease-in-out 3s forwards;
     }
 
     .slice-1 {
-      animation-delay: 0s;
+      animation-delay: 3s;
     }
 
     .slice-2 {
-      animation-delay: 0.2s; /* Delay by 0.2 seconds */
+      animation-delay: 3.2s; 
     }
 
     .slice-3 {
-      animation-delay: 0.4s; /* Delay by 0.4 seconds */
+      animation-delay: 3.4s;
     }
 
     .slice-4 {
-      animation-delay: 0.5s; /* Delay by 0.4 seconds */
+      animation-delay: 3.5s;
     }
 
     .sauce-animation {
@@ -103,7 +106,7 @@
         background-position: 20% 75%;
       }
 
-      .sauce-svg {
+      .sauce-svg, .slices-svg{
         /* height: calc(700px - 12rem); */
         transform: translateX(-4%) translateY(-50%) translateZ(0);
       }
@@ -157,11 +160,11 @@
     }
   }
   @keyframes draw-slices {
-    from {
+    /* from {
       stroke-dashoffset: 100%;
-    }
+    } */
     to {
-      stroke-dashoffset: 0%;
+      stroke-dashoffset: 0;
     }
   }
 }
