@@ -30,7 +30,7 @@
 
       transform: translate(-50%, -50%);
       /* height: 750px; */
-      height: calc(1000px - 12rem);
+      height: calc(100vh - 8rem);
       aspect-ratio: 1 / 1;
 
       border-radius: 50%;
@@ -40,7 +40,7 @@
     .sauce-animation {
       fill: none;
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
-      stroke-width: 250; /* Increase thickness as needed */
+      stroke-width: 350; /* Increase thickness as needed */
       stroke-dasharray: 50000; /* Length of the path, adjust based on the path length */
       stroke-dashoffset: 50000;
       animation: sauce-path 3s ease-in-out 1s forwards;
