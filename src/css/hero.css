@@ -27,7 +27,8 @@
       top: 58%;
       left: 48%;
       transform: translate(-50%, -50%);
-      height: calc(100vh - 12rem);
+      /* height: 750px; */
+      height: calc(100vh - 8rem);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       overflow-x: hidden;
