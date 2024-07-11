@@ -32,9 +32,8 @@
       overflow-x: hidden;
     }
 
-    .slices-svg {
-      border: 2px solid green;
-      height: 650px;
+    .slices-svg { 
+      height: 78%;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       top: 58%;
@@ -71,7 +70,7 @@
         -47px
       ); /* Adjust to center the cutter on the path */
     }
-/* slice-3 blue slice-4 red */
+ 
     .pizza-cutter-group {
      opacity: 0;
       animation: 
@@ -91,12 +90,10 @@
     }
 
     .spoon-svg {
-      /* border: 1px solid red; */
       position: absolute;
       top: 40%;
       height: 40vh;
       aspect-ratio: 1 / 1;
-      /* border-radius: 50%; */
       overflow-x: hidden;
       z-index: 3;
       opacity: 1;
