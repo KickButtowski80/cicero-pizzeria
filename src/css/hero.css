@@ -21,13 +21,11 @@
       animation: show-bg 0.5s ease-in-out forwards;
     }
 
-    .sauce-svg {
-      border: 2px solid blue;
+    .sauce-svg { 
       position: absolute;
       top: 58%;
       left: 48%;
       transform: translate(-50%, -50%);
-      /* height: 750px; */
       height: calc(100vh - 8rem);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
@@ -36,41 +34,52 @@
 
     .slices-svg {
       border: 2px solid green;
-      position: absolute;
-  
-      z-index: 2;
       height: 650px;
       aspect-ratio: 1 / 1;
-      top: 58%;
-      left: 48%;
-      transform: translate(-50%, -50%);
       border-radius: 50%;
-  
-
+      top: 58%;
+      left: 49%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      z-index: 3;
     }
-
     .animated-line {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: draw-slices 2s ease-in-out 3s forwards;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: draw-slices 2s ease-in-out forwards;
     }
-
+    
     .slice-1 {
       animation-delay: 3s;
     }
-
+    
     .slice-2 {
-      animation-delay: 3.2s; 
+      animation-delay: 7s;
     }
-
+    
     .slice-3 {
-      animation-delay: 3.4s;
+      animation-delay: 9s;
     }
-
+    
     .slice-4 {
-      animation-delay: 3.5s;
+      animation-delay: 5s;
     }
-
+    
+    .pizza-cutter {
+      transform: translate(
+        -35px,
+        -47px
+      ); /* Adjust to center the cutter on the path */
+    }
+/* slice-3 blue slice-4 red */
+    .pizza-cutter-group {
+      animation: 
+        move-cutter-horizontal 2s ease-in-out 3s forwards,
+        move-cutter-vertical 2s ease-in-out 5s forwards,
+        move-cutter-diagonal 2s ease-in-out 7s forwards,
+        move-cutter-new 2s ease-in-out 9s forwards;
+    }
+    
     .sauce-animation {
       fill: none;
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
@@ -100,13 +109,16 @@
       animation: spoon-path 2s ease-in-out 1s forwards;
     }
 
+ 
+
     @media screen and (max-width: 480px) {
       .pizza-base {
         background-repeat: no-repeat;
         background-position: 20% 75%;
       }
 
-      .sauce-svg, .slices-svg{
+      .sauce-svg,
+      .slices-svg {
         /* height: calc(700px - 12rem); */
         transform: translateX(-4%) translateY(-50%) translateZ(0);
       }
@@ -159,14 +171,67 @@
       offset-distance: 50%;
     }
   }
+
   @keyframes draw-slices {
-    /* from {
-      stroke-dashoffset: 100%;
-    } */
     to {
       stroke-dashoffset: 0;
     }
   }
+  
+
+  @keyframes move-cutter-horizontal {
+    0% {
+      offset-distance: 0%;
+      offset-path: path("M 0 100 L 0 -100");
+    }
+    100% {
+      offset-distance: 100%;
+      offset-path: path("M 0 100 L 0 -100");
+    }
+  }
+  
+  @keyframes move-cutter-vertical {
+    0% {
+      offset-distance: 0%;
+      offset-path: path("M 100 0 L -100 0");
+    }
+    100% {
+      offset-distance: 100%;
+      offset-path: path("M 100 0 L -100 0");
+    }
+  }
+  
+  @keyframes move-cutter-diagonal {
+    0% {
+      offset-distance: 0%;
+      offset-path: path(
+        "M -70.71067811865475 70.71067811865475 L 70.71067811865475 -70.71067811865475"
+      );
+    }
+    100% {
+      offset-distance: 100%;
+      offset-path: path(
+        "M -70.71067811865475 70.71067811865475 L 70.71067811865475 -70.71067811865475"
+      );
+    }
+  }
+  
+  @keyframes move-cutter-new {
+    0% {
+      offset-distance: 0%;
+      offset-path: path(
+        "M -70.71067811865475 -70.71067811865475 L 70.71067811865475 70.71067811865475"
+      );
+    }
+    100% {
+      offset-distance: 100%;
+      offset-path: path(
+        "M -70.71067811865475 -70.71067811865475 L 70.71067811865475 70.71067811865475"
+      );
+    }
+  }
+  
+ 
 }
 
 @media screen and (max-width: 480px) {
