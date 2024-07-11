@@ -73,6 +73,7 @@
     }
 /* slice-3 blue slice-4 red */
     .pizza-cutter-group {
+     opacity: 0;
       animation: 
         move-cutter-horizontal 2s ease-in-out 3s forwards,
         move-cutter-vertical 2s ease-in-out 5s forwards,
@@ -185,6 +186,7 @@
       offset-path: path("M 0 100 L 0 -100");
     }
     100% {
+      opacity: 1;
       offset-distance: 100%;
       offset-path: path("M 0 100 L 0 -100");
     }
@@ -224,6 +226,7 @@
       );
     }
     100% {
+      opacity: 0;
       offset-distance: 100%;
       offset-path: path(
         "M -70.71067811865475 -70.71067811865475 L 70.71067811865475 70.71067811865475"
