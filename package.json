@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "dev": "rm -rf .parcel-cache && DEBUG=parcel:* pnpm parcel src/index.html --no-cache",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
