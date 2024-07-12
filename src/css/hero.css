@@ -53,7 +53,6 @@
     }
 
     .slice-2 {
-       
       animation-delay: 7s;
     }
 
@@ -108,6 +107,15 @@
       animation: spoon-path 2s ease-in-out 1s forwards;
     }
 
+    .tomato {
+      width: 50px;
+      height: 50px;
+    }
+
+  
+    .tomato-1{
+      left: 313px; top: 250px; 
+    }
     @media screen and (max-width: 480px) {
       .pizza-base {
         background-repeat: no-repeat;
@@ -141,19 +149,9 @@
         animation: spoon-path 2s ease-in-out 1s reverse;
       }
 
-      .slice-4{
-        animation: none;
-      }
-  
-    .pizza-cutter-group {
-      opacity: 0;
-      animation:
-      move-cutter-vertical 2s ease-in-out 5s forwards,
-        move-cutter-horizontal 2s ease-in-out 3s forwards,
-        move-cutter-diagonal 2s ease-in-out 7s forwards,
-        move-cutter-new 2s ease-in-out 9s forwards;
-    }
+    
 
+  
     }
   }
 }
