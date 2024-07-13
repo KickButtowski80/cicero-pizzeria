@@ -33,6 +33,7 @@
     }
 
     .slices-svg {
+    
       height: 76.5%;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
@@ -49,6 +50,7 @@
     }
 
     .slice-1 {
+      
       animation-delay: 3s;
     }
 
@@ -76,7 +78,8 @@
         move-cutter-diagonal 2s ease-in-out 7s forwards,
         move-cutter-new 2s ease-in-out 9s forwards;
     }
-
+   
+ 
     .sauce-animation {
       fill: none;
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
@@ -87,6 +90,7 @@
     }
 
     .spoon-svg {
+     
       position: absolute;
       top: 40%;
       height: 40vh;
@@ -103,9 +107,10 @@
       );
       animation: spoon-path 2s ease-in-out 1s forwards;
     }
-    .tomatoes {
+    .animation-tomatoes {
       opacity: 0;
-      animation: show-tomatoes 1s ease-in-out 3s forwards;
+      animation: show-tomatoes 1s ease-in-out forwards;
+      
     }
 
     .tomato-at-top {
@@ -118,10 +123,12 @@
 
     .tomato-at-slice-3 {
       transform: translate(-26px, -140px);
+      animation-delay: 10s;
     }
 
     .tomato-at-slice-4 {
       transform: translate(-68px, -118px);
+      animation-delay: 11s;
     }
 
     .tomato-at-slice-5 {
@@ -130,8 +137,19 @@
 
     .tomato-at-slice-6 {
       transform: translate(-25px, -50px);
+     
     }
 
+
+    .hand-spreading-toppings{
+      opacity: 0;
+      animation:
+      /* move-cutter-horizontal 2s ease-in-out 3s forwards,
+      move-cutter-vertical 2s ease-in-out 5s forwards,
+      move-cutter-diagonal 2s ease-in-out 7s forwards, */
+    toppings-tomato-slice-3 2s ease-in-out 7s forwards,
+    toppings-tomato-slice-4 2s ease-in-out 11s forwards;
+    }
     @media screen and (max-width: 480px) {
       .pizza-base {
         background-repeat: no-repeat;
@@ -169,6 +187,22 @@
 }
 
 @layer utilities {
+
+@keyframes toppings-tomato-slice-3 {
+  100%{
+    opacity: 1;
+    transform: translate(-35px, -70px);
+  }
+}
+
+
+@keyframes toppings-tomato-slice-4 {
+  100%{
+    opacity: 1;
+    transform: translate(-79px, -48px);
+  }
+}
+
   @keyframes show-tomatoes {
     100% {
       opacity: 1;
