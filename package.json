@@ -12,21 +12,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cssnano": "^6.0.3",
+    "cssnano": "^7.0.4",
     "parcel": "^2.12.0",
-    "postcss": "^8.4.33",
-    "postcss-nesting": "^12.0.2",
+    "postcss": "^8.4.39",
+    "postcss-nesting": "^12.1.5",
     "posthtml-iconify": "^0.2.1",
-    "posthtml-include": "^1.7.4",
-    "prettier": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwindcss": "^3.4.1"
+    "posthtml-include": "^2.0.1",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.4"
   },
   "dependencies": {
-    "@parcel/transformer-posthtml": "^2.11.0",
+    "@parcel/transformer-posthtml": "^2.12.0",
     "dotenv": "^16.4.5",
-    "htmlnano": "^2.1.0",
-    "nodemailer": "^6.9.12",
+    "htmlnano": "^2.1.1",
+    "nodemailer": "^6.9.14",
+    "package": "^1.0.1",
     "posthtml": "^0.16.6"
   }
 }
