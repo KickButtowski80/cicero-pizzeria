@@ -68,7 +68,7 @@
       transform: translate(
         -35px,
         -47px
-      ); /* Adjust to center the cutter on the path */
+      );  
     }
 
     .pizza-cutter-group {
@@ -106,16 +106,27 @@
       );
       animation: spoon-path 2s ease-in-out 1s forwards;
     }
-
-    .tomato {
-      width: 50px;
-      height: 50px;
-    }
-
+   .tomatoes{
+    opacity: 0;
+    animation: show-tomatoes 1s ease-in-out 3s forwards
+   }
   
-    .tomato-1{
-      left: 313px; top: 250px; 
+    .tomato-at-top {
+      transform: translate(20px, -90px);
     }
+
+    .tomato-at-bottom {
+      transform: translate(20px, -148px);
+    }
+    .tomato-at-slice-4{
+      transform: translate(-25px, -80px);
+    }
+ 
+    .tomato-at-slice-5 {
+      transform: translate(-25px, -50px);
+    }
+ 
+ 
     @media screen and (max-width: 480px) {
       .pizza-base {
         background-repeat: no-repeat;
@@ -148,15 +159,18 @@
         );
         animation: spoon-path 2s ease-in-out 1s reverse;
       }
-
-    
-
-  
     }
   }
 }
 
 @layer utilities {
+
+@keyframes show-tomatoes {
+  100% {
+    opacity: 1;
+  }
+}
+
   @keyframes show-bg {
     100% {
       opacity: 1;
