@@ -142,6 +142,7 @@
 
 
     .hand-spreading-toppings{
+      scale: 0.3;
       opacity: 0;
       animation:
       /* move-cutter-horizontal 2s ease-in-out 3s forwards,
