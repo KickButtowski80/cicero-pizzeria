@@ -1,3 +1,4 @@
+@import './slices-svg.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,53 +33,7 @@
       overflow-x: hidden;
     }
 
-    .slices-svg {
-    
-      height: 76.5%;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      top: 57%;
-      left: 48.9%;
-      transform: translate(-50%, -50%);
-      position: absolute;
-      z-index: 3;
-    }
-    .animated-line {
-      stroke-dasharray: 200;
-      stroke-dashoffset: 200;
-      animation: draw-slices 2s ease-in-out forwards;
-    }
-
-    .slice-1 {
-      
-      animation-delay: 3s;
-    }
-
-    .slice-2 {
-      animation-delay: 7s;
-    }
-
-    .slice-3 {
-      animation-delay: 9s;
-    }
-
-    .slice-4 {
-      animation-delay: 5s;
-    }
-
-    .pizza-cutter {
-      transform: translate(-35px, -47px);
-    }
-
-    .pizza-cutter-group {
-      opacity: 0;
-      animation:
-        move-cutter-horizontal 2s ease-in-out 3s forwards,
-        move-cutter-vertical 2s ease-in-out 5s forwards,
-        move-cutter-diagonal 2s ease-in-out 7s forwards,
-        move-cutter-new 2s ease-in-out 9s forwards;
-    }
-   
+ 
  
     .sauce-animation {
       fill: none;
@@ -156,16 +111,14 @@
         background-repeat: no-repeat;
         background-position: 20% 75%;
       }
-      .slices-svg {
-        height: 61%;
-      }
+ 
 
       .sauce-svg {
         height: 76%;
       }
 
-      .sauce-svg,
-      .slices-svg {
+   
+      .sauce-svg{
         transform: translateX(-4%) translateY(-50%) translateZ(0);
       }
 
@@ -240,65 +193,7 @@
     }
   }
 
-  @keyframes draw-slices {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @keyframes move-cutter-horizontal {
-    0% {
-      offset-distance: 0%;
-      offset-path: path("M 0 100 L 0 -100");
-    }
-    100% {
-      opacity: 1;
-      offset-distance: 100%;
-      offset-path: path("M 0 100 L 0 -100");
-    }
-  }
-
-  @keyframes move-cutter-vertical {
-    0% {
-      offset-distance: 0%;
-      offset-path: path("M 100 0 L -100 0");
-    }
-    100% {
-      offset-distance: 100%;
-      offset-path: path("M 100 0 L -100 0");
-    }
-  }
-
-  @keyframes move-cutter-diagonal {
-    0% {
-      offset-distance: 0%;
-      offset-path: path(
-        "M -70.71067811865475 70.71067811865475 L 70.71067811865475 -70.71067811865475"
-      );
-    }
-    100% {
-      offset-distance: 100%;
-      offset-path: path(
-        "M -70.71067811865475 70.71067811865475 L 70.71067811865475 -70.71067811865475"
-      );
-    }
-  }
-
-  @keyframes move-cutter-new {
-    0% {
-      offset-distance: 0%;
-      offset-path: path(
-        "M -70.71067811865475 -70.71067811865475 L 70.71067811865475 70.71067811865475"
-      );
-    }
-    100% {
-      opacity: 0;
-      offset-distance: 100%;
-      offset-path: path(
-        "M -70.71067811865475 -70.71067811865475 L 70.71067811865475 70.71067811865475"
-      );
-    }
-  }
+ 
 }
 
 @media screen and (max-width: 480px) {
