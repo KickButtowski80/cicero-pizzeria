@@ -1,4 +1,4 @@
-@import './slices-svg.css';
+@import "./slices-svg.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,8 +33,6 @@
       overflow-x: hidden;
     }
 
- 
- 
     .sauce-animation {
       fill: none;
       stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
@@ -45,7 +43,6 @@
     }
 
     .spoon-svg {
-     
       position: absolute;
       top: 40%;
       height: 40vh;
@@ -65,7 +62,6 @@
     .animation-tomatoes {
       opacity: 0;
       animation: show-tomatoes 1s ease-in-out forwards;
-      
     }
 
     .tomato-at-top {
@@ -92,33 +88,30 @@
 
     .tomato-at-slice-6 {
       transform: translate(-25px, -50px);
-     
     }
 
+    .hand-spreading-toppings {
+      transform: translate(-32px, -152px);
 
-    .hand-spreading-toppings{
-      scale: 0.3;
       opacity: 0;
-      animation:
-      /* move-cutter-horizontal 2s ease-in-out 3s forwards,
+       animation:
+      /*move-cutter-horizontal 2s ease-in-out 3s forwards,
       move-cutter-vertical 2s ease-in-out 5s forwards,
-      move-cutter-diagonal 2s ease-in-out 7s forwards, */
-    toppings-tomato-slice-3 2s ease-in-out 7s forwards,
-    toppings-tomato-slice-4 2s ease-in-out 11s forwards;
+      move-cutter-diagonal 2s ease-in-out 7s forwards, 
+      toppings-tomato-slice-4   2s ease-in-out 11s forwards,*/
+      toppings-tomato-slice-3 2s ease-in-out 7s forwards;
     }
     @media screen and (max-width: 480px) {
       .pizza-base {
         background-repeat: no-repeat;
         background-position: 20% 75%;
       }
- 
 
       .sauce-svg {
         height: 76%;
       }
 
-   
-      .sauce-svg{
+      .sauce-svg {
         transform: translateX(-4%) translateY(-50%) translateZ(0);
       }
 
@@ -141,21 +134,19 @@
 }
 
 @layer utilities {
-
-@keyframes toppings-tomato-slice-3 {
-  100%{
-    opacity: 1;
-    transform: translate(-35px, -70px);
+  @keyframes toppings-tomato-slice-3 {
+    100% {
+      opacity: 1;
+      transform: translate(-32px, -152px);
+    }
   }
-}
 
-
-@keyframes toppings-tomato-slice-4 {
-  100%{
-    opacity: 1;
-    transform: translate(-79px, -48px);
+  @keyframes toppings-tomato-slice-4 {
+    100% {
+      opacity: 1;
+      transform: translate(-79px, -48px);
+    }
   }
-}
 
   @keyframes show-tomatoes {
     100% {
@@ -192,8 +183,6 @@
       offset-distance: 50%;
     }
   }
-
- 
 }
 
 @media screen and (max-width: 480px) {
