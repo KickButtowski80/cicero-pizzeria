@@ -11,5 +11,9 @@
     .musrhooms {
       scale: 0.1;
     }
+
+    .mushroom-slice-1{
+        transform: translate(377px,-260px);
+    }
   }
 }
