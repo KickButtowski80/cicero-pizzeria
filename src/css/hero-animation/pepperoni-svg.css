@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #hero {
+    .animation-pepperoni {
+      opacity: 0;
+      animation: show-pepperoni 1s ease-in-out forwards;
+    }
+
+    .pepperoni-slice-1 {
+      transform: translate(67px, -130px);
+      animation-delay: 5.25s;
+    }
+    .pepperoni-slice-2 {
+      transform: translate(-47px, -157px);
+      animation-delay: 5.5s;
+    }
+    .pepperoni-slice-3 {
+      transform: translate(-87px, -131px);
+      animation-delay: 5.75s;
+    }
+    .pepperoni-slice-4 {
+      transform: translate(-79px, -50px);
+      animation-delay: 6s;
+    }
+    .pepperoni-slice-5 {
+      transform: translate(-39px, -33px);
+      animation-delay: 6.25s;
+    }
+    .pepperoni-slice-6 {
+      transform: translate(9px, -17px);
+      animation-delay: 6.75s;
+    }
+  }
+}
+
+@layer utilities {
+  @keyframes show-pepperoni {
+    100% {
+      opacity: 1;
+    }
+  }
+}

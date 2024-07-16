@@ -1,5 +1,7 @@
 @import url("./hero-animation/mushroom-svg.css");
 @import "./hero-animation/slices-svg.css";
+@import "./hero-animation/pepperoni-svg.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
