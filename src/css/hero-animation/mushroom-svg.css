@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fluid-16-48: clamp(25rem, 70vh, 35rem);
+}
+
+@layer base {
+ #hero{
+    
+ }
+
+}

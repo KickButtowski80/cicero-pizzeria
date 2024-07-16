@@ -3,52 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-  .slices-svg {
-    /* opacity:0; */
-    height: 76.5%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    top: 57%;
-    left: 48.9%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 3;
-  }
-  .animated-line {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    animation: draw-slices 1s ease-in-out forwards;
-  }
+  #hero {
+    .slices-svg {
+      /* opacity:0; */
+      height: 76.5%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      top: 57%;
+      left: 48.9%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      z-index: 3;
+    }
+    .animated-line {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: draw-slices 1s ease-in-out forwards;
+    }
 
-  .slice-1 {
-    animation-delay: 5s;
-  }
+    .slice-1 {
+      animation-delay: 5s;
+    }
 
-  .slice-2 {
-    animation-delay: 5.25s;
-  }
+    .slice-2 {
+      animation-delay: 5.25s;
+    }
 
-  .slice-3 {
-    animation-delay: 5.5s;
-  }
+    .slice-3 {
+      animation-delay: 5.5s;
+    }
 
-  .slice-4 {
-    animation-delay: 5.75s;
-  }
+    .slice-4 {
+      animation-delay: 5.75s;
+    }
 
-  .pizza-cutter {
-    transform: translate(-35px, -47px);
-  }
+    .pizza-cutter {
+      transform: translate(-35px, -47px);
+    }
 
-  .pizza-cutter-group {
-    opacity: 0;
-    animation:
-      move-cutter-horizontal 2s ease-in-out 3s forwards,
-      move-cutter-vertical 2s ease-in-out 5s forwards,
-      move-cutter-diagonal 2s ease-in-out 7s forwards,
-      move-cutter-new 2s ease-in-out 9s forwards;
+    .pizza-cutter-group {
+      opacity: 0;
+      animation:
+        move-cutter-horizontal 2s ease-in-out 3s forwards,
+        move-cutter-vertical 2s ease-in-out 5s forwards,
+        move-cutter-diagonal 2s ease-in-out 7s forwards,
+        move-cutter-new 2s ease-in-out 9s forwards;
+    }
   }
-
   @media screen and (max-width: 480px) {
     .slices-svg {
       height: 61%;
