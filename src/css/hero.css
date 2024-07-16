@@ -1,4 +1,4 @@
-@import "./slices-svg.css";
+@import "./hero-animation/slices-svg.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
