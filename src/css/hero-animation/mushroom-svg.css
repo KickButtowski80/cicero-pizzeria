@@ -7,50 +7,51 @@
 }
 
 @layer base {
-  #hero {
+  #hero{
     .animation-mushrooms {
       opacity: 0;
-      animation: show-mushrooms 1s ease-in-out  forwards;
+      animation: show-mushrooms 1s ease-in-out forwards;
     }
-
-   .mushroom-slice-1 {
+ 
+    .mushroom-slice-1 {
       transform: translate(-31px, -60px);
-       animation-delay: 3.75s;
+      animation-delay: 3.75s;
     }
-     .mushroom-slice-2 {
+    .mushroom-slice-2 {
       transform: translate(-79px, -90px);
-       animation-delay: 4s;
+      animation-delay: 4s;
     }
-     .mushroom-slice-3 {
+    .mushroom-slice-3 {
       transform: translate(-105px, -120px);
-       animation-delay: 4.25s;
+      animation-delay: 4.25s;
     }
-   .mushroom-slice-4 {
+    .mushroom-slice-4 {
       transform: translate(-150px, -50px);
-       animation-delay: 4.5s;
+      animation-delay: 4.5s;
     }
     .mushroom-slice-5 {
       transform: translate(-177px, -60px);
-       animation-delay: 4.75s;
+      animation-delay: 4.75s;
     }
     .mushroom-slice-6 {
       transform: translate(-75px, -17px);
-       animation-delay: 5s;
+      animation-delay: 5s;
     }
-
-    .hand-spreading-toppings {
-      /* opacity: 0;
-     animation:
-       toppings-mushroom-slice-1 0.5s ease-in-out 3.75s forwards,
-      toppings-mushroom-slice-2 0.5s ease-in-out 4s forwards,
-      toppings-mushroom-slice-3 0.5s ease-in-out 4.25s forwards,
-      toppings-mushroom-slice-4 0.5s ease-in-out 4.5s forwards,
-      toppings-mushroom-slice-5 0.5s ease-in-out 4.75s forwards,
-      toppings-mushroom-slice-6 0.5s ease-in-out 5s forwards; */
-    } 
+    .slices-svg .hand-spreading-toppings {
+      transform: translate(20px, -100px);
+      opacity: 0;
+      /* animation:
+          toppings-mushroom-slice-1 0.5s ease-in-out 3.75s forwards,
+          toppings-mushroom-slice-2 0.5s ease-in-out 4s forwards,
+          toppings-mushroom-slice-3 0.5s ease-in-out 4.25s forwards,
+          toppings-mushroom-slice-4 0.5s ease-in-out 4.5s forwards,
+          toppings-mushroom-slice-5 0.5s ease-in-out 4.75s forwards,
+          toppings-mushroom-slice-6 0.5s ease-in-out 5s forwards; */
+  }
+  
+   
   }
 }
-
 
 @layer utilities {
   @keyframes show-mushrooms {
@@ -58,7 +59,7 @@
       opacity: 1;
     }
   }
-   @keyframes toppings-mushroom-slice-1 {
+  @keyframes toppings-mushroom-slice-1 {
     100% {
       opacity: 1;
       transform: translate(20px, -100px);
@@ -97,6 +98,5 @@
       opacity: 1;
       transform: translate(-33px, -60px);
     }
-  }  
- 
+  }
 }
