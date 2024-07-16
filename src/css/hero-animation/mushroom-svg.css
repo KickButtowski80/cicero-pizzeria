@@ -12,8 +12,23 @@
       scale: 0.1;
     }
 
-    .mushroom-slice-1{
-        transform: translate(377px,-260px);
+    .mushroom-slice-1 {
+      transform: translate(377px, -260px);
+    }
+    .mushroom-slice-2 {
+      transform: translate(69px, -690px);
+    }
+    .mushroom-slice-3 {
+      transform: translate(-385px, -620px);
+    }
+    .mushroom-slice-4 {
+      transform: translate(-450px, -320px);
+    }
+    .mushroom-slice-5 {
+      transform: translate(-777px, 60px);
+    }
+    .mushroom-slice-6 {
+      transform: translate(580px, 90px);
     }
   }
 }
