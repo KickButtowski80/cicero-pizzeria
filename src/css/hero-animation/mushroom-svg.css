@@ -7,8 +7,9 @@
 }
 
 @layer base {
- #hero{
-    
- }
-
+  #hero {
+    .musrhooms {
+      scale: 0.1;
+    }
+  }
 }
