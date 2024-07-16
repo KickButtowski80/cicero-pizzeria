@@ -39,7 +39,7 @@
       stroke-width: 350; /* Increase thickness as needed */
       stroke-dasharray: 50000; /* Length of the path, adjust based on the path length */
       stroke-dashoffset: 50000;
-      animation: sauce-path 3s ease-in-out 1s forwards;
+      animation: sauce-path 1.5s ease-in-out 0.5s forwards;
     }
 
     .spoon-svg {
@@ -57,49 +57,53 @@
       offset-path: path(
         "M 111 27 a 20 20 90 0 1 -3 28 A 130 130 90 0 0 60 156 c 0 55 45 100 100 100 s 100 -45 100 -100 a 70 70 90 0 0 -140 0 c 0 22 18 40 40 40 s 40 -18 40 -40 c 0 -6 -4 -10 -10 -10 c -6 0 -10 4 -10 10 a 20 20 90 1 1 -40 0 c 0 -28 22 -50 50 -50 s 50 22 50 50 c 0 44 -36 80 -80 80 s -80 -36 -80 -80 c 0 -61 49 -110 110 -110 s 110 49 110 110 c 0 77 -63 140 -140 140 s -140 -63 -140 -140 C 20 103 45 56 83 25 a 20 20 90 0 1 28 3"
       );
-      animation: spoon-path 2s ease-in-out 1s forwards;
+      animation: spoon-path 1.5s ease-in-out 0.5s forwards;
     }
     .animation-tomatoes {
       opacity: 0;
-      animation: show-tomatoes 1s ease-in-out forwards;
+      animation: show-tomatoes 1s ease-in-out 2s forwards;
     }
 
-    .tomato-at-top {
-      transform: translate(20px, -90px);
+    .tomato-at-slice-1 {
+      transform: translate(20px, -100px);
+      animation-delay: 2s;
     }
 
-    .tomato-at-bottom {
+    .tomato-at-slice-2 {
       transform: translate(20px, -148px);
+      animation-delay: 2.25s;
     }
 
     .tomato-at-slice-3 {
       transform: translate(-26px, -140px);
-      animation-delay: 10s;
+      animation-delay: 2.5s;
     }
 
     .tomato-at-slice-4 {
       transform: translate(-68px, -118px);
-      animation-delay: 11s;
+      animation-delay: 3s;
     }
 
     .tomato-at-slice-5 {
-      transform: translate(-25px, -80px);
+      transform: translate(-49px, -80px);
+      animation-delay: 3.25s;
     }
 
     .tomato-at-slice-6 {
       transform: translate(-25px, -50px);
+      animation-delay: 3.5s;
     }
 
     .hand-spreading-toppings {
-      transform: translate(-32px, -152px);
-
+      transform: translate(20px, -100px);
       opacity: 0;
-       animation:
-      /*move-cutter-horizontal 2s ease-in-out 3s forwards,
-      move-cutter-vertical 2s ease-in-out 5s forwards,
-      move-cutter-diagonal 2s ease-in-out 7s forwards, 
-      toppings-tomato-slice-4   2s ease-in-out 11s forwards,*/
-      toppings-tomato-slice-3 2s ease-in-out 7s forwards;
+      animation:
+        toppings-tomato-slice-1 0.5s ease-in-out 2s forwards,
+        toppings-tomato-slice-2 0.5s ease-in-out 2.25s forwards,
+        toppings-tomato-slice-3 0.5s ease-in-out 2.5s forwards,
+        toppings-tomato-slice-4 0.5s ease-in-out 3s forwards,
+        toppings-tomato-slice-5 0.5s ease-in-out 3.25s forwards,
+        toppings-tomato-slice-6 0.5s ease-in-out 3.5s forwards;
     }
     @media screen and (max-width: 480px) {
       .pizza-base {
@@ -134,6 +138,19 @@
 }
 
 @layer utilities {
+  @keyframes toppings-tomato-slice-1 {
+    100% {
+      opacity: 1;
+      transform: translate(20px, -100px);
+    }
+  }
+  @keyframes toppings-tomato-slice-2 {
+    100% {
+      opacity: 1;
+      transform: translate(16px, -160px);
+    }
+  }
+
   @keyframes toppings-tomato-slice-3 {
     100% {
       opacity: 1;
@@ -144,9 +161,24 @@
   @keyframes toppings-tomato-slice-4 {
     100% {
       opacity: 1;
-      transform: translate(-79px, -48px);
+      transform: translate(-77px, -130px);
     }
   }
+
+  @keyframes toppings-tomato-slice-5 {
+    100% {
+      opacity: 1;
+      transform: translate(-55px, -92px);
+    }
+  }
+
+  @keyframes toppings-tomato-slice-6 {
+    100% {
+      opacity: 1;
+      transform: translate(-33px, -60px);
+    }
+  }
+
 
   @keyframes show-tomatoes {
     100% {
