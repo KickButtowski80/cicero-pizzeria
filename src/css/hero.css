@@ -1,5 +1,5 @@
+@import url("./hero-animation/mushroom-svg.css");
 @import "./hero-animation/slices-svg.css";
-@import "./hero-animation/mushroom-svg.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,7 +62,7 @@
     }
     .animation-tomatoes {
       opacity: 0;
-      animation: show-tomatoes 1s ease-in-out 2s forwards;
+      animation: show-tomatoes 1s ease-in-out  forwards;
     }
 
     .tomato-at-slice-1 {
@@ -95,22 +95,22 @@
       animation-delay: 3.5s;
     }
 
-    .hand-spreading-toppings {
+    .slices-svg  .hand-spreading-toppings {
       transform: translate(20px, -100px);
       opacity: 0;
       animation:
-         toppings-tomato-slice-1 0.5s ease-in-out 2s forwards,
+        toppings-tomato-slice-1 0.5s ease-in-out 2s forwards,
         toppings-tomato-slice-2 0.5s ease-in-out 2.25s forwards,
         toppings-tomato-slice-3 0.5s ease-in-out 2.5s forwards,
         toppings-tomato-slice-4 0.5s ease-in-out 3s forwards,
         toppings-tomato-slice-5 0.5s ease-in-out 3.25s forwards,
-        toppings-tomato-slice-6 0.5s ease-in-out 3.5s forwards, 
-        toppings-mushroom-slice-1 0.5s ease-in-out 3.75s forwards,
+        toppings-tomato-slice-6 0.5s ease-in-out 3.5s forwards,
+       toppings-mushroom-slice-1 0.5s ease-in-out 3.75s forwards,
         toppings-mushroom-slice-2 0.5s ease-in-out 4s forwards,
         toppings-mushroom-slice-3 0.5s ease-in-out 4.25s forwards,
         toppings-mushroom-slice-4 0.5s ease-in-out 4.5s forwards,
         toppings-mushroom-slice-5 0.5s ease-in-out 4.75s forwards,
-        toppings-mushroom-slice-6 0.5s ease-in-out 5s forwards;
+        toppings-mushroom-slice-6 0.5s ease-in-out 5s forwards; 
     }
     @media screen and (max-width: 480px) {
       .pizza-base {
@@ -186,7 +186,7 @@
     }
   }
 
-  @keyframes toppings-mushroom-slice-1 {
+  /* @keyframes toppings-mushroom-slice-1 {
     100% {
       opacity: 1;
       transform: translate(43px, -135px);
@@ -225,7 +225,7 @@
       opacity: 1;
       transform: translate(-6px, -80px);
     }
-  }
+  } */
 
   @keyframes show-tomatoes {
     100% {
