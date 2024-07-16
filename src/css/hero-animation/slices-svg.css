@@ -22,19 +22,19 @@
     }
 
     .slice-1 {
-      animation-delay: 5s;
+      animation-delay: 8s;
     }
 
     .slice-2 {
-      animation-delay: 5.25s;
+      animation-delay: 8.25s;
     }
 
     .slice-3 {
-      animation-delay: 5.5s;
+      animation-delay: 8.5s;
     }
 
     .slice-4 {
-      animation-delay: 5.75s;
+      animation-delay: 8.75s;
     }
 
     .pizza-cutter {
@@ -44,10 +44,10 @@
     .pizza-cutter-group {
       opacity: 0;
       animation:
-        move-cutter-horizontal 2s ease-in-out 3s forwards,
-        move-cutter-vertical 2s ease-in-out 5s forwards,
-        move-cutter-diagonal 2s ease-in-out 7s forwards,
-        move-cutter-new 2s ease-in-out 9s forwards;
+        move-cutter-horizontal 2s ease-in-out 8s forwards,
+        move-cutter-vertical 2s ease-in-out 8.25s forwards,
+        move-cutter-diagonal 2s ease-in-out 8.5s forwards,
+        move-cutter-new 2s ease-in-out 8.75s forwards;
     }
  
   @media screen and (max-width: 480px) {

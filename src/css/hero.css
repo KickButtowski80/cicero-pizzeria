@@ -62,7 +62,7 @@
     }
     .animation-tomatoes {
       opacity: 0;
-      animation: show-tomatoes 1s ease-in-out  forwards;
+      animation: show-tomatoes 1s ease-in-out forwards;
     }
 
     .tomato-at-slice-1 {
@@ -95,7 +95,7 @@
       animation-delay: 3.5s;
     }
 
-    .slices-svg  .hand-spreading-toppings {
+    .slices-svg .hand-spreading-toppings {
       transform: translate(20px, -100px);
       opacity: 0;
       animation:
@@ -105,12 +105,12 @@
         toppings-tomato-slice-4 0.5s ease-in-out 3s forwards,
         toppings-tomato-slice-5 0.5s ease-in-out 3.25s forwards,
         toppings-tomato-slice-6 0.5s ease-in-out 3.5s forwards,
-       toppings-mushroom-slice-1 0.5s ease-in-out 3.75s forwards,
+        toppings-mushroom-slice-1 0.5s ease-in-out 3.75s forwards,
         toppings-mushroom-slice-2 0.5s ease-in-out 4s forwards,
         toppings-mushroom-slice-3 0.5s ease-in-out 4.25s forwards,
         toppings-mushroom-slice-4 0.5s ease-in-out 4.5s forwards,
         toppings-mushroom-slice-5 0.5s ease-in-out 4.75s forwards,
-        toppings-mushroom-slice-6 0.5s ease-in-out 5s forwards; 
+        toppings-mushroom-slice-6 0.5s ease-in-out 5s forwards;
     }
     @media screen and (max-width: 480px) {
       .pizza-base {
