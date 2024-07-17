@@ -18,7 +18,7 @@
       animation-delay: 5.5s;
     }
     .pepperoni-slice-3 {
-      transform: translate(-145px, -131px);
+      transform: translate(-91px, -141px);
       animation-delay: 5.75s;
     }
     .pepperoni-slice-4 {
@@ -52,35 +52,35 @@
   @keyframes toppings-pepperoni-slice-2 {
     100% {
       opacity: 1;
-      transform: translate(-56x, -167px);
+      transform: translate(-56px, -167px);
     }
   }
 
   @keyframes toppings-pepperoni-slice-3 {
     100% {
       opacity: 1;
-      transform: translate(-32px, -184px);
+      transform: translate(-90px, -154px);
     }
   }
 
   @keyframes toppings-pepperoni-slice-4 {
     100% {
       opacity: 1;
-      transform: translate(-103px, -124px);
+      transform: translate(-87px, -61px);
     }
   }
 
   @keyframes toppings-pepperoni-slice-5 {
     100% {
       opacity: 1;
-      transform: translate(-79px, -113px);
+      transform: translate(-43px, -43px);
     }
   }
 
   @keyframes toppings-pepperoni-slice-6 {
     100% {
       opacity: 1;
-      transform: translate(-6px, -80px);
+      transform: translate(0px, -28px);
     }
   }  
 
