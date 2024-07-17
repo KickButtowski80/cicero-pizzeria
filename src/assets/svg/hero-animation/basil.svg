@@ -7,12 +7,11 @@ Author: Vera Ae
 Source:https://www.svgrepo.com/svg/417245/Basil-->
 
 
-<svg>
-    <symbol viewBox="-3.2 -3.2 38.40 38.40" id="basil-icon" xmlns="http://www.w3.org/2000/svg"
-        fill="#000000"
-        transform="rotate(0)">
-
-        <defs>
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+    <symbol  id="basil-icon"  viewBox="-3.2 -3.2 38.40 38.40"
+        >
+    
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
                 stroke="#CCCCCC"
@@ -26,6 +25,6 @@ Source:https://www.svgrepo.com/svg/417245/Basil-->
                 <path class="cls-2"
                     d="M16,8h0a1,1,0,0,1,1,1V30a0,0,0,0,1,0,0H15a0,0,0,0,1,0,0V9A1,1,0,0,1,16,8Z"></path>
             </g>
-        </defs>
-    </symbol>
+        </symbol>
+    </defs>
 </svg>
