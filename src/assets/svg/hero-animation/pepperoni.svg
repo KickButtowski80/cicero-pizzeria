@@ -13,10 +13,7 @@ Source: https://www.svgrepo.com/svg/417228/pepperoni -->
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
-                <defs>
-                    <style>.cls-1{fill:#be3333;}.cls-2{fill:#e1a0a0;}</style>
-                </defs>
-                <title>Pepperoni</title>
+                                <title>Pepperoni</title>
                 <circle fill="#be3333" cx="16" cy="16" r="14"></circle>
                 <path fill="#e1a0a0"
                     d="M12,10.14a1,1,0,0,1-.71-1.71l1.14-1.14a1,1,0,0,1,1.41,1.41L12.71,9.85A1,1,0,0,1,12,10.14Z"></path>
