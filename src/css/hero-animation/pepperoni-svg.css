@@ -42,4 +42,46 @@
       opacity: 1;
     }
   }
+
+   @keyframes toppings-pepperoni-slice-1 {
+    100% {
+      opacity: 1;
+      transform: translate(61px, -141px);
+    }
+  }
+  @keyframes toppings-pepperoni-slice-2 {
+    100% {
+      opacity: 1;
+      transform: translate(-56x, -167px);
+    }
+  }
+
+  @keyframes toppings-pepperoni-slice-3 {
+    100% {
+      opacity: 1;
+      transform: translate(-32px, -184px);
+    }
+  }
+
+  @keyframes toppings-pepperoni-slice-4 {
+    100% {
+      opacity: 1;
+      transform: translate(-103px, -124px);
+    }
+  }
+
+  @keyframes toppings-pepperoni-slice-5 {
+    100% {
+      opacity: 1;
+      transform: translate(-79px, -113px);
+    }
+  }
+
+  @keyframes toppings-pepperoni-slice-6 {
+    100% {
+      opacity: 1;
+      transform: translate(-6px, -80px);
+    }
+  }  
+
 }
