@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fluid-16-48: clamp(25rem, 70vh, 35rem);
+}
+
+@layer base {
+  #hero {
+    .animation-basils {
+        opacity: 0;
+        animation: show-mushrooms 1s ease-in-out forwards;
+      }
+    .basil-slice-1 {
+      transform: translate(-31px, -73px);
+      animation-delay: 5.25s;
+    }
+    .basil-slice-2 {
+      transform: translate(-88px, -85px);
+      animation-delay: 5.75s;
+    }
+    .basil-slice-3 {
+      transform: translate(-110px, -36px);
+      animation-delay: 6s;
+    }
+    .basil-slice-4 {
+      transform: translate(-98px, 27px);
+      animation-delay: 6.25s;
+    }
+    .basil-slice-5 {
+      transform: translate(-49px, 24px);
+      animation-delay: 6.75s;
+    }
+    .basil-slice-6 {
+      transform: translate(35px, 14px);
+      animation-delay: 7s;
+    }
+    .basil-slice-7{
+        transform: translate(0px, 50px);
+        animation-delay: 7.25s;
+      }
+  }
+}
