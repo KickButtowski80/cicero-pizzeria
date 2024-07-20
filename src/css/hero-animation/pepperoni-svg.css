@@ -33,6 +33,11 @@
       transform: translate(9px, -17px);
       animation-delay: 6.5s;
     }
+
+    .pepperoni-slice-7 {
+      transform: translate(35px, -74px);
+      animation-delay: 6.5s;
+    }
   }
 }
 
