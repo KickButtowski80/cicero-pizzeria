@@ -42,3 +42,54 @@
       }
   }
 }
+
+
+@layer utilities {
+    @keyframes toppings-basil-slice-1 {
+      100% {
+        opacity: 1;
+        transform: translate(20px, -100px);
+      }
+    }
+    @keyframes toppings-basil-slice-2 {
+      100% {
+        opacity: 1;
+        transform: translate(16px, -160px);
+      }
+    }
+  
+    @keyframes toppings-basil-slice-3 {
+      100% {
+        opacity: 1;
+        transform: translate(-32px, -152px);
+      }
+    }
+  
+    @keyframes toppings-basil-slice-4 {
+      100% {
+        opacity: 1;
+        transform: translate(-77px, -130px);
+      }
+    }
+  
+    @keyframes toppings-basil-slice-5 {
+      100% {
+        opacity: 1;
+        transform: translate(-55px, -92px);
+      }
+    }
+  
+    @keyframes toppings-basil-slice-6 {
+      100% {
+        opacity: 1;
+        transform: translate(-33px, -60px);
+      }
+    }
+
+    @keyframes toppings-basil-slice-7 {
+        100% {
+          opacity: 1;
+          transform: translate(-33px, -60px);
+        }
+      }
+}  
