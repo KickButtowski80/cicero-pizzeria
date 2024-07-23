@@ -36,7 +36,7 @@
 
     .pepperoni-slice-7 {
       transform: translate(35px, -74px);
-      animation-delay: 6.5s;
+      animation-delay: 6.7s;
     }
   }
 }
@@ -86,6 +86,12 @@
     100% {
       opacity: 1;
       transform: translate(0px, -28px);
+    }
+  }  
+  @keyframes toppings-pepperoni-slice-7 {
+    100% {
+      opacity: 1;
+      transform: translate(3px, -28px);
     }
   }  
 
