@@ -44,10 +44,10 @@
     .pizza-cutter-group {
       opacity: 0;
       animation:
-        move-cutter-horizontal 2s ease-in-out 8s forwards,
-        move-cutter-vertical 2s ease-in-out 8.25s forwards,
-        move-cutter-diagonal 2s ease-in-out 8.5s forwards,
-        move-cutter-new 2s ease-in-out 8.75s forwards;
+        move-cutter-horizontal 1s ease-in-out 8s forwards,
+        move-cutter-vertical 1s ease-in-out 8.15s forwards,
+        move-cutter-diagonal 1s ease-in-out 8.5s forwards,
+        move-cutter-new 1s ease-in-out 8.75s forwards;
     }
  
   @media screen and (max-width: 480px) {
