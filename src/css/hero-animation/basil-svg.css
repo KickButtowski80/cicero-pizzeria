@@ -88,7 +88,7 @@
 
     @keyframes toppings-basil-slice-7 {
         100% {
-          opacity: 1;
+          opacity: 0;
           transform: translate(-33px, -60px);
         }
       }
