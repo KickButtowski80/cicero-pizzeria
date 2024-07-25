@@ -1,3 +1,4 @@
+@import url("./hero-animation/sauce-svg.css");
 @import url("./hero-animation/mushroom-svg.css");
 @import "./hero-animation/slices-svg.css";
 @import "./hero-animation/pepperoni-svg.css";
@@ -26,25 +27,7 @@
       animation: show-bg 0.5s ease-in-out forwards;
     }
 
-    .sauce-svg {
-      position: absolute;
-      top: 58%;
-      left: 48%;
-      transform: translate(-50%, -50%);
-      height: calc(100vh - 8rem);
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      overflow-x: hidden;
-    }
-
-    .sauce-animation {
-      fill: none;
-      stroke: #950202; /* Tomato Red */ /* Adjust color as desired */
-      stroke-width: 350; /* Increase thickness as needed */
-      stroke-dasharray: 50000; /* Length of the path, adjust based on the path length */
-      stroke-dashoffset: 50000;
-      animation: sauce-path 1.5s ease-in-out 0.5s forwards;
-    }
+ 
 
     .spoon-svg {
       position: absolute;
@@ -203,46 +186,7 @@
     }
   }
 
-  /* @keyframes toppings-mushroom-slice-1 {
-    100% {
-      opacity: 1;
-      transform: translate(43px, -135px);
-    }
-  }
-  @keyframes toppings-mushroom-slice-2 {
-    100% {
-      opacity: 1;
-      transform: translate(-5px, -150px);
-    }
-  }
-
-  @keyframes toppings-mushroom-slice-3 {
-    100% {
-      opacity: 1;
-      transform: translate(-32px, -184px);
-    }
-  }
-
-  @keyframes toppings-mushroom-slice-4 {
-    100% {
-      opacity: 1;
-      transform: translate(-103px, -124px);
-    }
-  }
-
-  @keyframes toppings-mushroom-slice-5 {
-    100% {
-      opacity: 1;
-      transform: translate(-79px, -113px);
-    }
-  }
-
-  @keyframes toppings-mushroom-slice-6 {
-    100% {
-      opacity: 1;
-      transform: translate(-6px, -80px);
-    }
-  } */
+ 
 
   @keyframes show-tomatoes {
     100% {
