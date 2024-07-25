@@ -14,31 +14,31 @@
       }
     .basil-slice-1 {
       transform: translate(-31px, -73px);
-      animation-delay: 5.25s;
+      animation-delay: 6.75s;
     }
     .basil-slice-2 {
       transform: translate(-88px, -85px);
-      animation-delay: 5.75s;
+      animation-delay: 7s;
     }
     .basil-slice-3 {
       transform: translate(-110px, -36px);
-      animation-delay: 6s;
+      animation-delay: 7.25s;
     }
     .basil-slice-4 {
       transform: translate(-98px, 27px);
-      animation-delay: 6.25s;
+      animation-delay: 7.75s;
     }
     .basil-slice-5 {
       transform: translate(-49px, 24px);
-      animation-delay: 6.75s;
+      animation-delay: 8s;
     }
     .basil-slice-6 {
       transform: translate(35px, 14px);
-      animation-delay: 7s;
+      animation-delay: 8.25s;
     }
     .basil-slice-7{
         transform: translate(0px, 50px);
-        animation-delay: 7.25s;
+        animation-delay: 8.5s;
       }
   }
 }
@@ -48,48 +48,48 @@
     @keyframes toppings-basil-slice-1 {
       100% {
         opacity: 1;
-        transform: translate(20px, -100px);
+        transform: translate(-9px, -174px);
       }
     }
     @keyframes toppings-basil-slice-2 {
       100% {
         opacity: 1;
-        transform: translate(16px, -160px);
+        transform: translate(-64px, -184px);
       }
     }
   
     @keyframes toppings-basil-slice-3 {
       100% {
         opacity: 1;
-        transform: translate(-32px, -152px);
+        transform: translate(-88px, -137px);
       }
     }
   
     @keyframes toppings-basil-slice-4 {
       100% {
         opacity: 1;
-        transform: translate(-77px, -130px);
+        transform: translate(-77px, -73px);
       }
     }
   
     @keyframes toppings-basil-slice-5 {
       100% {
         opacity: 1;
-        transform: translate(-55px, -92px);
+        transform: translate(-26px, -77px);
       }
     }
   
     @keyframes toppings-basil-slice-6 {
       100% {
         opacity: 1;
-        transform: translate(-33px, -60px);
+        transform: translate(21px, 51px);
       }
     }
 
     @keyframes toppings-basil-slice-7 {
         100% {
           opacity: 0;
-          transform: translate(-33px, -60px);
+          transform: translate(-29px, -76px);
         }
       }
 }  
