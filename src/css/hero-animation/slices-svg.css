@@ -26,15 +26,15 @@
     }
 
     .horizontal-slice {
-      animation-delay: 8.75s;
+      animation-delay: 9.5s;
     }
 
     .reverse-diagonal-slice {
-      animation-delay: 9s;
+      animation-delay: 10.5s;
     }
 
     .diagonal-slice {
-      animation-delay: 9.25s;
+      animation-delay: 11.5s;
     }
 
     .pizza-cutter {
@@ -45,9 +45,9 @@
       opacity: 0;
       animation:
         move-cutter-vertical 1s ease-in-out 8.5s forwards,
-        move-cutter-horizontal 1s ease-in-out 8.75s forwards,
-        move-cutter-reverse-diagonal 1s ease-in-out 9s forwards,
-        move-cutter-diagonal 1s ease-in-out 9.25s forwards;
+        move-cutter-horizontal 1s ease-in-out 9.5s forwards,
+        move-cutter-reverse-diagonal 1s ease-in-out 10.5s forwards,
+        move-cutter-diagonal 1s ease-in-out 11.5s forwards;
     }
 
     @media screen and (max-width: 480px) {
