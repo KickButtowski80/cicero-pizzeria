@@ -21,20 +21,20 @@
       animation: draw-slices 1s ease-in-out forwards;
     }
 
-    .slice-1 {
-      animation-delay: 8s;
-    }
-
-    .slice-2 {
-      animation-delay: 8.25s;
-    }
-
-    .slice-3 {
+    .vertical-slice {
       animation-delay: 8.5s;
     }
 
-    .slice-4 {
+    .horizontal-slice {
       animation-delay: 8.75s;
+    }
+
+    .reverse-diagonal-slice {
+      animation-delay: 9s;
+    }
+
+    .diagonal-slice {
+      animation-delay: 9.25s;
     }
 
     .pizza-cutter {
@@ -44,22 +44,22 @@
     .pizza-cutter-group {
       opacity: 0;
       animation:
-        move-cutter-horizontal 1s ease-in-out 8s forwards,
-        move-cutter-vertical 1s ease-in-out 8.15s forwards,
-        move-cutter-diagonal 1s ease-in-out 8.5s forwards,
-        move-cutter-new 1s ease-in-out 8.75s forwards;
-    }
- 
-  @media screen and (max-width: 480px) {
-    .slices-svg {
-      height: 61%;
+        move-cutter-vertical 1s ease-in-out 8.5s forwards,
+        move-cutter-horizontal 1s ease-in-out 8.75s forwards,
+        move-cutter-reverse-diagonal 1s ease-in-out 9s forwards,
+        move-cutter-diagonal 1s ease-in-out 9.25s forwards;
     }
 
-    .slices-svg {
-      transform: translateX(-4%) translateY(-50%) translateZ(0);
+    @media screen and (max-width: 480px) {
+      .slices-svg {
+        height: 61%;
+      }
+
+      .slices-svg {
+        transform: translateX(-4%) translateY(-50%) translateZ(0);
+      }
     }
   }
-}
 }
 
 @layer utilities {
@@ -92,7 +92,7 @@
     }
   }
 
-  @keyframes move-cutter-diagonal {
+  @keyframes move-cutter-reverse-diagonal {
     0% {
       offset-distance: 0%;
       offset-path: path(
@@ -107,7 +107,7 @@
     }
   }
 
-  @keyframes move-cutter-new {
+  @keyframes move-cutter-diagonal {
     0% {
       offset-distance: 0%;
       offset-path: path(
