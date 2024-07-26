@@ -69,7 +69,7 @@
     }
   }
 
-  @keyframes move-cutter-horizontal {
+  @keyframes move-cutter-vertical {
     0% {
       offset-distance: 0%;
       offset-path: path("M 0 100 L 0 -100");
@@ -81,7 +81,7 @@
     }
   }
 
-  @keyframes move-cutter-vertical {
+  @keyframes move-cutter-horizontal {
     0% {
       offset-distance: 0%;
       offset-path: path("M 100 0 L -100 0");
