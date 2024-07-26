@@ -56,7 +56,7 @@
       }
 
       .slices-svg {
-        transform: translateX(-4%) translateY(-50%) translateZ(0);
+        transform: translateX(0%) translateY(-50%) translateZ(0);
       }
     }
   }
