@@ -1,9 +1,9 @@
 @import url("./hero-animation/sauce-svg.css");
-@import url("./hero-animation/tomato-svg.css");
 @import url("./hero-animation/mushroom-svg.css");
+/* @import url("./hero-animation/tomato-svg.css"); */
+@import "./hero-animation/slices-svg.css";
 @import "./hero-animation/pepperoni-svg.css";
 @import "./hero-animation/basil-svg.css";
-@import "./hero-animation/slices-svg.css";
 
 @tailwind base;
 @tailwind components;
@@ -28,6 +28,8 @@
       animation: show-bg 0.5s ease-in-out forwards;
     }
 
+ 
+
     .spoon-svg {
       position: absolute;
       top: 40%;
@@ -45,6 +47,40 @@
       );
       animation: spoon-path 1.5s ease-in-out 0.5s forwards;
     }
+    .animation-tomatoes {
+      opacity: 0;
+      animation: show-tomatoes 1s ease-in-out forwards;
+    }
+
+    .tomato-at-slice-1 {
+      transform: translate(20px, -100px);
+      animation-delay: 2s;
+    }
+
+    .tomato-at-slice-2 {
+      transform: translate(20px, -148px);
+      animation-delay: 2.25s;
+    }
+
+    .tomato-at-slice-3 {
+      transform: translate(-26px, -140px);
+      animation-delay: 2.5s;
+    }
+
+    .tomato-at-slice-4 {
+      transform: translate(-68px, -118px);
+      animation-delay: 3s;
+    }
+
+    .tomato-at-slice-5 {
+      transform: translate(-49px, -80px);
+      animation-delay: 3.25s;
+    }
+
+    .tomato-at-slice-6 {
+      transform: translate(-25px, -50px);
+      animation-delay: 3.5s;
+    } 
 
     .slices-svg .hand-spreading-toppings {
       transform: translate(20px, -100px);
@@ -109,7 +145,56 @@
   }
 }
 
-@layer utilities {
+  @layer utilities {
+  @keyframes toppings-tomato-slice-1 {
+    100% {
+      opacity: 1;
+      transform: translate(20px, -100px);
+    }
+  }
+  @keyframes toppings-tomato-slice-2 {
+    100% {
+      opacity: 1;
+      transform: translate(16px, -160px);
+    }
+  }
+
+  @keyframes toppings-tomato-slice-3 {
+    100% {
+      opacity: 1;
+      transform: translate(-32px, -152px);
+    }
+  }
+
+  @keyframes toppings-tomato-slice-4 {
+    100% {
+      opacity: 1;
+      transform: translate(-77px, -130px);
+    }
+  }
+
+  @keyframes toppings-tomato-slice-5 {
+    100% {
+      opacity: 1;
+      transform: translate(-55px, -92px);
+    }
+  }
+
+  @keyframes toppings-tomato-slice-6 {
+    100% {
+      opacity: 1;
+      transform: translate(-33px, -60px);
+    }
+  }
+
+ 
+
+  @keyframes show-tomatoes {
+    100% {
+      opacity: 1;
+    }
+  }
+
   @keyframes show-bg {
     100% {
       opacity: 1;
@@ -139,7 +224,7 @@
       offset-distance: 50%;
     }
   }
-}
+}  
 
 @media screen and (max-width: 480px) {
   @keyframes spoon-path {
