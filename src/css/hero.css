@@ -27,9 +27,20 @@
       overflow: hidden;
       animation: show-bg 0.5s ease-in-out forwards;
     }
-
- 
-
+    .background-slogan {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      opacity: 0.5;
+      font-size: 2em;
+      color: #9b1860;
+    }
+    .slogan-animation {
+      opacity: 0;
+      animation: show-slogan 2s ease-in-out 9s forwards;
+    }
     .spoon-svg {
       position: absolute;
       top: 40%;
@@ -80,7 +91,7 @@
     .tomato-at-slice-6 {
       transform: translate(-25px, -50px);
       animation-delay: 3.5s;
-    } 
+    }
 
     .slices-svg .hand-spreading-toppings {
       transform: translate(20px, -100px);
@@ -145,7 +156,13 @@
   }
 }
 
-  @layer utilities {
+@layer utilities {
+
+  @keyframes show-slogan {
+    100%{
+      opacity: 1;
+    }
+  }
   @keyframes toppings-tomato-slice-1 {
     100% {
       opacity: 1;
@@ -187,8 +204,6 @@
     }
   }
 
- 
-
   @keyframes show-tomatoes {
     100% {
       opacity: 1;
@@ -224,7 +239,7 @@
       offset-distance: 50%;
     }
   }
-}  
+}
 
 @media screen and (max-width: 480px) {
   @keyframes spoon-path {
