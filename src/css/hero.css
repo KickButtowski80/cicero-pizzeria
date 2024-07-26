@@ -1,9 +1,9 @@
 @import url("./hero-animation/sauce-svg.css");
-@import url("./hero-animation/mushroom-svg.css");
 @import url("./hero-animation/tomato-svg.css");
-@import "./hero-animation/slices-svg.css";
+@import url("./hero-animation/mushroom-svg.css");
 @import "./hero-animation/pepperoni-svg.css";
 @import "./hero-animation/basil-svg.css";
+@import "./hero-animation/slices-svg.css";
 
 @tailwind base;
 @tailwind components;
