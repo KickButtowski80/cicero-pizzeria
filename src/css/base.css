@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --slice-pizza: url("/src/assets/svg/slicePizza.svg")
+    --slice-pizza: url("/src/assets/svg/slicePizza.svg");
   }
-  
+
   html,
   body {
     scroll-behavior: smooth;
@@ -25,13 +25,11 @@
     vertical-align: baseline;
     box-sizing: border-box;
   }
-  
-
 }
 
 @layer components {
-  .wrapper {
-    @apply min-h-screen;
+  .flex-centered-wrapper {
+    @apply flex min-h-screen items-center justify-center;
     width: calc(100% - 0rem);
     min-height: 100vh;
     margin-inline: auto;
@@ -52,4 +50,3 @@
       1px 1px 0 black;
   }
 }
-
