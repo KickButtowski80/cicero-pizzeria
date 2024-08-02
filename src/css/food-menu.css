@@ -9,8 +9,7 @@
       --skew-angle: -4deg;
       --background: #243047;
       margin-top: 80px; */
-     
-   
+
     .image {
       height: 50vh;
       object-fit: cover;
@@ -19,17 +18,26 @@
       opacity: 0;
       transition: opacity 2s ease-in;
     }
+    :is(.lunch-logo, .dinner-logo) img {
+      -webkit-transition: 0.4s ease;
+      transition: 0.4s ease;
+    }
+
+    a:hover :is(.lunch-logo, .dinner-logo) img  {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
 
     .show-image {
       opacity: 1;
     }
 
     .dinner-logo-animation {
-      animation: bounce 3s forwards;
+      animation: slideInFromRight 1s forwards;
     }
 
     .lunch-logo-animation {
-      animation: bounce 3s forwards 0.5s;
+      animation: slideInFromLeft 1s forwards;
     }
   }
 
@@ -77,6 +85,28 @@
     }
     90% {
       transform: translate3d(0px, -10px, 0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
     }
   }
 }
