@@ -9,8 +9,7 @@
       --skew-angle: -4deg;
       --background: #243047;
       margin-top: 80px; */
-     
-   
+
     .image {
       height: 50vh;
       object-fit: cover;
@@ -18,6 +17,15 @@
       border-radius: 4%;
       opacity: 0;
       transition: opacity 2s ease-in;
+    }
+    :is(.lunch-logo, .dinner-logo) img {
+      -webkit-transition: 0.4s ease;
+      transition: 0.4s ease;
+    }
+
+    a:hover :is(.lunch-logo, .dinner-logo) img  {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
     }
 
     .show-image {
