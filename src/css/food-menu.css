@@ -33,11 +33,11 @@
     }
 
     .dinner-logo-animation {
-      animation: bounce 3s forwards;
+      animation: slideInFromRight 1s forwards;
     }
 
     .lunch-logo-animation {
-      animation: bounce 3s forwards 0.5s;
+      animation: slideInFromLeft 1s forwards;
     }
   }
 
@@ -85,6 +85,28 @@
     }
     90% {
       transform: translate3d(0px, -10px, 0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
     }
   }
 }
