@@ -37,7 +37,7 @@
     }
 
     .lunch-logo-animation {
-      animation: slideInFromLeft 1s forwards;
+      animation: slideInFromLeft 1s forwards 0.5s;
     }
   }
 
